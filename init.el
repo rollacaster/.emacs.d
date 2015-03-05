@@ -81,7 +81,6 @@
 (eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-yasnippet)
 (require 'setup-autocomplete)
-;;(require 'setup-guide-key)
 (require 'setup-smartparens)
 (require 'setup-tern)
 ;; (require 'setup-web-mode)
