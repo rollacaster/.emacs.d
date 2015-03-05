@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: MongooseSchema
+# key: msc
+# --
+var mongoose = require('mongoose');
+
+var $1Schema = new mongoose.Schema({
+    $0
+});
+
+mongoose.model('$1', $1Schema);
