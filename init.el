@@ -56,6 +56,8 @@
      auto-complete
      tern-auto-complete
      guide-key
+     texinfo
+     auctex
      )
    )
   )
@@ -83,6 +85,7 @@
 (require 'setup-autocomplete)
 (require 'setup-smartparens)
 (require 'setup-tern)
+(require 'setup-auctex)
 ;; (require 'setup-web-mode)
 (require 'setup-ido)
 (require 'setup-smex)
