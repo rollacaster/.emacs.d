@@ -58,6 +58,14 @@
      guide-key
      texinfo
      auctex
+     ispell
+     org-pdfview
+     gscholar-bibtex
+     multi-term
+     babel
+     projectile
+     restclient
+     diminish
      )
    )
   )
@@ -86,9 +94,13 @@
 (require 'setup-smartparens)
 (require 'setup-tern)
 (require 'setup-auctex)
-;; (require 'setup-web-mode)
+(require 'setup-web-mode)
 (require 'setup-ido)
 (require 'setup-smex)
+(require 'setup-flyspell)
+(require 'setup-org)
+(require 'setup-reftex)
+(pdf-tools-install)
 
 ;; map files to modes
 (require 'mode-mappings)
