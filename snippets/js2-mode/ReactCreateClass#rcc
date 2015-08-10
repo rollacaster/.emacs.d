@@ -2,10 +2,22 @@
 # name: JSX-createClass
 # key: rcc
 # --
-var $1 = React.createClass({
-  render: function() {
+class $1 extends React.Component {
+  static defaultProps = {
+    $2
+  }
+
+  static propTypes = {
+    $3
+  }
+
+  state = {
+    $4
+  }
+
+  render() {
     return (
       $0
     );
   }
-});
+}
