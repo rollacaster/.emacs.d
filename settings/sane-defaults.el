@@ -41,8 +41,8 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; Set line length to 75
-(setq fill-column 75)
+;; Set line length to 90
+(setq fill-column 90)
 
 ;; Activate recent mode and set max saved item to 100
 (recentf-mode 1)
