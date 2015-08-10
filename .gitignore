@@ -12,3 +12,5 @@ history
 
 /settings/setup-reftex.el
 /settings/setup-org.el
+/projectile.cache
+/tramp
