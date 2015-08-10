@@ -29,6 +29,9 @@
       `(("." . ,(expand-file-name
            (concat user-emacs-directory "backups")))))
 
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 ;; make always backup files
 (setq vc-make-backup-files t)
 
@@ -66,6 +69,8 @@
      projectile
      restclient
      diminish
+     csv-mode
+     framemove
      )
    )
   )
@@ -100,6 +105,8 @@
 (require 'setup-flyspell)
 (require 'setup-org)
 (require 'setup-reftex)
+(require 'setup-projectile)
+(require 'setup-framemove)
 (pdf-tools-install)
 
 ;; map files to modes
