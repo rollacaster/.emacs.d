@@ -71,6 +71,7 @@
      diminish
      csv-mode
      framemove
+     powerline
      )
    )
   )
@@ -107,6 +108,7 @@
 (require 'setup-reftex)
 (require 'setup-projectile)
 (require 'setup-framemove)
+(require 'setup-powerline)
 (pdf-tools-install)
 
 ;; map files to modes
