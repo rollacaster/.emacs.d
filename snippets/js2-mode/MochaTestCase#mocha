@@ -2,8 +2,8 @@
 # name: MochaTestCase
 # key: mocha
 # --
-describe('$1', function() {
-  it('$2', function($3) {
+describe('$1', () => {
+  it('$2', ($3) => {
      $0
   });
 });
