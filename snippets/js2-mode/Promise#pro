@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Promise#pro
+# key: Promise
+# binding: direct-keybinding
+# --
+return new Promise((resolve, reject) => {
+  $0
+});

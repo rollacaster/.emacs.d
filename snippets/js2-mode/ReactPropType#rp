@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: JSX-propType
+# key: rp
+# --
+React.PropTypes.$0
