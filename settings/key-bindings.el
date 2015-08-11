@@ -22,5 +22,10 @@
 (global-set-key (kbd "C-c k")    'windmove-up)
 (global-set-key (kbd "C-c l")  'windmove-down)
 
+;; Avy
+(global-set-key (kbd "C-c n") 'avy-goto-char-2)
+(global-set-key (kbd "C-c m") 'avy-copy-line)
+(global-set-key (kbd "C-c ,") 'avy-move-line)
+(global-set-key (kbd "C-c .") 'avy-copy-region)
 
 (provide 'key-bindings)

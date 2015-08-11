@@ -72,6 +72,7 @@
      csv-mode
      framemove
      powerline
+     avy
      )
    )
   )
