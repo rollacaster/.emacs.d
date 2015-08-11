@@ -3,7 +3,6 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-hook 'web-mode-hook (lambda () (tern-mode t)))
 (add-hook 'web-mode-hook 'yas-minor-mode)
-(add-hook 'web-mode-hook 'projectile-mode)
 
 ;; LaTex mode
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . LaTeX-mode))
