@@ -14,4 +14,10 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
+;; Cutom faces
+(custom-set-faces
+ '(highlight ((t (:background "dim gray"))))
+ '(magit-item-highlight ((t (:inherit highlight))))
+ '(sp-pair-overlay-face ((t (:background "chartreuse" :foreground "black")))))
+
 (provide 'appearance)
