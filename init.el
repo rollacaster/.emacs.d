@@ -73,6 +73,7 @@
      framemove
      powerline
      avy
+     neotree
      )
    )
   )
@@ -110,6 +111,7 @@
 (require 'setup-projectile)
 (require 'setup-framemove)
 (require 'setup-powerline)
+(require 'neotree)
 (pdf-tools-install)
 
 ;; map files to modes

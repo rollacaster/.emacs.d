@@ -28,4 +28,7 @@
 (global-set-key (kbd "C-c ,") 'avy-move-line)
 (global-set-key (kbd "C-c .") 'avy-copy-region)
 
+;; Neo
+(global-set-key [f8] 'neotree-toggle)
+
 (provide 'key-bindings)
