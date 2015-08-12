@@ -2,4 +2,4 @@
 # name: JSX-propType
 # key: rp
 # --
-React.PropTypes.$0
+PropTypes.$0
