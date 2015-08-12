@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: AltAction#aa
+# key: aa
+# binding: direct-keybinding
+# --
+import alt from '../alt';
+
+class $1Actions {
+  constructor() {
+    this.generateActions($0);
+  }
+}
+
+export default alt.createActions($1Actions);

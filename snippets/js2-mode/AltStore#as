@@ -1,0 +1,19 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: AltStore#store]
+# key: store
+# binding: direct-keybinding
+# --
+import alt from '../alt';
+import $1Actions from '../actions/$1Actions';
+
+class $1Store {
+  constructor() {
+    this.bindActions($1Actions);
+  }
+
+  on$2($3){
+    $0
+  }
+}
+
+export default alt.createStore($1Store, '$1Store');
