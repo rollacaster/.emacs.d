@@ -85,6 +85,7 @@
      powerline
      avy
      neotree
+     js-doc
      )
    )
   )
@@ -123,6 +124,7 @@
 (require 'setup-framemove)
 (require 'setup-powerline)
 (require 'neotree)
+(require 'setup-jsdoc)
 (pdf-tools-install)
 
 ;; map files to modes

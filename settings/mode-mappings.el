@@ -3,6 +3,10 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-hook 'web-mode-hook (lambda () (tern-mode t)))
 (add-hook 'web-mode-hook 'yas-minor-mode)
+(add-hook 'web-mode-hook
+          #'(lambda ()
+              (define-key web-mode-map "\C-ci" 'js-doc-insert-function-doc)
+              (define-key web-mode-map "@" 'js-doc-insert-tag)))
 
 ;; LaTex mode
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . LaTeX-mode))
