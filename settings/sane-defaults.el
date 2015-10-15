@@ -94,4 +94,7 @@
 ;; No electric indent
 (setq electric-indent-mode nil)
 
+;; No start message
+(setq initial-scratch-message nil)
+
 (provide 'sane-defaults)
