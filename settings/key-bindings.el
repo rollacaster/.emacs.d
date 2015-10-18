@@ -15,6 +15,7 @@
 ;; Org-Mode
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c s") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; Windmove
 (global-set-key (kbd "C-c h")  'windmove-left)
