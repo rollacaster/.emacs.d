@@ -17,7 +17,8 @@
 ;; Org mode
 (add-hook 'org-capture 'auto-fill-mode)
 (add-hook 'org-capture 'flyspell-mode)
-(add-hook 'org-capture 'ispell)
+(add-hook 'org-mode 'flyspell-mode)
+(add-hook 'org-mode 'auto-fill-mode)
 
 ;; Rest-Client mode
 (add-to-list 'auto-mode-alist '("\\.api\\'" . restclient-mode))
