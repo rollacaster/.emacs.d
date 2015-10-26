@@ -17,17 +17,6 @@
 (add-to-list 'load-path theme-dir)
 (load custom-file)
 
-;; set local variables
-(custom-set-variables
- '(ac-comphist-file "d:/.emacs.d/var/ac-comphist.dat")
- '(custom-safe-themes (quote ("cf08ae4c26cacce2eebff39d129ea0a21c9d7bf70ea9b945588c1c66392578d1" default)))
- '(ido-enable-tramp-completion nil)
- '(ido-save-directory-list-file "~/.emacs.d/var/.ido.last")
- '(recentf-save-file "~/.emacs.d/var/.recentf")
- '(save-place-file "/home/thomas/.emacs.d/var/.places")
- '(smex-save-file "~/.emacs.d/var/smex-items")
- '(visible-bell t))
-
 (require 'appearance)
 
 ;; add external projects to load path
