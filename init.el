@@ -114,6 +114,7 @@
 (require 'setup-powerline)
 (require 'neotree)
 (require 'setup-jsdoc)
+(require 'flycheck)
 (pdf-tools-install)
 
 ;; map files to modes
