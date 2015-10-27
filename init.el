@@ -63,7 +63,6 @@
      auctex
      ispell
      org-pdfview
-     gscholar-bibtex
      multi-term
      babel
      projectile
