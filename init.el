@@ -76,6 +76,7 @@
      neotree
      js-doc
      flycheck
+     undo-tree
      )
    )
   )
