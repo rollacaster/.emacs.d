@@ -75,6 +75,7 @@
      avy
      neotree
      js-doc
+     flycheck
      )
    )
   )
@@ -119,9 +120,3 @@
 
 ;; map files to modes
 (require 'mode-mappings)
-
-
-
-
-
-
