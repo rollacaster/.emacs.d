@@ -9,9 +9,7 @@ history
 /server/
 /projectile-bookmarks.eld
 /bookmarks
-
 /settings/setup-reftex.el
-/settings/setup-org.el
 /projectile.cache
 /tramp
 /smex-items
