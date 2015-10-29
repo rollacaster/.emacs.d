@@ -67,11 +67,6 @@
 ;; Increase gc memory size
 (setq gc-cons-threshold 20000000)
 
-;; Show undo-history as tree
-(setq undo-tree-mode-lighter ".")
-(require 'undo-tree)
-(global-undo-tree-mode)
-
 ;; Sentences do not need double space to end
 (set-default 'sentence-end-double-space nil)
 
