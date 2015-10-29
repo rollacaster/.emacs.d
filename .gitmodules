@@ -1,3 +1,6 @@
-[submodule "site-lisp/dash.el"]
-	path = site-lisp/dash.el
+[submodule "site-lisp/mu"]
+	path = site-lisp/mu
+	url = git://github.com/djcb/mu.git
+[submodule "site-lisp/dash"]
+	path = site-lisp/dash
 	url = https://github.com/magnars/dash.el.git
