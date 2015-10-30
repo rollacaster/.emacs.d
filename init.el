@@ -75,6 +75,7 @@
      neotree
      js-doc
      flycheck
+     json-mode
      )
    )
   )
