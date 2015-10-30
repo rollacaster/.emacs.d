@@ -19,9 +19,9 @@
 
 ;; Windmove
 (global-set-key (kbd "C-c h")  'windmove-left)
-(global-set-key (kbd "C-c j") 'windmove-right)
+(global-set-key (kbd "C-c l") 'windmove-right)
 (global-set-key (kbd "C-c k")    'windmove-up)
-(global-set-key (kbd "C-c l")  'windmove-down)
+(global-set-key (kbd "C-c j")  'windmove-down)
 
 ;; Avy
 (global-set-key (kbd "C-c n") 'avy-goto-char-2)
