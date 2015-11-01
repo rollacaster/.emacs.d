@@ -109,13 +109,12 @@
 (require 'setup-smex)
 (require 'setup-flyspell)
 (require 'setup-org)
-(require 'setup-reftex)
 (require 'setup-projectile)
 (require 'setup-framemove)
 (require 'setup-powerline)
 (require 'neotree)
 (require 'setup-jsdoc)
-(require 'flycheck)
+(require 'setup-flycheck)
 (pdf-tools-install)
 
 ;; map files to modes
