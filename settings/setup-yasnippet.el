@@ -6,5 +6,7 @@
 ;; Manually define indents
 (setq yas-indent-line 'fixed)
 
+;; Load snippets
+(yas-reload-all)
 
 (provide 'setup-yasnippet)
