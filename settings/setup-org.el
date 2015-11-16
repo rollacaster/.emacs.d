@@ -3,4 +3,6 @@
                               ("l" "Learn" entry (file "~/Dropbox/org/Learn.org")
                                "* %?\n  %i\n")))
 
+;; Use "⤵" instead of "..." for indicating sub-items
+(setq org-ellipsis "⤵")
 (provide 'setup-org)
