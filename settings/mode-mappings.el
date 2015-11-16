@@ -1,6 +1,5 @@
 ;; Web-Mode
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-hook 'web-mode-hook (lambda () (tern-mode t)))
 (add-hook 'web-mode-hook 'yas-minor-mode)
 (add-hook 'web-mode-hook
           #'(lambda ()
@@ -16,7 +15,6 @@
 ;; JS2 Mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook 'flycheck-mode)
-(add-hook 'js2-mode-hook 'tern-mode)
 (add-hook 'js2-mode-hook 'yas-minor-mode)
 (add-hook 'js2-mode-hook
           #'(lambda ()

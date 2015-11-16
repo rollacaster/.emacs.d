@@ -55,9 +55,7 @@
      js2-mode
      dired-details
      popup
-     tern
      auto-complete
-     tern-auto-complete
      guide-key
      texinfo
      auctex
@@ -102,7 +100,6 @@
 (require 'setup-yasnippet)
 (require 'setup-autocomplete)
 (require 'setup-smartparens)
-(require 'setup-tern)
 (require 'setup-auctex)
 (require 'setup-web-mode)
 (require 'setup-ido)
