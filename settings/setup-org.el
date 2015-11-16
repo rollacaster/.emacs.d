@@ -1,3 +1,4 @@
+;; Org capture templates to add todos or learn actions
 (setq org-capture-templates '(("t" "Todo" entry (file "~/Dropbox/org/Todo.org")
                                "* TODO %?\n  %i\n")
                               ("l" "Learn" entry (file "~/Dropbox/org/Learn.org")
