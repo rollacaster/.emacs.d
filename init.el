@@ -112,7 +112,7 @@
 (require 'neotree)
 (require 'setup-jsdoc)
 (require 'setup-flycheck)
-(pdf-tools-install)
+(require 'setup-pdf)
 
 ;; map files to modes
 (require 'mode-mappings)
