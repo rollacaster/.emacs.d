@@ -91,7 +91,7 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
-
+(put 'set-goal-column 'disabled nil)
 
 ;; setup extensions
 ;; (require 'setup-conkeror)
