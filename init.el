@@ -42,7 +42,6 @@
 
 
 (require 'sane-defaults)
-(require 'key-bindings)
 
 ;; setup packages
 (require 'setup-package)
@@ -74,6 +73,8 @@
      js-doc
      flycheck
      json-mode
+     helm
+     helm-projectile
      )
    )
   )
@@ -85,6 +86,9 @@
    (init-install-packages)
   )
 )
+
+(require 'setup-helm)
+(require 'key-bindings)
 
 ;; enable forbidden commands
 (put 'narrow-to-region 'disabled nil)
@@ -102,8 +106,6 @@
 (require 'setup-smartparens)
 (require 'setup-auctex)
 (require 'setup-web-mode)
-(require 'setup-ido)
-(require 'setup-smex)
 (require 'setup-flyspell)
 (require 'setup-org)
 (require 'setup-projectile)
