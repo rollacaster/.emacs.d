@@ -3,8 +3,8 @@
 
 (add-to-list 'custom-theme-load-path custom-theme-directory)
 
-(require 'color-theme-tomorrow)
-(load-theme 'tomorrow-night-eighties t)
+;; (require 'color-theme-tomorrow)
+(require 'solarized-light-theme)
 
 ;; No splash screen
 (setq inhibit-startup-message t)
@@ -13,8 +13,5 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
-;; Change some faces which are hard to read with the current theme
-(set-face-background 'highlight "dim gray")
 
 (provide 'appearance)

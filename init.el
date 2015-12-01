@@ -17,8 +17,6 @@
 (add-to-list 'load-path theme-dir)
 (load custom-file)
 
-(require 'appearance)
-
 ;; add external projects to load path
 (dolist (project (directory-files site-lisp-dir t "\\w+"))
   (when (file-directory-p project)
@@ -88,6 +86,7 @@
   )
 )
 
+(require 'appearance)
 (require 'setup-helm)
 (require 'key-bindings)
 
