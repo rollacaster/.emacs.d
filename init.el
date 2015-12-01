@@ -52,7 +52,6 @@
      js2-mode
      dired-details
      popup
-     auto-complete
      guide-key
      texinfo
      auctex
@@ -74,6 +73,7 @@
      helm
      helm-projectile
      helm-spotify
+     company
      )
    )
   )
@@ -118,3 +118,4 @@
 
 ;; map files to modes
 (require 'mode-mappings)
+(require 'setup-company)
