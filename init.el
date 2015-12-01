@@ -98,12 +98,14 @@
 (put 'upcase-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 
+;; map files to modes
+(require 'mode-mappings)
+
 ;; setup extensions
 ;; (require 'setup-conkeror)
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-yasnippet)
-(require 'setup-autocomplete)
 (require 'setup-smartparens)
 (require 'setup-auctex)
 (require 'setup-web-mode)
@@ -116,7 +118,4 @@
 (require 'setup-jsdoc)
 (require 'setup-flycheck)
 (require 'setup-pdf)
-
-;; map files to modes
-(require 'mode-mappings)
 (require 'setup-company)
