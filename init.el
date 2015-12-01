@@ -73,6 +73,7 @@
      helm
      helm-projectile
      helm-spotify
+     solarized-theme
      company
      )
    )
