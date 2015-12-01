@@ -75,6 +75,7 @@
      json-mode
      helm
      helm-projectile
+     helm-spotify
      )
    )
   )
