@@ -40,6 +40,9 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
+;; Mac test
+(setq is-mac (equal system-type 'darwin))
+
 
 (require 'sane-defaults)
 (require 'key-bindings)
@@ -74,6 +77,7 @@
      js-doc
      flycheck
      json-mode
+     web-mode
      )
    )
   )
@@ -91,6 +95,11 @@
 (put 'narrow-to-page 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+;; Setup env variables on mac
+(when is-mac
+  (require-package 'exec-path-from-shell)
+  (exec-path-from-shell-initialize))
 
 
 ;; setup extensions
