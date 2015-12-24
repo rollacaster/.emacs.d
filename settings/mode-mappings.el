@@ -30,4 +30,7 @@
 ;; Rest-Client mode
 (add-to-list 'auto-mode-alist '("\\.api\\'" . restclient-mode))
 
+;; Company mode
+(add-hook 'after-init-hook 'global-company-mode)
+
 (provide 'mode-mappings)

@@ -4,7 +4,7 @@
 )
 
 (setq js2-highlight-level 3)
-
-(add-hook 'js2-mode-hook 'ac-js2-mode)
+(setq js2-strict-missing-semi-warning nil)
+(setq js2-global-externs '("describe", "it", "expect" "beforeEach", "sinon"))
 
 (provide 'setup-js2-mode)
