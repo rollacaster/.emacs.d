@@ -43,4 +43,7 @@
 ;; Neo
 (global-set-key [f8] 'neotree-toggle)
 
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 (provide 'key-bindings)
