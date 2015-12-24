@@ -134,4 +134,3 @@
 (when (not is-mac)
           (require 'setup-pdf))
 (require 'setup-company)
-(require 'setup-tramp)
