@@ -33,4 +33,7 @@
 ;; Company mode
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 (provide 'mode-mappings)
