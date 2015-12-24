@@ -17,8 +17,6 @@
 (add-to-list 'load-path theme-dir)
 (load custom-file)
 
-(require 'appearance)
-
 ;; add external projects to load path
 (dolist (project (directory-files site-lisp-dir t "\\w+"))
   (when (file-directory-p project)
@@ -45,7 +43,6 @@
 
 
 (require 'sane-defaults)
-(require 'key-bindings)
 
 ;; setup packages
 (require 'setup-package)
@@ -58,7 +55,6 @@
      js2-mode
      dired-details
      popup
-     auto-complete
      guide-key
      texinfo
      auctex
@@ -78,6 +74,11 @@
      flycheck
      json-mode
      web-mode
+     helm
+     helm-projectile
+     helm-spotify
+     solarized-theme
+     company
      )
    )
   )
@@ -90,11 +91,19 @@
   )
 )
 
+(require 'appearance)
+(require 'setup-helm)
+(require 'key-bindings)
+
 ;; enable forbidden commands
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+
+
+(package-initialize)
 
 ;; Setup env variables on mac
 (when is-mac
@@ -102,17 +111,18 @@
   (exec-path-from-shell-initialize))
 
 
+;; map files to modes
+(require 'mode-mappings)
+
+
 ;; setup extensions
 ;; (require 'setup-conkeror)
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-yasnippet)
-(require 'setup-autocomplete)
 (require 'setup-smartparens)
 (require 'setup-auctex)
 (require 'setup-web-mode)
-(require 'setup-ido)
-(require 'setup-smex)
 (require 'setup-flyspell)
 (require 'setup-org)
 (require 'setup-projectile)
@@ -121,7 +131,7 @@
 (require 'neotree)
 (require 'setup-jsdoc)
 (require 'setup-flycheck)
-(require 'setup-pdf)
-
-;; map files to modes
-(require 'mode-mappings)
+(when (not is-mac)
+          (require 'setup-pdf))
+(require 'setup-company)
+(require 'setup-tramp)
