@@ -133,4 +133,4 @@
 (require 'setup-jsdoc)
 (require 'setup-flycheck)
 (when (not is-mac)
-          (require 'setup-pdf))
+  (require 'setup-pdf))
