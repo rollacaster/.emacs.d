@@ -119,6 +119,7 @@
 ;; (require 'setup-conkeror)
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'dired '(require 'setup-dired))
+(eval-after-load 'company-mode '(require 'setup-company))
 (require 'setup-yasnippet)
 (require 'setup-smartparens)
 (require 'setup-auctex)
@@ -133,4 +134,3 @@
 (require 'setup-flycheck)
 (when (not is-mac)
           (require 'setup-pdf))
-(require 'setup-company)
