@@ -48,4 +48,8 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
+;; crux
+(global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
+(global-set-key (kbd "C-c TAB") 'crux-cleanup-buffer-or-region)
+
 (provide 'key-bindings)

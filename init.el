@@ -79,6 +79,7 @@
      helm-spotify
      solarized-theme
      company
+     crux
      )
    )
   )
@@ -134,3 +135,4 @@
 (require 'setup-flycheck)
 (when (not is-mac)
   (require 'setup-pdf))
+(require 'crux)
