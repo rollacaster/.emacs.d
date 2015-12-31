@@ -9,4 +9,10 @@
                (side            . bottom)
                (window-height   . 0.2)))
 
+(setq-default flycheck-disabled-checkers
+              (append flycheck-disabled-checkers
+                      '(javascript-jshint)))
+
+(flycheck-add-mode 'javascript-standard 'web-mode)
+
 (provide 'setup-flycheck)
