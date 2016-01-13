@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: ES6Import#imp
-# key: import
+# key: imp
 # binding: direct-keybinding
 # --
 import $1 from '$2';

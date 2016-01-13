@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ReactCreateStatelessComponent#rcs
+# key: rcs
+# binding: direct-keybinding
+# --
+import React, { PropTypes } from 'react'
+
+const $1 = props => (
+
+)
+
+$1.propTypes = {
+
+}

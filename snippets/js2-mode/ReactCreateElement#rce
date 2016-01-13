@@ -1,7 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: JSX-createElement            
-# key: rce
-# --
-React.createElement ('$1', {className: "$2"},
-  $0
-)

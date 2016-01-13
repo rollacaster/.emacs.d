@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: Promise#pro
-# key: Promise
+# key: pro
 # binding: direct-keybinding
 # --
 return new Promise((resolve, reject) => {
