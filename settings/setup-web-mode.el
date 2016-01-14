@@ -11,4 +11,7 @@
         ad-do-it)
     ad-do-it))
 
+(eval-after-load 'web-mode
+  '(define-key web-mode-map (kbd "C-c C-v") 'browse-url-of-file))
+
 (provide 'setup-web-mode)
