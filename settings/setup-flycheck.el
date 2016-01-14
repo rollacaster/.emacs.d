@@ -13,7 +13,7 @@
               (append flycheck-disabled-checkers
                       '(javascript-jshint)))
 
-(flycheck-add-mode 'javascript-standard 'web-mode)
+(flycheck-add-mode 'html-tidy 'web-mode)
 (flycheck-add-mode 'javascript-standard 'js2-jsx-mode)
 
 (provide 'setup-flycheck)

@@ -8,6 +8,9 @@
 (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 
+;; Web Mode
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
 ;; JS2 Mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook #'yas-minor-mode)
