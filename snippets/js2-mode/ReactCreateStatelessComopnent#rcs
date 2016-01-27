@@ -12,3 +12,5 @@ const $1 = props => (
 $1.propTypes = {
 
 }
+
+export default $1
