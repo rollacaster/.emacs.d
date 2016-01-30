@@ -8,7 +8,7 @@
 (setq js2-highlight-level 3)
 
 ;; Do not warn about missing semicolons
-(setq js2-strict-missing-semi-warningl nil)
+(setq js2-strict-missing-semi-warning nil)
 
 ;; Add externals
 (setq js2-global-externs '("describe", "it", "expect" "beforeEach", "sinon"))
