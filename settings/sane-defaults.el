@@ -92,4 +92,7 @@
 ;; No start message
 (setq initial-scratch-message nil)
 
+;; Kill process without asking
+(setq kill-buffer-query-functions nil)
+
 (provide 'sane-defaults)
