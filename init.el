@@ -80,6 +80,7 @@
      solarized-theme
      company
      crux
+     undo-tree
      org-bullets
      mocha
      )
@@ -137,5 +138,7 @@
 (require 'setup-flycheck)
 (when (not is-mac)
   (require 'setup-pdf))
+(require 'undo-tree)
+(global-undo-tree-mode)
 (require 'crux)
 (require 'setup-mocha)
