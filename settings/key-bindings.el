@@ -37,6 +37,7 @@
 
 ;; Avy
 (global-set-key (kbd "C-c n") 'avy-goto-char)
+(global-set-key (kbd "C-c C-n") 'avy-goto-char)
 (global-set-key (kbd "C-c ,") 'avy-copy-line)
 (global-set-key (kbd "C-c m") 'avy-move-line)
 (global-set-key (kbd "C-c .") 'avy-copy-region)
@@ -58,8 +59,13 @@
 
 ;; Transpose stuff with M-t
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
+(global-set-key (kbd "M-t c") 'transpose-chars)
 (global-set-key (kbd "M-t l") 'transpose-lines)
 (global-set-key (kbd "M-t w") 'transpose-words)
 (global-set-key (kbd "M-t p") 'transpose-params)
+
+;; Replace String
+(global-set-key (kbd "C-c s") 'replace-string)
+(global-set-key (kbd "C-c C-s") 'replace-string)
 
 (provide 'key-bindings)
