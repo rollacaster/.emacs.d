@@ -81,6 +81,8 @@
      company
      crux
      undo-tree
+     company-tern
+     tern
      org-bullets
      mocha
      )
@@ -142,3 +144,4 @@
 (global-undo-tree-mode)
 (require 'crux)
 (require 'setup-mocha)
+(require 'setup-tern)
