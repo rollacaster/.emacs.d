@@ -80,6 +80,7 @@
      solarized-theme
      company
      crux
+     org-bullets
      )
    )
   )
