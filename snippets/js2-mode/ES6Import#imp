@@ -3,5 +3,4 @@
 # key: imp
 # binding: direct-keybinding
 # --
-import $1 from '$2';
-$0
+import $1 from '$0'

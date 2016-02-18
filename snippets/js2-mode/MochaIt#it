@@ -1,9 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
 # name: MochaTestCase
-# key: mocha
+# key: it
 # --
-describe('$1', () => {
-  it('$2', ($3) => {
-     $0
-  })
-})
+it('should $0')

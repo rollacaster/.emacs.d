@@ -3,8 +3,8 @@
 # key: switch
 # binding: direct-keybinding
 # --
-switch($1) {
-  case: $2
+switch ($1) {
+  case $2:
     $0
   default:
     $3
