@@ -81,6 +81,7 @@
      company
      crux
      org-bullets
+     mocha
      )
    )
   )
@@ -137,3 +138,4 @@
 (when (not is-mac)
   (require 'setup-pdf))
 (require 'crux)
+(require 'setup-mocha)
