@@ -12,6 +12,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 ;; JS2 Mode
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook #'yas-minor-mode)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
