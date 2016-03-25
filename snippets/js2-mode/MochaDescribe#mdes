@@ -2,8 +2,10 @@
 # name: MochaTestCase
 # key: mocha
 # --
+import $1 from './$1'
+
 describe('$1', () => {
-  it('$2', ($3) => {
+  it('should $2', ($3) => {
      $0
   })
 })
