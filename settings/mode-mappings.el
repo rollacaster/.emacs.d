@@ -14,10 +14,6 @@
 ;; JS2 Mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook #'yas-minor-mode)
-(add-hook 'js2-mode-hook
-          #'(lambda ()
-              (define-key web-mode-map "\C-ci" 'js-doc-insert-function-doc)
-              (define-key web-mode-map "@" 'js-doc-insert-tag)))
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
 ;; Org mode
