@@ -1,0 +1,16 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ReactCreateStatelessComponent#rncs
+# key: rncs
+# binding: direct-keybinding
+# --
+import React, { PropTypes } from 'react-native'
+
+const $1 = props => (
+
+)
+
+$1.propTypes = {
+
+}
+
+export default $1
