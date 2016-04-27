@@ -22,7 +22,7 @@
 (auto-compression-mode t)
 
 ;; Answering just 'y' or 'n'
-;; (defalias 'yes-or-no-p 'y-or-no-p)   
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; UTF-8
 (setq locale-coding-system 'utf-8)
