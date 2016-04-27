@@ -70,4 +70,18 @@
 (global-set-key (kbd "C-c s") 'replace-string)
 (global-set-key (kbd "C-c C-s") 'replace-string)
 
+;; Move
+(global-set-key "\M-9" 'backward-sexp)
+(global-set-key "\M-0" 'forward-sexp)
+
+;; Expand mark
+(global-set-key "\M-2" 'er/expand-region)
+
+;; Multiple cursors
+(global-set-key (kbd "C-c RET") #'mc/mark-all-like-this-dwim)
+(global-set-key (kbd "M-3") #'mc/mark-next-like-this)
+(global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
+(global-set-key (kbd "M-#") #'mc/unmark-next-like-this)
+(global-set-key (kbd "M-$") #'mc/unmark-previous-like-this)
+
 (provide 'key-bindings)
