@@ -1,4 +1,5 @@
 ;; JSX Mode
+(rename-modeline "js2-mode" js2-jsx-mode "JSX")
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 (add-hook 'js2-jsx-mode 'yas-minor-mode)
 
@@ -12,6 +13,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
 ;; JS2 Mode
+(rename-modeline "js2-mode" js2-mode "JS2")
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-hook 'js2-mode-hook #'yas-minor-mode)
