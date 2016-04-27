@@ -52,6 +52,8 @@
 ;; crux
 (global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
 (global-set-key (kbd "C-c TAB") 'crux-cleanup-buffer-or-region)
+(global-set-key (kbd "C-x C-e") 'crux-eval-and-replace)
+(global-set-key (kbd "C-c C-e") 'eval-last-sexp)
 
 ;; terminals
 (global-set-key (kbd "C-x t") 'multi-term)
