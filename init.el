@@ -151,3 +151,4 @@
 (require 'crux)
 (require 'setup-mocha)
 (require 'setup-tern)
+(eval-after-load 'elm-mode '(require 'setup-elm))
