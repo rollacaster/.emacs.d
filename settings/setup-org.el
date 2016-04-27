@@ -1,10 +1,10 @@
 ;; Org capture templates to add todos or learn actions
-(setq org-capture-templates '(("t" "Todo" entry (file "~/Dropbox/org/Todo.org")
-                               "* TODO %?\n  %i\n")
+(setq org-capture-templates '(("t" "☛ TODO" entry (file "~/Dropbox/org/Todo.org")
+                               "* ☛ TODO %?\n  %i\n")
                               ("l" "Learn" entry (file "~/Dropbox/org/Learn.org")
                                "* %?\n  %i\n")
                               ("c" "comSysto" entry (file "~/Dropbox/org/comSysto.org")
-                               "* TODO %?\n  %i\n")))
+                               "* ☛ TODO %?\n  %i\n")))
 
 ;; Use "⤵" instead of "..." for indicating sub-items
 (setq org-ellipsis "⤵")
