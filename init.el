@@ -69,8 +69,6 @@
      framemove
      powerline
      avy
-     neotree
-     js-doc
      flycheck
      json-mode
      web-mode
