@@ -114,6 +114,11 @@
   (require-package 'exec-path-from-shell)
   (exec-path-from-shell-initialize))
 
+;; Functions (load all files in defuns-dir)
+(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
+(dolist (file (directory-files defuns-dir t "\\w+"))
+  (when (file-regular-p file)
+    (load file)))
 
 ;; map files to modes
 (require 'mode-mappings)
