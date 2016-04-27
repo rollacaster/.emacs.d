@@ -83,6 +83,9 @@
      tern
      org-bullets
      mocha
+     elm-mode
+     elm-yasnippets
+     js2-refactor
      )
    )
   )

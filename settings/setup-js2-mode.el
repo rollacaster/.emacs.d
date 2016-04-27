@@ -16,4 +16,7 @@
 ;; Add externals
 (setq js2-global-externs '("describe", "it", "expect", "beforeEach", "sinon", "require"))
 
+(require 'js2-refactor)
+(js2r-add-keybindings-with-prefix "C-c C-j")
+
 (provide 'setup-js2-mode)
