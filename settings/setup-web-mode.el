@@ -14,4 +14,7 @@
 (eval-after-load 'web-mode
   '(define-key web-mode-map (kbd "C-c C-v") 'browse-url-of-file))
 
+(eval-after-load 'web-mode
+  '(define-key web-mode-map (kbd "C-c RET") 'mc/mark-all-like-this-dwim))
+
 (provide 'setup-web-mode)
