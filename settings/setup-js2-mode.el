@@ -12,6 +12,7 @@
 ;; Do not warn about missing semicolons
 (setq js2-strict-missing-semi-warning nil)
 (setq js2-highlight-external-variables nil)
+(setq js2-strict-trailing-comma-warning nil)
 
 ;; Add externals
 (setq js2-global-externs '("describe", "it", "expect", "beforeEach", "sinon", "require"))
