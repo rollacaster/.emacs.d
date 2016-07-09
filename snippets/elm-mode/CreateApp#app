@@ -1,0 +1,59 @@
+# -*- mode: snippet -*-
+# name: Create elm app
+# key: app
+# --
+module Main exposing (..)
+
+import Html.App as Html
+
+
+
+main =
+    Html.program
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
+
+
+
+-- MODEL
+
+
+type alias Model =
+     $1
+
+
+init =
+    ( $2, Cmd.none )
+
+
+
+-- UPDATE
+
+
+type Msg
+    = $3
+
+
+update msg model =
+    case msg of
+        $3 ->
+            ( $2, Cmd.none )
+
+
+
+-- SUBSCRIPTIONS
+
+
+subscriptions model =
+    Sub.none
+
+
+
+-- VIEW
+
+
+view model =
+     $0

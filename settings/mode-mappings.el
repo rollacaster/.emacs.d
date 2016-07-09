@@ -40,6 +40,9 @@
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; Elm mode
+(add-hook 'elm-mode-hook #'yas-minor-mode)
+
 ;; CSS-mode
 (add-hook 'css-mode-hook 'rainbow-mode)
 
