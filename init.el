@@ -154,6 +154,6 @@
 (require 'crux)
 (require 'setup-mocha)
 (require 'setup-tern)
-(require 'setup-guide-key)
+(require 'setup-guidekey)
 (require 'setup-hydras)
 (eval-after-load 'elm-mode '(require 'setup-elm))
