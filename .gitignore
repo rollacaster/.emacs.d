@@ -17,3 +17,6 @@ history
 /recentf
 /eshell
 /.mc-lists.el
+abbrev_defs
+fixture/
+semanticdb/
