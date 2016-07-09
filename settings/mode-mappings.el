@@ -3,6 +3,7 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
 (add-hook 'js2-jsx-mode 'yas-minor-mode)
 (add-hook 'js2-jsx-mode #'js2-refactor-mode)
+(add-hook 'js2-jsx-mode 'rainbow-mode)
 
 ;; LaTex mode
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . LaTeX-mode))
@@ -20,6 +21,7 @@
 (add-hook 'js2-mode-hook #'yas-minor-mode)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
+(add-hook 'js2-mode-hook 'rainbow-mode)
 
 ;; Org mode
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -37,5 +39,8 @@
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; CSS-mode
+(add-hook 'css-mode-hook 'rainbow-mode)
 
 (provide 'mode-mappings)

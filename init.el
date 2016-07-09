@@ -86,6 +86,9 @@
      elm-mode
      elm-yasnippets
      js2-refactor
+     rainbow-mode
+     kurecolor
+     hydra
      )
    )
   )
@@ -152,4 +155,5 @@
 (require 'setup-mocha)
 (require 'setup-tern)
 (require 'setup-guide-key)
+(require 'setup-hydras)
 (eval-after-load 'elm-mode '(require 'setup-elm))
