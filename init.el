@@ -61,7 +61,6 @@
      ispell
      org-pdfview
      multi-term
-     babel
      projectile
      restclient
      diminish
