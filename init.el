@@ -155,6 +155,7 @@
 (require 'setup-tern)
 (require 'setup-guidekey)
 (require 'setup-hydras)
+(require 'setup-emoji)
 (require 'setup-company)
 (eval-after-load 'elm-mode '(require 'setup-elm))
 (require 'setup-alert)
