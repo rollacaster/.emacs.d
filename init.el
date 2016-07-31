@@ -88,6 +88,7 @@
      rainbow-mode
      kurecolor
      hydra
+     alert
      )
    )
   )
@@ -156,3 +157,4 @@
 (require 'setup-guidekey)
 (require 'setup-hydras)
 (eval-after-load 'elm-mode '(require 'setup-elm))
+(require 'setup-alert)
