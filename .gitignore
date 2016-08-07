@@ -21,3 +21,4 @@ abbrev_defs
 fixture/
 semanticdb/
 emojis
+.harvest/
