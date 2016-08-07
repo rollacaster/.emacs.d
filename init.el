@@ -89,6 +89,7 @@
      kurecolor
      hydra
      alert
+     ggtags
      use-package
      )
    )
