@@ -84,4 +84,10 @@
 (global-set-key (kbd "M-#") #'mc/unmark-next-like-this)
 (global-set-key (kbd "M-$") #'mc/unmark-previous-like-this)
 
+(global-set-key (kbd "s-p") 'projectile-switch-project)
+(global-set-key (kbd "s-f") 'projectile-find-file)
+(global-set-key (kbd "s-d") 'projectile-find-dir)
+(global-set-key (kbd "s-g") 'projectile-grep)
+(global-set-key (kbd "s-s") 'projectile-ag)
+
 (provide 'key-bindings)
