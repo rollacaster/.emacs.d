@@ -20,12 +20,12 @@
 ;; add external projects to load path
 (dolist (project (directory-files site-lisp-dir t "\\w+"))
   (when (file-directory-p project)
-  (add-to-list 'load-path project)))
+    (add-to-list 'load-path project)))
 
 ;; write backup to own directories
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
-           (concat user-emacs-directory "backups")))))
+                 (concat user-emacs-directory "backups")))))
 
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
@@ -96,8 +96,8 @@
   (error
    (package-refresh-contents)
    (init-install-packages)
+   )
   )
-)
 
 (require 'appearance)
 (require 'setup-helm)
