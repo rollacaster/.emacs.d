@@ -49,8 +49,7 @@
 
 (defun init-install-packages ()
   (packages-install
-   '(magit
-     yasnippet
+   '(yasnippet
      smartparens
      js2-mode
      dired-details
@@ -132,6 +131,7 @@
 ;; setup extensions
 ;; (require 'setup-conkeror)
 (require 'setup-use-package)
+(use-package magit)
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-yasnippet)
