@@ -59,7 +59,6 @@
      texinfo
      auctex
      ispell
-     org-pdfview
      multi-term
      projectile
      restclient
@@ -80,7 +79,6 @@
      undo-tree
      company-tern
      tern
-     org-bullets
      mocha
      elm-mode
      elm-yasnippets
