@@ -75,7 +75,6 @@
      helm-spotify
      solarized-theme
      company
-     crux
      undo-tree
      company-tern
      tern
@@ -151,7 +150,7 @@
   (require 'setup-pdf))
 (require 'undo-tree)
 (global-undo-tree-mode)
-(require 'crux)
+(use-package crux)
 (require 'setup-mocha)
 (require 'setup-tern)
 (require 'setup-guidekey)
