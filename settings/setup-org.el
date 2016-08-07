@@ -15,4 +15,8 @@
 ;; Add all files in the org-directory to the agenda
 (setq org-folder "~/Dropbox/org")
 (setq org-agenda-files (nthcdr 2 (directory-files org-folder t)))
+
+;; Ask if work time should be substracted after 15 minutes
+(setq org-clock-idle-time 15)
+
 (provide 'setup-org)
