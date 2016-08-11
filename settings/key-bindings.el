@@ -89,5 +89,7 @@
 (global-set-key (kbd "s-d") 'projectile-find-dir)
 (global-set-key (kbd "s-g") 'projectile-grep)
 (global-set-key (kbd "s-s") 'projectile-ag)
+(global-set-key (kbd "s-k") 'projectile-kill-buffers)
+
 
 (provide 'key-bindings)
