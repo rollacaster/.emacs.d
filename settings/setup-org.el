@@ -18,6 +18,10 @@
 
   ;; Ask if work time should be substracted after 15 minutes
   (setq org-clock-idle-time 15)
+
+  ;; Parent TODOs cannot be resolved when a child has a TODO state
+  (setq org-enforce-todo-dependencies t)
+  (setq org-enforce-todo-checkbox-dependencies t)
   )
 
 (use-package org-pdfview)
