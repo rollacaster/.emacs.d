@@ -49,8 +49,7 @@
 
 (defun init-install-packages ()
   (packages-install
-   '(yasnippet
-     smartparens
+   '(smartparens
      js2-mode
      dired-details
      popup
