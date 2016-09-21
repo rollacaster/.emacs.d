@@ -9,6 +9,8 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" "DEFERRED(f)")))
 
+  (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?w) ("Phone" . ?p) ("Anywhere" . ?a) ("Mamming" . ?m)))
+
   ;; Use "⤵" instead of "..." for indicating sub-items
   (setq org-ellipsis "⤵")
   ;; Use utf8 org bullets
