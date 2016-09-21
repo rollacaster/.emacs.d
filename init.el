@@ -159,3 +159,4 @@
 (eval-after-load 'elm-mode '(require 'setup-elm))
 (require 'setup-alert)
 (require 'setup-harvest)
+(require 'setup-mu)
