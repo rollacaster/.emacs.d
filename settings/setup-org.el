@@ -5,6 +5,10 @@
                                  "* %?  %i\n %a\n %u")
                                 ("t" "Todo" entry (file "~/Dropbox/org/Todo.org")
                                  "* TODO %^{Brief Description} %? %^g\nAdded: %U")))
+
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" "DEFERRED(f)")))
+
   ;; Use "⤵" instead of "..." for indicating sub-items
   (setq org-ellipsis "⤵")
   ;; Use utf8 org bullets
