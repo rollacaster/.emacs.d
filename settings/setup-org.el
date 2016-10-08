@@ -16,6 +16,8 @@
 
   (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p) ("Anywhere" . ?a) ("Mamming" . ?m)))
 
+  (setq org-refile-targets '(("Lists.org" :level . 1)))
+
   ;; Use "⤵" instead of "..." for indicating sub-items
   (setq org-ellipsis "⤵")
   ;; Use utf8 org bullets
