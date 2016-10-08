@@ -3,6 +3,7 @@
 
 ;; Set basic offset to 2
 (setq js2-basic-offset 2)
+(setq js-indent-level 2)
 (setq sgml-basic-offset 2)
 (setq sgml-at 2)
 
