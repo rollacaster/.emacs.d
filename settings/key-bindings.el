@@ -91,5 +91,8 @@
 (global-set-key (kbd "s-s") 'projectile-ag)
 (global-set-key (kbd "s-k") 'projectile-kill-buffers)
 
+; Move-text
+(global-set-key (kbd "M-P") 'move-text-up)
+(global-set-key (kbd "M-N") 'move-text-down)
 
 (provide 'key-bindings)

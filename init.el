@@ -161,3 +161,4 @@
 (require 'setup-harvest)
 (require 'setup-mu)
 (require 'setup-tide)
+(require 'setup-movetext)
