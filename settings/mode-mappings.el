@@ -48,4 +48,7 @@
 ;; CSS-mode
 (add-hook 'css-mode-hook 'rainbow-mode)
 
+;; Emacs mode
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+
 (provide 'mode-mappings)
