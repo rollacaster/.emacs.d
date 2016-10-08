@@ -160,3 +160,4 @@
 (require 'setup-alert)
 (require 'setup-harvest)
 (require 'setup-mu)
+(require 'setup-tide)
