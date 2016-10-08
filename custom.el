@@ -8,10 +8,14 @@
  '(magit-log-arguments (quote ("--graph" "--decorate" "-n256")))
  '(org-agenda-files
    (quote
-    ("/Users/thomas/Dropbox/org/Address.org" "/Users/thomas/Dropbox/org/Dates.org" "/Users/thomas/Dropbox/org/Debt.org" "/Users/thomas/Dropbox/org/Geld.org" "/Users/thomas/Dropbox/org/Learn.org" "/Users/thomas/Dropbox/org/Movies.org" "/Users/thomas/Dropbox/org/Presents.org" "/Users/thomas/Dropbox/org/Projects.org" "/Users/thomas/Dropbox/org/Todo.org" "/Users/thomas/Dropbox/org/Tools.org" "/Users/thomas/Dropbox/org/Urlaub.org" "/Users/thomas/Dropbox/org/Wishlist.org" "/Users/thomas/Dropbox/org/Wohnung.org" "/Users/thomas/Dropbox/org/comSysto.org")))
+    ("/Users/thomas/Dropbox/org/Archive.org" "/Users/thomas/Dropbox/org/Inbox.org" "/Users/thomas/Dropbox/org/Lists.org" "/Users/thomas/Dropbox/org/Maybe.org" "/Users/thomas/Dropbox/org/Projects.org" "/Users/thomas/Dropbox/org/Projects.org_archive" "/Users/thomas/Dropbox/org/Reference.org" "/Users/thomas/Dropbox/org/Todo.org" "/Users/thomas/Dropbox/org/Todo.org_archive")))
+ '(package-selected-packages
+   (quote
+    (move-text org-gcal s tide notmuch aggressive-indent auc-tex rainbow-delimiters jade paredit org-mode use-package org-pomodoro helm-ag ag ggtags harvest jdee emojify git-timemachine yaml-mode web-mode undo-tree swiper solarized-theme smartparens slack sass-mode restclient rainbow-mode powerline pandoc-mode palette ox-gfm org-pdfview org-bullets org-alert neotree multi-term mocha markdown-preview-mode magit loc-changes load-relative list-utils kurecolor json-mode js2-refactor js-doc helm-spotify helm-projectile guide-key gh-md framemove flycheck expand-region exec-path-from-shell elm-yasnippets elm-mode edit-server dired-details diminish csv-nav csv-mode crux company-tern company-emoji babel avy auctex)))
  '(safe-local-variable-values
    (quote
-    ((setq js2-basic-offset 4)
+    ((js2-basic-offset . 4)
+     (setq js2-basic-offset 4)
      (mocha-options . "--reporter dot --r src/test/setup.js --compilers js:babel-core/register")
      (mocha-options . "--reporter dot --r babel-core/register --r src/test/setup.js")
      (mocha-options . "--R dot --r babel-core/register --r src/test/setup.js")
