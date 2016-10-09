@@ -162,3 +162,7 @@
 (require 'setup-mu)
 (require 'setup-tide)
 (require 'setup-movetext)
+(use-package paredit
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
