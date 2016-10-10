@@ -73,7 +73,6 @@
      helm-spotify
      solarized-theme
      company
-     undo-tree
      company-tern
      tern
      mocha
@@ -147,8 +146,9 @@
 (require 'setup-flycheck)
 (when (not is-mac)
   (require 'setup-pdf))
-(require 'undo-tree)
-(global-undo-tree-mode)
+(use-package undo-tree
+  :init
+    (global-undo-tree-mode))
 (use-package crux)
 (require 'setup-mocha)
 (require 'setup-tern)
