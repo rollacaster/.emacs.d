@@ -20,4 +20,6 @@
 ;; format options
 (setq tide-format-options '(:insertSpaceAfterFunctionKeywordForAnonymousFunctions t :placeOpenBraceOnNewLineForFunctions nil))
 
+(setq typescript-indent-level 2)
+
 (provide 'setup-tide)
