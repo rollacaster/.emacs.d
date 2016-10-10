@@ -22,3 +22,6 @@ fixture/
 semanticdb/
 emojis
 .harvest/
+basic.ics
+.org-id-locations
+org-gcal
