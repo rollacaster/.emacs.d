@@ -146,8 +146,9 @@
 (when (not is-mac)
   (require 'setup-pdf))
 (use-package undo-tree
+  :diminish undo-tree-mode
   :init
-    (global-undo-tree-mode))
+  (global-undo-tree-mode))
 (use-package crux)
 (require 'setup-mocha)
 (require 'setup-tern)
@@ -161,6 +162,7 @@
 (require 'setup-tide)
 (require 'setup-movetext)
 (use-package paredit
+  :diminish paredit-mode
   :config
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
