@@ -82,7 +82,6 @@
      rainbow-mode
      kurecolor
      hydra
-     alert
      ggtags
      use-package
      )
@@ -157,7 +156,6 @@
 (require 'setup-emoji)
 (require 'setup-company)
 (eval-after-load 'elm-mode '(require 'setup-elm))
-(require 'setup-alert)
 (require 'setup-harvest)
 (require 'setup-mu)
 (require 'setup-tide)
@@ -166,3 +164,8 @@
   :config
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
+
+(use-package alert
+  :commands (alert)
+  :init
+  (setq alert-default-style 'notifier))
