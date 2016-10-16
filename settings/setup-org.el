@@ -33,6 +33,15 @@
   ;; Parent TODOs cannot be resolved when a child has a TODO state
   (setq org-enforce-todo-dependencies t)
   (setq org-enforce-todo-checkbox-dependencies t)
+
+  ;; Mode Hooks
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (add-hook 'org-capture 'auto-fill-mode)
+  (add-hook 'org-capture 'flyspell-mode)
+  (add-hook 'org-mode 'flyspell-mode)
+  (add-hook 'org-mode 'auto-fill-mode)
+  (add-hook 'org-mode 'org-bullets-mode)
+
   )
 
 (use-package org-pdfview)

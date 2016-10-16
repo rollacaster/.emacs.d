@@ -25,14 +25,6 @@
 (add-hook 'js2-mode-hook 'rainbow-mode)
 (add-hook 'typescript-mode-hook #'js2-refactor-mode)
 
-;; Org mode
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-(add-hook 'org-capture 'auto-fill-mode)
-(add-hook 'org-capture 'flyspell-mode)
-(add-hook 'org-mode 'flyspell-mode)
-(add-hook 'org-mode 'auto-fill-mode)
-(add-hook 'org-mode 'org-bullets-mode)
-
 ;; Rest-Client mode
 (add-to-list 'auto-mode-alist '("\\.api\\'" . restclient-mode))
 
