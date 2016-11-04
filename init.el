@@ -140,7 +140,7 @@
 (require 'setup-projectile)
 (require 'setup-framemove)
 (require 'setup-powerline)
-(require 'neotree)
+(use-package neotree)
 (require 'setup-jsdoc)
 (require 'setup-flycheck)
 (when (not is-mac)
