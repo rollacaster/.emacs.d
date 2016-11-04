@@ -5,7 +5,7 @@
   (setq org-capture-templates '(("i" "Inbox" entry (file "~/Dropbox/org/Inbox.org")
                                  "* %?  %i\n %a\n %u")
                                 ("t" "Todo" entry (file "~/Dropbox/org/Todo.org")
-                                 "* TODO %^{Brief Description} %? %^g\nAdded: %U")
+                                 "* TODO %? %^g\nAdded: %U")
                                 ("m" "Maybe" entry (file "~/Dropbox/org/Maybe.org")
                                  "* %?\nAdded: %U")
                                 ("l" "List" entry (file "~/Dropbox/org/List.org")
