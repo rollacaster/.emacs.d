@@ -17,7 +17,7 @@
 ;; JS2 Mode
 (rename-modeline "js2-mode" js2-mode "JS2")
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js-jsx-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-hook 'js2-mode-hook #'yas-minor-mode)
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
