@@ -5,16 +5,12 @@
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
 
-(setq theme-dir
-      (expand-file-name "themes" user-emacs-directory))
-
 (setq custom-file 
       (expand-file-name "custom.el" user-emacs-directory))
 
 ;; load paths
 (add-to-list 'load-path settings-dir)
 (add-to-list 'load-path site-lisp-dir)
-(add-to-list 'load-path theme-dir)
 (load custom-file)
 
 ;; add external projects to load path

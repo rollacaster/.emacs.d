@@ -1,9 +1,8 @@
-(setq custom-theme-directory 
+(setq custom-theme-directory
       (concat user-emacs-directory "themes"))
 
 (add-to-list 'custom-theme-load-path custom-theme-directory)
 
-;; (require 'color-theme-tomorrow)
 (require 'solarized-light-theme)
 
 ;; No splash screen
