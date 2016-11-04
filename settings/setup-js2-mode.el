@@ -6,6 +6,7 @@
 (setq js-indent-level 2)
 (setq sgml-basic-offset 2)
 (setq sgml-at 2)
+(setq json-reformat:indent-width 2)
 
 ;; Highlight as much as possible
 (setq js2-highlight-level 3)
