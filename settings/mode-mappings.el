@@ -23,7 +23,6 @@
 (add-hook 'js-jsx-mode-hook #'js2-refactor-mode)
 (add-hook 'js-jsx-mode-hook 'rainbow-mode)
 (add-hook 'js2-mode-hook #'yas-minor-mode)
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (add-hook 'js2-mode-hook 'rainbow-mode)
 (add-hook 'typescript-mode-hook #'js2-refactor-mode)
