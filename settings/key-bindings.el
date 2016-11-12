@@ -95,4 +95,7 @@
 (global-set-key (kbd "M-P") 'move-text-up)
 (global-set-key (kbd "M-N") 'move-text-down)
 
+; Company mode
+(global-set-key (kbd "C-;") 'company-complete)
+
 (provide 'key-bindings)
