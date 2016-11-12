@@ -17,4 +17,9 @@
 (eval-after-load 'web-mode
   '(define-key web-mode-map (kbd "C-c RET") 'mc/mark-all-like-this-dwim))
 
+(define-key web-mode-map (kbd "C-;") 'company-web-html)
+(add-hook 'web-mode-hook (lambda ()
+                           (set (make-local-variable 'company-backends) '(company-web-html company-files))
+                           (company-mode t)))
+
 (provide 'setup-web-mode)

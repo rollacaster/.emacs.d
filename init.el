@@ -130,6 +130,7 @@
 (require 'setup-yasnippet)
 (require 'setup-smartparens)
 (require 'setup-auctex)
+(use-package company-web)
 (require 'setup-web-mode)
 (require 'setup-flyspell)
 (require 'setup-org)
