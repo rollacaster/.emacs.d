@@ -42,4 +42,7 @@
 ;; CSS-mode
 (add-hook 'css-mode-hook 'rainbow-mode)
 
+;; dired-mode
+(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
 (provide 'mode-mappings)
