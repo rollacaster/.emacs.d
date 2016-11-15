@@ -14,7 +14,7 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" "DEFERRED(f)")))
 
-  (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p) ("Anywhere" . ?a) ("Mamming" . ?m)))
+  (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p) ("Train" . ?t) ("Mamming" . ?m)))
 
   (setq org-refile-targets '(("Lists.org" :level . 1)))
 
