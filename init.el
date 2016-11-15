@@ -153,7 +153,7 @@
 (require 'setup-hydras)
 (require 'setup-company)
 (eval-after-load 'elm-mode '(require 'setup-elm))
-(require 'setup-harvest)
+(use-package harvest)
 (require 'setup-mu)
 (require 'setup-tide)
 (require 'setup-movetext)
