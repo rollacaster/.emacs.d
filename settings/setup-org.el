@@ -37,6 +37,7 @@
   ;; Ignore schedule & deadline items in TODO agenda
   (setq org-agenda-todo-ignore-scheduled t)
   (setq org-agenda-todo-ignore-deadlines t)
+  (setq org-agenda-tags-todo-honor-ignore-options t)
 
   ;; Mode Hooks
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -45,6 +46,14 @@
   (add-hook 'org-mode 'flyspell-mode)
   (add-hook 'org-mode 'auto-fill-mode)
   (add-hook 'org-mode 'org-bullets-mode)
+
+  (setq org-agenda-custom-commands
+        '(("w" "Work agenda"
+           ((agenda "")
+            (tags-todo "+Work")))
+          ("h" "Home agenda"
+           ((agenda "")
+            (tags-todo "-Work")))))
 
   )
 
