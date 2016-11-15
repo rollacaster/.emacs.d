@@ -69,8 +69,6 @@
      helm-spotify
      solarized-theme
      company
-     company-tern
-     tern
      mocha
      elm-mode
      elm-yasnippets
@@ -138,7 +136,6 @@
 (require 'setup-framemove)
 (require 'setup-powerline)
 (use-package neotree)
-(require 'setup-jsdoc)
 (require 'setup-flycheck)
 (when (not is-mac)
   (require 'setup-pdf))
@@ -148,7 +145,6 @@
   (global-undo-tree-mode))
 (use-package crux)
 (require 'setup-mocha)
-(require 'setup-tern)
 (require 'setup-guidekey)
 (require 'setup-hydras)
 (require 'setup-company)
