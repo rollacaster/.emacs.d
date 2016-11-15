@@ -22,6 +22,7 @@
 (add-hook 'js-jsx-mode-hook #'yas-minor-mode)
 (add-hook 'js-jsx-mode-hook #'js2-refactor-mode)
 (add-hook 'js-jsx-mode-hook 'rainbow-mode)
+(add-hook 'js-jsx-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'js2-mode-hook #'yas-minor-mode)
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (add-hook 'js2-mode-hook 'rainbow-mode)
