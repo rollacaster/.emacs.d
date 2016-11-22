@@ -70,7 +70,6 @@
      js2-refactor
      rainbow-mode
      kurecolor
-     hydra
      ggtags
      use-package
      )
@@ -136,7 +135,6 @@
   (global-undo-tree-mode))
 (use-package crux)
 (require 'setup-mocha)
-(require 'setup-hydras)
 (use-package company)
 (use-package company-web)
 (use-package company-emoji
@@ -193,3 +191,15 @@
   (setq alert-default-style 'notifier))
 (use-package all-the-icons)
 (use-package all-the-icons-dired)
+
+(use-package hydra
+  :config
+  (eval-after-load 'css-mode '(defhydra hydra-color (css-mode-map "C-c C-c")
+                                "color"
+                                ("u" kurecolor-increase-hue-by-step "increase hue")
+                                ("j" kurecolor-decrease-hue-by-step "decreasee hue")
+                                ("i" kurecolor-increase-saturation-by-step "increase saturation")
+                                ("k" kurecolor-decrease-saturation-by-step "decrease saturation")
+                                ("o" kurecolor-increase-brightness-by-step "increase brightness")
+                                ("l" kurecolor-decrease-brightness-by-step "decrease brightness"))))
+
