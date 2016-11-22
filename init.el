@@ -58,7 +58,6 @@
      restclient
      diminish
      csv-mode
-     framemove
      powerline
      avy
      json-mode
@@ -128,7 +127,6 @@
 (require 'setup-web-mode)
 (require 'setup-org)
 (require 'setup-projectile)
-(require 'setup-framemove)
 (require 'setup-powerline)
 (use-package neotree)
 (when (not is-mac)
@@ -177,6 +175,10 @@
 
   (flycheck-add-mode 'html-tidy 'web-mode)
   (flycheck-add-mode 'javascript-standard 'js2-jsx-mode))
+
+(use-package framemove
+  :config
+  (setq framemove-hook-into-windmove t))
 
 (use-package alert
   :commands (alert)
