@@ -65,7 +65,6 @@
      helm-projectile
      helm-spotify
      solarized-theme
-     mocha
      elm-yasnippets
      js2-refactor
      rainbow-mode
@@ -134,7 +133,6 @@
   :init
   (global-undo-tree-mode))
 (use-package crux)
-(require 'setup-mocha)
 (use-package company)
 (use-package company-web)
 (use-package company-emoji
