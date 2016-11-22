@@ -69,7 +69,6 @@
      helm-spotify
      solarized-theme
      mocha
-     elm-mode
      elm-yasnippets
      js2-refactor
      rainbow-mode
@@ -150,7 +149,6 @@
 (use-package company-emoji
   :config
   (add-to-list 'company-backends 'company-emoji))
-(eval-after-load 'elm-mode '(require 'setup-elm))
 (use-package harvest)
 (require 'setup-mu)
 (require 'setup-tide)
@@ -164,6 +162,11 @@
   :config
   (global-emojify-mode)
   :bind (("C-c e" . emojify-insert-emoji)))
+(use-package elm-mode
+  :config
+  (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
+  (add-to-list 'company-backends 'company-elm)
+  (define-key elm-mode-map (kbd "C-c TAB") 'elm-mode-format-buffer))
 
 (use-package alert
   :commands (alert)
