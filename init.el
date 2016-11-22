@@ -148,6 +148,9 @@
 (require 'setup-guidekey)
 (require 'setup-hydras)
 (require 'setup-company)
+(use-package company-emoji
+  :config
+  (add-to-list 'company-backends 'company-emoji))
 (eval-after-load 'elm-mode '(require 'setup-elm))
 (use-package harvest)
 (require 'setup-mu)
