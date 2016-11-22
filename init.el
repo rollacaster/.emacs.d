@@ -68,7 +68,6 @@
      helm-projectile
      helm-spotify
      solarized-theme
-     company
      mocha
      elm-mode
      elm-yasnippets
@@ -128,7 +127,6 @@
 (require 'setup-yasnippet)
 (require 'setup-smartparens)
 (require 'setup-auctex)
-(use-package company-web)
 (require 'setup-web-mode)
 (require 'setup-flyspell)
 (require 'setup-org)
@@ -147,7 +145,8 @@
 (require 'setup-mocha)
 (require 'setup-guidekey)
 (require 'setup-hydras)
-(require 'setup-company)
+(use-package company)
+(use-package company-web)
 (use-package company-emoji
   :config
   (add-to-list 'company-backends 'company-emoji))
