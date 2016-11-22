@@ -5,7 +5,7 @@
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
 
-(setq custom-file 
+(setq custom-file
       (expand-file-name "custom.el" user-emacs-directory))
 
 ;; load paths
