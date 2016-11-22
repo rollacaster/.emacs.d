@@ -98,4 +98,8 @@
 ; Company mode
 (global-set-key (kbd "C-;") 'company-complete)
 
+; Change keys for mac port
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super)
+
 (provide 'key-bindings)
