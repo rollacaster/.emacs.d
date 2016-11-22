@@ -141,7 +141,6 @@
 (use-package harvest)
 (require 'setup-mu)
 (require 'setup-tide)
-(require 'setup-movetext)
 (use-package paredit
   :diminish paredit-mode
   :config
