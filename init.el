@@ -61,7 +61,6 @@
      framemove
      powerline
      avy
-     flycheck
      json-mode
      web-mode
      helm
@@ -127,13 +126,11 @@
 (require 'setup-smartparens)
 (require 'setup-auctex)
 (require 'setup-web-mode)
-(require 'setup-flyspell)
 (require 'setup-org)
 (require 'setup-projectile)
 (require 'setup-framemove)
 (require 'setup-powerline)
 (use-package neotree)
-(require 'setup-flycheck)
 (when (not is-mac)
   (require 'setup-pdf))
 (use-package undo-tree
@@ -167,6 +164,19 @@
   (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
   (add-to-list 'company-backends 'company-elm)
   (define-key elm-mode-map (kbd "C-c TAB") 'elm-mode-format-buffer))
+(use-package flycheck
+  :config
+  ;; Show list of flycheck errors on the bottom in a small window
+  (add-to-list 'display-buffer-alist
+               `(,(rx bos "*Flycheck errors*" eos)
+                 (display-buffer-reuse-window
+                  display-buffer-in-side-window)
+                 (reusable-frames . visible)
+                 (side            . bottom)
+                 (window-height   . 0.2)))
+
+  (flycheck-add-mode 'html-tidy 'web-mode)
+  (flycheck-add-mode 'javascript-standard 'js2-jsx-mode))
 
 (use-package alert
   :commands (alert)
