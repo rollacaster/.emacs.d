@@ -126,8 +126,6 @@
 (require 'setup-projectile)
 (require 'setup-powerline)
 (use-package neotree)
-(when (not is-mac)
-  (require 'setup-pdf))
 (use-package undo-tree
   :diminish undo-tree-mode
   :init
