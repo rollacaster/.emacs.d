@@ -49,7 +49,6 @@
      js2-mode
      dired-details
      popup
-     guide-key
      texinfo
      auctex
      ispell
@@ -137,7 +136,6 @@
   (global-undo-tree-mode))
 (use-package crux)
 (require 'setup-mocha)
-(require 'setup-guidekey)
 (require 'setup-hydras)
 (use-package company)
 (use-package company-web)
@@ -179,6 +177,15 @@
 (use-package framemove
   :config
   (setq framemove-hook-into-windmove t))
+
+(use-package guide-key
+  :config
+  (setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
+  (setq guide-key/highlight-command-regexp
+        '("rectangle"
+          ("register" . font-lock-type-face)
+          ("bookmark" . "hot pink")))
+  (guide-key-mode 1))
 
 (use-package alert
   :commands (alert)
