@@ -57,7 +57,6 @@
      restclient
      diminish
      csv-mode
-     powerline
      avy
      json-mode
      web-mode
@@ -124,7 +123,6 @@
 (require 'setup-web-mode)
 (require 'setup-org)
 (require 'setup-projectile)
-(require 'setup-powerline)
 (use-package neotree)
 (use-package undo-tree
   :diminish undo-tree-mode
@@ -196,3 +194,6 @@
                                 ("o" kurecolor-increase-brightness-by-step "increase brightness")
                                 ("l" kurecolor-decrease-brightness-by-step "decrease brightness"))))
 
+(use-package powerline
+  :config
+  (powerline-default-theme))
