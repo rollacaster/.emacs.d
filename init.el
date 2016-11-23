@@ -145,8 +145,6 @@
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
 (use-package emojify
-  :config
-  (global-emojify-mode)
   :bind (("C-c e" . emojify-insert-emoji)))
 (use-package elm-mode
   :config
