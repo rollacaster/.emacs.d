@@ -53,7 +53,6 @@
      auctex
      ispell
      multi-term
-     projectile
      restclient
      diminish
      csv-mode
@@ -122,7 +121,6 @@
 (require 'setup-auctex)
 (require 'setup-web-mode)
 (require 'setup-org)
-(require 'setup-projectile)
 (use-package neotree)
 (use-package undo-tree
   :diminish undo-tree-mode
@@ -197,3 +195,11 @@
 (use-package powerline
   :config
   (powerline-default-theme))
+
+(use-package projectile
+  :config
+  (projectile-global-mode)
+  (add-to-list 'projectile-globally-ignored-directories "node_modules")
+  (add-to-list 'projectile-globally-ignored-directories "elm-stuff")
+  (setq projectile-completion-system 'helm)
+  (helm-projectile-on))
