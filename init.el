@@ -45,8 +45,7 @@
 
 (defun init-install-packages ()
   (packages-install
-   '(smartparens
-     js2-mode
+   '(js2-mode
      dired-details
      popup
      texinfo
@@ -117,7 +116,6 @@
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-yasnippet)
-(require 'setup-smartparens)
 (require 'setup-auctex)
 (require 'setup-web-mode)
 (require 'setup-org)
@@ -203,3 +201,7 @@
   (add-to-list 'projectile-globally-ignored-directories "elm-stuff")
   (setq projectile-completion-system 'helm)
   (helm-projectile-on))
+
+(use-package smartparens
+  :config
+  (smartparens-global-mode 1))
