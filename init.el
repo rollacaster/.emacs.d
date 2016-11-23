@@ -115,7 +115,6 @@
 (use-package magit)
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'dired '(require 'setup-dired))
-(require 'setup-yasnippet)
 (require 'setup-auctex)
 (require 'setup-web-mode)
 (require 'setup-org)
@@ -205,3 +204,14 @@
 (use-package smartparens
   :config
   (smartparens-global-mode 1))
+
+(use-package yasnippet
+  :config
+  ;; Activate yasnippet
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+
+  ;; Manually define indents
+  (setq yas-indent-line 'fixed)
+
+  ;; Load snippets
+  (yas-reload-all))
