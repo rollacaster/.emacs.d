@@ -37,6 +37,22 @@
                     (mu4e-sent-folder   . "/Gmail/[Gmail].Sent Mail")
                     (mu4e-trash-folder  ."/Gmail/[Gmail].Trash")
                     (mu4e-refile-folder .  "/Gmail/Archives")
+                    (mu4e-sent-messages-behavior . delete)))
+           ,(make-mu4e-context
+            :name "IntegrityNext"
+            :enter-func (lambda () (mu4e-message "Switch to IntegrityNext"))
+            :match-func (lambda (msg)
+                         (if msg
+                             (let ((maildir (mu4e-message-field-raw msg :maildir)))
+                               (s-contains? "Gmail" maildir))
+                           nil))
+            :vars '((user-mail-address . "thomas.sojka@integritynext.com")
+                    (user-full-name . "Thomas Sojka")
+                    (mu4e-compose-signature . "VG Thomas")
+                    (mu4e-drafts-folder . "/integritynext/[Gmail].Drafts")
+                    (mu4e-sent-folder   . "/integritynext/[Gmail].Sent Mail")
+                    (mu4e-trash-folder  ."/integritynext/[Gmail].Trash")
+                    (mu4e-refile-folder .  "/integritynext/Archives")
                     (mu4e-sent-messages-behavior . delete)))))
 
 (setq mu4e-maildir-shortcuts
@@ -44,7 +60,12 @@
          ("/Gmail/[Gmail].Sent Mail"   . ?s)
          ("/Gmail/Archives"   . ?d)
          ("/Gmail/[Gmail].Trash"       . ?f)
-         ("/Gmail/[Gmail].All Mail"    . ?r)
+         ("/Gmail/[Gmail].All Mail"    . ?g)
+         ("/integritynext/INBOX"               . ?z)
+         ("/integritynext/[Gmail].Sent Mail"   . ?x)
+         ("/integritynext/Archives"   . ?c)
+         ("/integritynext/[Gmail].Trash"       . ?v)
+         ("/integritynext/[Gmail].All Mail"    . ?b)
          ("/Web/INBOX"               . ?q)
          ("/Web/Sent"   . ?w)
          ("/Web/Archives"       . ?e)
