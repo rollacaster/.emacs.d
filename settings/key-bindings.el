@@ -28,6 +28,7 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c s") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-x o") 'rac-find-org-project)
 
 ;; Windmove
 (global-set-key (kbd "C-c h")  'windmove-left)
