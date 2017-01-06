@@ -46,6 +46,10 @@
   (add-hook 'org-mode 'flyspell-mode)
   (add-hook 'org-mode 'auto-fill-mode)
   (add-hook 'org-mode 'org-bullets-mode)
+  (defun rac-completion-hook ()
+    (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t)
+    )
+  (add-hook 'org-mode-hook #'rac-completion-hook)
 
   (setq org-agenda-custom-commands
         '(("w" "Work agenda"
