@@ -17,7 +17,8 @@
 (global-set-key (kbd "C-c i o") 'helm-occur)
 (global-set-key (kbd "C-c i g") 'helm-google-suggest)
 
-(global-set-key (kbd "C-c i s") 'helm-spotify)
+(global-set-key (kbd "C-x s") 'helm-spotify)
+(global-set-key (kbd "C-x a") 'helm-execute-kmacro)
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
 (global-set-key (kbd "C-x m") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-mini)
