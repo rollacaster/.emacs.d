@@ -13,6 +13,8 @@
 
 ;; Web Mode
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ftl\\'" . web-mode))
+(add-hook 'web-mode-hook #'yas-minor-mode)
 
 ;; JS2 Mode
 (rename-modeline "js2-mode" js2-mode "JS2")
