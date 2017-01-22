@@ -38,8 +38,8 @@
 (global-set-key (kbd "C-c j")  'windmove-down)
 
 ;; Avy
-(global-set-key (kbd "C-c n") 'avy-goto-char)
-(global-set-key (kbd "C-c C-n") 'avy-goto-char)
+(global-set-key (kbd "C-c g") 'avy-goto-line)
+(global-set-key (kbd "C-:") 'avy-goto-char)
 (global-set-key (kbd "C-c ,") 'avy-copy-line)
 (global-set-key (kbd "C-c m") 'avy-move-line)
 (global-set-key (kbd "C-c .") 'avy-copy-region)
