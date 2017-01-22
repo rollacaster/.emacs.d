@@ -117,6 +117,7 @@
 (eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-auctex)
 (require 'setup-web-mode)
+(use-package noflet)
 (require 'setup-org)
 (use-package neotree)
 (use-package undo-tree

@@ -1,22 +1,23 @@
-
 (use-package org
   :init
   ;; Org capture templates to add todos or learn actions
   (setq org-capture-templates '(("i" "Inbox" entry (file "~/Dropbox/org/Inbox.org")
-                                 "* %?  %i\n %a\n %u")
+                                 "* %?  %i\n %a")
                                 ("t" "Todo" entry (file "~/Dropbox/org/Todo.org")
-                                 "* TODO %? %^g\nAdded: %U")
+                                 "* TODO %? %^g")
                                 ("m" "Maybe" entry (file "~/Dropbox/org/Maybe.org")
-                                 "* %?\nAdded: %U")
-                                ("l" "List" entry (file "~/Dropbox/org/List.org")
-                                 "* %?\nAdded: %U")))
+                                 "* %?\n")
+                                ("r" "Read" entry (file "~/Dropbox/org/Inbox.org")
+                                 "* %? %^L" :prepend t)
+                                ("l" "Links" entry (file "~/Dropbox/org/Links.org")
+                                 "* %? %^L")))
 
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" "DEFERRED(f)")))
 
   (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p) ("Train" . ?t) ("Mamming" . ?m)))
 
-  (setq org-refile-targets '(("Lists.org" :level . 1)))
+  (setq org-refile-targets '(("Links.org" :level . 1)))
 
   ;; Use "⤵" instead of "..." for indicating sub-items
   (setq org-ellipsis "⤵")
@@ -58,6 +59,28 @@
           ("h" "Home agenda"
            ((agenda "")
             (tags-todo "-Work")))))
+
+  ;; Capture everywhere with emacsclient -ne "(make-capture-frame)"
+  (defadvice org-capture-finalize
+      (after delete-capture-frame activate)
+    "Advise capture-finalize to close the frame"
+    (if (equal "capture" (frame-parameter nil 'name))
+        (delete-frame)))
+
+  (defadvice org-capture-destroy
+      (after delete-capture-frame activate)
+    "Advise capture-destroy to close the frame"
+    (if (equal "capture" (frame-parameter nil 'name))
+        (delete-frame)))
+
+  (defun make-capture-frame ()
+    "Create a new frame and run org-capture."
+    (interactive)
+    (make-frame '((name . "capture")))
+    (select-frame-by-name "capture")
+    (delete-other-windows)
+    (noflet ((switch-to-buffer-other-window (buf) (switch-to-buffer buf)))
+      (org-capture)))
 
   )
 
