@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+#name : Inline Log
+#key: il
+# --
+!console.log($0) && 
