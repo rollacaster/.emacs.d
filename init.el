@@ -216,3 +216,7 @@
 
   ;; Load snippets
   (yas-reload-all))
+
+(use-package npm-mode
+  :config
+  (npm-global-mode))
