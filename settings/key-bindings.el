@@ -30,6 +30,7 @@
 (global-set-key (kbd "C-c s") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-x o") 'rac-find-org-project)
+(global-set-key (kbd "C-c o") 'org-iswitchb)
 
 ;; Windmove
 (global-set-key (kbd "C-c h")  'windmove-left)
