@@ -28,7 +28,8 @@
             :match-func (lambda (msg)
                          (if msg
                              (let ((maildir (mu4e-message-field-raw msg :maildir)))
-                               (s-contains? "Gmail" maildir))
+                               (message maildir)
+                               (and (s-contains? "Gmail" maildir) (not (s-contains? "integritynext" maildir))))
                            nil))
             :vars '((user-mail-address . "thomas.sojka@comsysto.com")
                     (user-full-name . "Thomas Sojka")
@@ -44,7 +45,7 @@
             :match-func (lambda (msg)
                          (if msg
                              (let ((maildir (mu4e-message-field-raw msg :maildir)))
-                               (s-contains? "Gmail" maildir))
+                               (s-contains? "integritynext" maildir))
                            nil))
             :vars '((user-mail-address . "thomas.sojka@integritynext.com")
                     (user-full-name . "Thomas Sojka")
