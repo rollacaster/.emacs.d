@@ -1,5 +1,7 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: MochaTestCase
-# key: it
+# name: TestExp
+# key: exp
 # --
-it('should $0')
+expect($1).toEqual({
+  $0
+})

@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: MochaTestCase
-# key: mdes
+# name: Describe
+# key: desc
 # --
 describe('$1', () => {
   $0

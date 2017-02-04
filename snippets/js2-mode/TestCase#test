@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: MochaTestCase
-# key: mocha
+# name: TestCase
+# key: test
 # --
 import $1 from './$1'
 
