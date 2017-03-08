@@ -220,3 +220,4 @@
 (use-package npm-mode
   :config
   (npm-global-mode))
+(use-package meghanada)

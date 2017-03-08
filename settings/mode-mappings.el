@@ -48,4 +48,12 @@
 ;; dired-mode
 (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
+;; java mode
+(add-to-list 'auto-mode-alist '("\\.java\\'" . java-mode))
+(add-hook 'java-mode-hook
+          (lambda ()
+            ;; meghanada-mode on
+            (meghanada-mode t)
+            (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
+
 (provide 'mode-mappings)
