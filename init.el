@@ -125,7 +125,8 @@
   :init
   (global-undo-tree-mode))
 (use-package crux)
-(use-package company)
+(use-package company
+  :diminish company-mode)
 (use-package company-web)
 (use-package company-emoji
   :config
