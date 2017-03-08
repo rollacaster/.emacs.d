@@ -105,4 +105,7 @@
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super)
 
+; Pomidor
+(global-set-key (kbd "<f12>") #'pomidor)
+
 (provide 'key-bindings)

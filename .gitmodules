@@ -7,3 +7,6 @@
 [submodule "harvest"]
 	path = site-lisp/harvest
 	url = https://github.com/rollacaster/harvest.el.git
+[submodule "site-lisp/pomidor"]
+	path = site-lisp/pomidor
+	url = https://github.com/TatriX/pomidor.git
