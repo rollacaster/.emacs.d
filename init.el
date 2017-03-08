@@ -221,6 +221,8 @@
 (use-package npm-mode
   :config
   (npm-global-mode))
+(use-package ox-jira)
+(use-package ox-gfm)
 (use-package meghanada)
 (use-package restclient
   :init (add-to-list 'display-buffer-alist
