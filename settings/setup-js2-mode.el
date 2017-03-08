@@ -15,11 +15,15 @@
 (setq js2-strict-missing-semi-warning nil)
 (setq js2-highlight-external-variables nil)
 (setq js2-strict-trailing-comma-warning nil)
+(setq js2-ignored-warnings '("msg.no.side.effects", "msg.no.paren", "msg.no.semi.stmt", "msg.unterminated.re.lit"))
 
 ;; Add externals
 (setq js2-global-externs '("describe", "it", "expect", "beforeEach", "sinon", "require"))
 
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+
 (require 'js2-refactor)
 (js2r-add-keybindings-with-prefix "C-c C-j")
+
 
 (provide 'setup-js2-mode)
