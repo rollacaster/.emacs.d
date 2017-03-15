@@ -5,3 +5,9 @@
     (quit-window nil window)))
 
 (global-set-key (kbd "C-c q") #'lunaryorn-quit-bottom-side-windows)
+
+(defun copy-file-path ()
+  "copy buffer's full path to kill ring"
+  (interactive)
+  (when buffer-file-name
+    (kill-new (file-truename buffer-file-name))))
