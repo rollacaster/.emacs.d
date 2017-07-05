@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ReactSpan#span
+# key: span
+# binding: direct-keybinding
+# --
+<span>$0</span>

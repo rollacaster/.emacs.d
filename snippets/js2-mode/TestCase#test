@@ -4,8 +4,8 @@
 # --
 import $1 from './$1'
 
-describe('$1', () => {
-  it('should $2', ($3) => {
+describe('$1 $2', () => {
+  it('should $3', ($4) => {
      $0
   })
 })
