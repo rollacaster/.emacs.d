@@ -232,3 +232,9 @@
                        (reusable-frames . visible)
                        (side            . bottom)
                        (window-height   . 0.2))))
+
+(use-package prettier-js
+  :config
+  (add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
+  (setq prettier-js-args '("--single-quote" "--no-semi")))
+
