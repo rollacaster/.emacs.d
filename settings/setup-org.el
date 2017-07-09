@@ -17,7 +17,7 @@
 
   (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p) ("Train" . ?t) ("Mamming" . ?m)))
 
-  (setq org-refile-targets '(("Links.org" :level . 1)))
+  (setq org-refile-targets '(("Links.org" :level . 1) ("Todo.org" :level . 1)))
 
   ;; Use "⤵" instead of "..." for indicating sub-items
   (setq org-ellipsis "⤵")
