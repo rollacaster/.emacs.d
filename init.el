@@ -256,7 +256,10 @@
   (setq ivy-use-virtual-buffers t)
   (setq ivy-height 15)
   (setq ivy-count-format "%d/%d ")
-  (setq counsel-yank-pop-separator "\n------------\n"))
+  (setq counsel-yank-pop-separator "\n------------\n")
+
+  (use-package counsel-osx-app
+    :bind (("C-c x" . counsel-osx-app))))
 
 (use-package counsel-projectile
   :config
