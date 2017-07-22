@@ -168,15 +168,6 @@
   :config
   (setq framemove-hook-into-windmove t))
 
-(use-package guide-key
-  :config
-  (setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
-  (setq guide-key/highlight-command-regexp
-        '("rectangle"
-          ("register" . font-lock-type-face)
-          ("bookmark" . "hot pink")))
-  (guide-key-mode 1))
-
 (use-package alert
   :commands (alert)
   :init
@@ -286,6 +277,10 @@
 (use-package counsel-projectile
   :config
   (counsel-projectile-on))
+
+(use-package which-key
+  :config
+  (which-key-mode))
 
 (use-package avy
   :bind (( "C-c g" . avy-goto-line)
