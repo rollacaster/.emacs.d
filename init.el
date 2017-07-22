@@ -241,6 +241,17 @@
   (add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
   (setq prettier-js-args '("--single-quote" "--no-semi")))
 
+(use-package wgrep
+  :config
+  (setq wgrep-auto-save-buffer t)
+  (eval-after-load 'grep
+    '(define-key grep-mode-map
+       (kbd "C-x C-q") 'wgrep-change-to-wgrep-mode))
+
+  (eval-after-load 'wgrep
+    '(define-key grep-mode-map
+       (kbd "C-c C-c") 'wgrep-finish-edit)))
+
 (use-package smex)
 
 (use-package swiper
