@@ -50,9 +50,6 @@
      texinfo
      auctex
      ispell
-     restclient
-     csv-mode
-     json-mode
      web-mode
      js2-refactor
      rainbow-mode
@@ -277,6 +274,8 @@
          ( "C-c ," . avy-copy-line)
          ( "C-c m" . avy-move-line)
          ( "C-c ." . avy-copy-region)))
+(use-package json-mode
+  :mode "\\.json\\'")
 (use-package multi-term
   :bind
   (( "C-x t" . multi-term)
