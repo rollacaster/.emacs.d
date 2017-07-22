@@ -95,4 +95,10 @@
 ;; Kill process without asking
 (setq kill-buffer-query-functions nil)
 
+;; Allow to read from minibuffer while in minibuffer.
+(setq enable-recursive-minibuffers t)
+
+;; Show the minibuffer depth (when larger than 1)
+(minibuffer-depth-indicate-mode 1)
+
 (provide 'sane-defaults)

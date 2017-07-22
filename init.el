@@ -57,9 +57,6 @@
      csv-mode
      json-mode
      web-mode
-     helm
-     helm-projectile
-     helm-spotify
      solarized-theme
      elm-yasnippets
      js2-refactor
@@ -80,7 +77,6 @@
   )
 
 (require 'appearance)
-(require 'setup-helm)
 (require 'key-bindings)
 
 ;; enable forbidden commands
@@ -208,8 +204,7 @@
   (projectile-global-mode)
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
   (add-to-list 'projectile-globally-ignored-directories "elm-stuff")
-  (setq projectile-completion-system 'helm)
-  (helm-projectile-on))
+  (setq projectile-completion-system 'ivy))
 
 (use-package smartparens
   :config
@@ -245,6 +240,41 @@
   :config
   (add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
   (setq prettier-js-args '("--single-quote" "--no-semi")))
+
+(use-package smex)
+
+(use-package swiper
+  :diminish ivy-mode
+  :bind (("C-s" . swiper)
+         ("C-c C-r" . ivy-resume)
+         ("C-x m" . counsel-M-x)
+         ("C-x C-m" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)
+         ("C-M-i" . complete-symbol)
+         ("C-." . counsel-imenu)
+         ("C-c 8" . counsel-unicode-char)
+         ("C-c v" . ivy-push-view)
+         ("C-c V" . ivy-pop-view)
+         ("M-y" . counsel-yank-pop)
+         ( "C-h f" . counsel-describe-function)
+         ( "C-h v" . counsel-describe-variable)
+         ( "C-h l" . counsel-find-library)
+         ( "C-h u" . counsel-unicode-char)
+         ( "C-x b" . ivy-switch-buffer))
+  :config
+  (ivy-mode 1)
+  (require 'ivy-hydra)
+  (setq ivy-re-builders-alist
+        '((t . ivy--regex-ignore-order)))
+
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-height 15)
+  (setq ivy-count-format "%d/%d ")
+  (setq counsel-yank-pop-separator "\n------------\n"))
+
+(use-package counsel-projectile
+  :config
+  (counsel-projectile-on))
 
 (use-package avy
   :bind (( "C-c g" . avy-goto-line)
