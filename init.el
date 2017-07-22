@@ -218,14 +218,7 @@
 (use-package ox-jira)
 (use-package ox-gfm)
 (use-package meghanada)
-(use-package restclient
-  :init (add-to-list 'display-buffer-alist
-                     `(,(rx bos "*HTTP Response*" eos)
-                       (display-buffer-reuse-window
-                        display-buffer-in-side-window)
-                       (reusable-frames . visible)
-                       (side            . bottom)
-                       (window-height   . 0.2))))
+(use-package restclient)
 
 (use-package prettier-js
   :config
