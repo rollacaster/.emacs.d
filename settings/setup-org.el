@@ -3,7 +3,7 @@
   ;; Org capture templates to add todos or learn actions
   (setq org-capture-templates '(("i" "Inbox" entry (file "~/Dropbox/org/Inbox.org")
                                  "* %?  %i\n %a")
-                                ("t" "Todo" entry (file "~/Dropbox/org/Todo.org")
+                                ("t" "Todo" entry (file+headline "~/Dropbox/org/Todo.org" "TODOs")
                                  "* TODO %? %^g")
                                 ("m" "Maybe" entry (file "~/Dropbox/org/Maybe.org")
                                  "* %?\n")
@@ -17,7 +17,7 @@
 
   (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p) ("Train" . ?t) ("Mamming" . ?m)))
 
-  (setq org-refile-targets '(("Links.org" :level . 1) ("Todo.org" :level . 1)))
+  (setq org-refile-targets '(("Links.org" :level . 1) ("Todo.org" :level . 1) ("Maybe.org" :level . 1)))
 
   ;; Use "⤵" instead of "..." for indicating sub-items
   (setq org-ellipsis "⤵")
@@ -53,12 +53,9 @@
   (add-hook 'org-mode-hook #'rac-completion-hook)
 
   (setq org-agenda-custom-commands
-        '(("w" "Work agenda"
+        '(("h" "Agenda"
            ((agenda "")
-            (tags-todo "+Work")))
-          ("h" "Home agenda"
-           ((agenda "")
-            (tags-todo "-Work")))))
+            (tags-todo "*")))))
 
   ;; Capture everywhere with emacsclient -ne "(make-capture-frame)"
   (defadvice org-capture-finalize
@@ -81,10 +78,10 @@
     (delete-other-windows)
     (noflet ((switch-to-buffer-other-window (buf) (switch-to-buffer buf)))
       (org-capture)))
+  :config
+  (use-package org-pdfview)
+  (use-package org-bullets))
 
-  )
 
-(use-package org-pdfview)
-(use-package org-bullets)
 
 (provide 'setup-org)
