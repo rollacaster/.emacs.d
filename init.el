@@ -122,7 +122,7 @@
   :bind (([f8] . neotree-toggle)))
 (use-package undo-tree
   :diminish undo-tree-mode
-  :init
+  :config
   (global-undo-tree-mode))
 (use-package crux
   :bind ( ("C-c r" . crux-rename-buffer-and-file)
@@ -170,7 +170,7 @@
 
 (use-package alert
   :commands (alert)
-  :init
+  :config
   (setq alert-default-style 'notifier))
 (use-package all-the-icons)
 (use-package all-the-icons-dired)
