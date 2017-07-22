@@ -101,4 +101,7 @@
 ;; Show the minibuffer depth (when larger than 1)
 (minibuffer-depth-indicate-mode 1)
 
+;; Change recenter order for C-l
+(setq recenter-positions '(top middle bottom))
+
 (provide 'sane-defaults)
