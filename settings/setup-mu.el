@@ -16,7 +16,7 @@
                            nil))
            :vars '((user-mail-address . "thsojka@web.de")
                    (user-full-name . "Thomas Sojka")
-                   (mu4e-compose-signature . "VG Thomas")
+                   (mu4e-compose-signature . "")
                    (mu4e-drafts-folder . "/Web/Drafts")
                    (mu4e-sent-folder   . "/Web/Sent")
                    (mu4e-trash-folder  ."/Web/Trash")
@@ -33,7 +33,33 @@
                            nil))
             :vars '((user-mail-address . "thomas.sojka@comsysto.com")
                     (user-full-name . "Thomas Sojka")
-                    (mu4e-compose-signature . "VG Thomas")
+                    (mu4e-compose-signature . "
+Thomas Sojka
+Software Engineer
+
+comSysto
+
+comSysto GmbH
+Tumblingerstr. 23
+80337 München
+
+Tel: +49 176 422 353 77
+Fax: +49 89 550 605 90
+
+http://comsysto.com/
+
+Geschäftsführer:
+Daniel Bartl
+Tomislav Zorc
+
+Handelsregister:
+Amtsgericht München
+HRB 147101
+
+Wichtiger Hinweis: Diese E-Mail und etwaige Anlagen enthalten vertrauliche oder rechtlich geschützte Informationen. Wenn Sie nicht der vorgesehene Adressat dieser E-Mail oder dessen Vertreter sein sollten, so beachten Sie bitte, dass jede Form der Kenntnisnahme, Veröffentlichung, Vervielfältigung oder Weitergabe des Inhalts dieser E-Mail unzulässig ist. Wir bitten Sie, sich in diesem Fall mit dem Absender der E-Mail in Verbindung zu setzen.
+
+Important Note: This e-mail and any attachment are confidential or protected by law. Access to this email by anyone else is unauthorized. If you are not the intended recipient, any form of disclosure, reproduction, distribution or any action taken or refrained from in reliance on it, is prohibited and may be unlawful. Please notify the sender immediately.
+")
                     (mu4e-drafts-folder . "/Gmail/[Gmail].Drafts")
                     (mu4e-sent-folder   . "/Gmail/[Gmail].Sent Mail")
                     (mu4e-trash-folder  ."/Gmail/[Gmail].Trash")
@@ -49,10 +75,10 @@
                            nil))
             :vars '((user-mail-address . "thomas.sojka@integritynext.com")
                     (user-full-name . "Thomas Sojka")
-                    (mu4e-compose-signature . "VG Thomas")
-                    (mu4e-drafts-folder . "/integritynext/[Gmail].Entw&APw-rfe")
-                    (mu4e-sent-folder   . "/integritynext/[Gmail].Gesendet")
-                    (mu4e-trash-folder  ."/integritynext/[Gmail].Papierkorb")
+                    (mu4e-compose-signature . "")
+                    (mu4e-drafts-folder . "/integritynext/[Gmail].Drafts")
+                    (mu4e-sent-folder   . "/integritynext/[Gmail].Sent Mail")
+                    (mu4e-trash-folder  ."/integritynext/[Gmail].Bin")
                     (mu4e-refile-folder .  "/integritynext/Archives")
                     (mu4e-sent-messages-behavior . delete)))))
 
@@ -65,7 +91,7 @@
          ("/integritynext/INBOX"               . ?z)
          ("/integritynext/[Gmail].Gesendet"   . ?x)
          ("/integritynext/Archives"   . ?c)
-         ("/integritynext/[Gmail].Papierkorb"       . ?v)
+         ("/integritynext/[Gmail].Trash"       . ?v)
          ("/integritynext/[Gmail].All Mail"    . ?b)
          ("/Web/INBOX"               . ?q)
          ("/Web/Sent"   . ?w)
