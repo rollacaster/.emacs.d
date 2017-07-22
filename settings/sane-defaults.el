@@ -104,4 +104,10 @@
 ;; Change recenter order for C-l
 (setq recenter-positions '(top middle bottom))
 
+;; ediff
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq ediff-split-window-function 'split-window-horizontally)
+(setq ediff-diff-options "-w")
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
 (provide 'sane-defaults)
