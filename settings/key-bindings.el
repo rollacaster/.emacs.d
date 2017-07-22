@@ -25,10 +25,6 @@
 (global-set-key (kbd "C-c k")    'windmove-up)
 (global-set-key (kbd "C-c j")  'windmove-down)
 
-;; terminals
-(global-set-key (kbd "C-x t") 'multi-term)
-(global-set-key (kbd "C-c t") 'multi-term)
-
 ;; Transpose stuff with M-t
 (global-unset-key (kbd "M-t")) ;; which used to be transpose-words
 (global-set-key (kbd "M-t c") 'transpose-chars)

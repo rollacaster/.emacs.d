@@ -50,7 +50,6 @@
      texinfo
      auctex
      ispell
-     multi-term
      restclient
      csv-mode
      json-mode
@@ -279,3 +278,7 @@
          ( "C-c ," . avy-copy-line)
          ( "C-c m" . avy-move-line)
          ( "C-c ." . avy-copy-region)))
+(use-package multi-term
+  :bind
+  (( "C-x t" . multi-term)
+   ( "C-c t" . multi-term)))
