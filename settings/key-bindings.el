@@ -68,4 +68,10 @@
 ; Pomidor
 (global-set-key (kbd "<f12>") #'pomidor)
 
+; rgrep
+(global-set-key (kbd "C-<") 'rgrep)
+
+; Dired
+(global-set-key (kbd "C-x C-j") 'dired-jump)
+
 (provide 'key-bindings)
