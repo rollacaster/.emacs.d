@@ -46,23 +46,19 @@
 (defun init-install-packages ()
   (packages-install
    '(js2-mode
-     dired-details
      popup
      texinfo
      auctex
      ispell
      multi-term
      restclient
-     diminish
      csv-mode
      json-mode
      web-mode
      solarized-theme
-     elm-yasnippets
      js2-refactor
      rainbow-mode
      kurecolor
-     ggtags
      use-package
      )
    )
