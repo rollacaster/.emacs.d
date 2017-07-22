@@ -45,13 +45,12 @@
 
 (defun init-install-packages ()
   (packages-install
-   '(js2-mode
+   '(
      popup
      texinfo
      auctex
      ispell
      web-mode
-     js2-refactor
      rainbow-mode
      use-package
      )
@@ -102,7 +101,6 @@
   (setq magit-completing-read-function 'ivy-completing-read)
   :bind (( "C-x g" . magit-status)
          ( "C-x M-g" . magit-dispatch-popup)))
-(eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-auctex)
 (require 'setup-web-mode)
@@ -283,3 +281,36 @@
 (use-package solarized-theme
   :config
   (require 'solarized-light-theme))
+
+(use-package js2-mode
+  :bind (:map js2-mode-map
+              ("C-k" . js2r-kill))
+  :config
+  ;; Activate toggle indent with tab
+  (setq js2-bounce-indent-p t)
+
+  ;; Set basic offset to 2
+  (setq js2-basic-offset 2)
+  (setq js-indent-level 2)
+  (setq sgml-basic-offset 2)
+  (setq sgml-at 2)
+  (setq json-reformat:indent-width 2)
+
+  ;; Highlight as much as possible
+  (setq js2-highlight-level 3)
+
+  ;; Do not warn about missing semicolons
+  (setq js2-strict-missing-semi-warning nil)
+  (setq js2-highlight-external-variables nil)
+  (setq js2-strict-trailing-comma-warning nil)
+  (setq js2-ignored-warnings '("msg.no.side.effects", "msg.no.paren", "msg.no.semi.stmt", "msg.unterminated.re.lit"))
+  (js2-imenu-extras-setup)
+  ;; Add externals
+  (setq js2-global-externs '("describe", "it", "expect", "beforeEach", "sinon", "require"))
+  (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+  (add-hook 'js2-mode-hook (lambda ()
+                             (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+  (use-package js2-refactor
+    :config
+    (js2r-add-keybindings-with-prefix "C-c C-j"))
+  (use-package xref-js2))
