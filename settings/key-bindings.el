@@ -38,26 +38,6 @@
 (global-set-key (kbd "C-c k")    'windmove-up)
 (global-set-key (kbd "C-c j")  'windmove-down)
 
-;; Avy
-(global-set-key (kbd "C-c g") 'avy-goto-line)
-(global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-c ,") 'avy-copy-line)
-(global-set-key (kbd "C-c m") 'avy-move-line)
-(global-set-key (kbd "C-c .") 'avy-copy-region)
-
-;; Neo
-(global-set-key [f8] 'neotree-toggle)
-
-;; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
-
-;; crux
-(global-set-key (kbd "C-c r") 'crux-rename-buffer-and-file)
-(global-set-key (kbd "C-c TAB") 'crux-cleanup-buffer-or-region)
-(global-set-key (kbd "C-x C-e") 'crux-eval-and-replace)
-(global-set-key (kbd "C-c C-e") 'eval-last-sexp)
-
 ;; terminals
 (global-set-key (kbd "C-x t") 'multi-term)
 (global-set-key (kbd "C-c t") 'multi-term)

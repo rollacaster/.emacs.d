@@ -55,7 +55,6 @@
      restclient
      diminish
      csv-mode
-     avy
      json-mode
      web-mode
      helm
@@ -112,19 +111,28 @@
 ;; setup extensions
 ;; (require 'setup-conkeror)
 (require 'setup-use-package)
-(use-package magit)
+(use-package magit
+  :config
+  (setq magit-completing-read-function 'ivy-completing-read)
+  :bind (( "C-x g" . magit-status)
+         ( "C-x M-g" . magit-dispatch-popup)))
 (eval-after-load 'js2-mode '(require 'setup-js2-mode))
 (eval-after-load 'dired '(require 'setup-dired))
 (require 'setup-auctex)
 (require 'setup-web-mode)
 (use-package noflet)
 (require 'setup-org)
-(use-package neotree)
+(use-package neotree
+  :bind (([f8] . neotree-toggle)))
 (use-package undo-tree
   :diminish undo-tree-mode
   :init
   (global-undo-tree-mode))
-(use-package crux)
+(use-package crux
+  :bind ( ("C-c r" . crux-rename-buffer-and-file)
+          ("C-c TAB" . crux-cleanup-buffer-or-region)
+          ("C-x C-e" . crux-eval-and-replace)
+          ("C-c C-e" . eval-last-sexp)))
 (use-package company
   :diminish company-mode)
 (use-package company-web)
@@ -238,3 +246,9 @@
   (add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
   (setq prettier-js-args '("--single-quote" "--no-semi")))
 
+(use-package avy
+  :bind (( "C-c g" . avy-goto-line)
+         ( "C-:" . avy-goto-char)
+         ( "C-c ," . avy-copy-line)
+         ( "C-c m" . avy-move-line)
+         ( "C-c ." . avy-copy-region)))
