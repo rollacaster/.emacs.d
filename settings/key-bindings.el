@@ -73,9 +73,6 @@
 (global-set-key (kbd "M-P") 'move-text-up)
 (global-set-key (kbd "M-N") 'move-text-down)
 
-; Company mode
-(global-set-key (kbd "C-;") 'company-complete)
-
 ; Change keys for mac port
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super)

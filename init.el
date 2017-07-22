@@ -125,7 +125,8 @@
           ("C-x C-e" . crux-eval-and-replace)
           ("C-c C-e" . eval-last-sexp)))
 (use-package company
-  :diminish company-mode)
+  :diminish company-mode
+  :bind (("C-;" . company-complete)))
 (use-package company-web)
 (use-package company-emoji
   :config
