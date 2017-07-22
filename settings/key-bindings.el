@@ -12,14 +12,6 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(global-set-key (kbd "C-x s") 'helm-spotify)
-(global-set-key (kbd "C-x a") 'helm-execute-kmacro)
-(global-set-key (kbd "C-x C-m") 'helm-M-x)
-(global-set-key (kbd "C-x m") 'helm-M-x)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
-
 ;; Org-Mode
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c s") 'org-store-link)
