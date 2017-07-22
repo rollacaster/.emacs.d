@@ -246,6 +246,7 @@
          ( "C-h v" . counsel-describe-variable)
          ( "C-h l" . counsel-find-library)
          ( "C-h u" . counsel-unicode-char)
+         ( "C-c f" . counsel-rg)
          ( "C-x b" . ivy-switch-buffer))
   :config
   (ivy-mode 1)
