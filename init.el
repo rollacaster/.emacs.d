@@ -54,7 +54,6 @@
      csv-mode
      json-mode
      web-mode
-     solarized-theme
      js2-refactor
      rainbow-mode
      use-package
@@ -282,3 +281,6 @@
   :bind
   (( "C-x t" . multi-term)
    ( "C-c t" . multi-term)))
+(use-package solarized-theme
+  :config
+  (require 'solarized-light-theme))
