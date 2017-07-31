@@ -1,9 +1,13 @@
 ;; JSX Mode
 (rename-modeline "js2-mode" js2-jsx-mode "JSX")
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-hook 'js2-jsx-mode 'yas-minor-mode)
 (add-hook 'js2-jsx-mode #'js2-refactor-mode)
 (add-hook 'js2-jsx-mode 'rainbow-mode)
+
+(add-hook 'rjsx-mode 'yas-minor-mode)
+(add-hook 'rjsx-mode #'js2-refactor-mode)
+(add-hook 'rjsx-mode 'rainbow-mode)
 
 ;; LaTex mode
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . LaTeX-mode))
@@ -19,7 +23,7 @@
 ;; JS2 Mode
 (rename-modeline "js2-mode" js2-mode "JS2")
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-jsx-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
 (add-hook 'js-jsx-mode-hook #'yas-minor-mode)
 (add-hook 'js-jsx-mode-hook #'js2-refactor-mode)

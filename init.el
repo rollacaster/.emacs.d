@@ -341,3 +341,5 @@
   :config
   ;; Make AUCTex aware of style files and multi-files
   (setq TeX-parse-self t))
+
+(use-package rjsx-mode)
