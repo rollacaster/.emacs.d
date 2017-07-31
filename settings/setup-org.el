@@ -47,6 +47,7 @@
   (add-hook 'org-mode-hook #'flyspell-mode)
   (add-hook 'org-mode-hook #'auto-fill-mode)
   (add-hook 'org-mode-hook #'org-bullets-mode)
+  (add-hook 'org-mode-hook #'yas-minor-mode)
   (defun rac-completion-hook ()
     (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t)
     )
