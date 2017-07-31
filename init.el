@@ -225,8 +225,7 @@
 
 (use-package swiper
   :diminish ivy-mode
-  :bind (("C-s" . swiper)
-         ("C-c C-r" . ivy-resume)
+  :bind (("C-c C-r" . ivy-resume)
          ("C-x m" . counsel-M-x)
          ("C-x C-m" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
@@ -235,7 +234,6 @@
          ("C-c 8" . counsel-unicode-char)
          ("C-c v" . ivy-push-view)
          ("C-c V" . ivy-pop-view)
-         ("M-y" . counsel-yank-pop)
          ( "C-h f" . counsel-describe-function)
          ( "C-h v" . counsel-describe-variable)
          ( "C-h l" . counsel-find-library)
