@@ -2,8 +2,22 @@
 
 (require 's)
 (require 'mu4e)
+(require 'smtpmail)
 
 (setq mu4e-context-policy 'ask)
+
+(defun maildir-debugger (mailbox)
+  "MAILBOX."
+  (if (s-contains? mailbox (mu4e-message-field-raw msg :maildir))
+      (message (concat mailbox " match"))
+    (message (concat mailbox " no-match"))))
+
+;; sending mail -- replace USERNAME with your gmail username
+;; also, make sure the gnutls command line utils are installed
+;; package 'gnutls-bin' in Debian/Ubuntu
+(setq message-send-mail-function  'smtpmail-send-it)
+(setq smtpmail-stream-type  'starttls)
+(setq smtpmail-smtp-service 587)
 
 (setq mu4e-contexts
       `( ,(make-mu4e-context
@@ -17,23 +31,26 @@
            :vars '((user-mail-address . "thsojka@web.de")
                    (user-full-name . "Thomas Sojka")
                    (mu4e-compose-signature . "")
-                   (mu4e-drafts-folder . "/Web/Drafts")
-                   (mu4e-sent-folder   . "/Web/Sent")
-                   (mu4e-trash-folder  ."/Web/Trash")
+                   (mu4e-drafts-folder . "/Web/.Drafts")
+                   (mu4e-sent-folder   . "/Web/.Sent")
+                   (mu4e-trash-folder  ."/Web/.Trash")
                    (mu4e-refile-folder .  "/Web/Archives")
-                   (mu4e-sent-messages-behavior . sent)))
+                   (mu4e-sent-messages-behavior . sent)
+                   (smtpmail-default-smtp-server . "smtp.web.de")
+                   (smtpmail-smtp-user ."thsojka@web.de")
+                   (smtpmail-smtp-server ."smtp.web.de")))
          , (make-mu4e-context
             :name "comSysto"
             :enter-func (lambda () (mu4e-message "Switch to comSysto"))
             :match-func (lambda (msg)
-                         (if msg
-                             (let ((maildir (mu4e-message-field-raw msg :maildir)))
-                               (message maildir)
-                               (and (s-contains? "Gmail" maildir) (not (s-contains? "integritynext" maildir))))
-                           nil))
-            :vars '((user-mail-address . "thomas.sojka@comsysto.com")
+                          (if msg
+                              (let ((maildir (mu4e-message-field-raw msg :maildir)))
+                                (s-contains? "reply" maildir))
+                            nil))
+            :vars '((user-mail-address . "t.sojka@reply.de")
                     (user-full-name . "Thomas Sojka")
                     (mu4e-compose-signature . "
+
 Thomas Sojka
 Software Engineer
 
@@ -64,23 +81,28 @@ Important Note: This e-mail and any attachment are confidential or protected by 
                     (mu4e-sent-folder   . "/Gmail/[Gmail].Sent Mail")
                     (mu4e-trash-folder  ."/Gmail/[Gmail].Trash")
                     (mu4e-refile-folder .  "/Gmail/Archives")
-                    (mu4e-sent-messages-behavior . delete)))
+                    (mu4e-sent-messages-behavior . delete)
+                    (smtpmail-smtp-user ."t.sojka@reply.de")
+                    (smtpmail-smtp-server ."smtp.reply.it")))
            ,(make-mu4e-context
-            :name "IntegrityNext"
-            :enter-func (lambda () (mu4e-message "Switch to IntegrityNext"))
-            :match-func (lambda (msg)
-                         (if msg
-                             (let ((maildir (mu4e-message-field-raw msg :maildir)))
-                               (s-contains? "integritynext" maildir))
-                           nil))
-            :vars '((user-mail-address . "thomas.sojka@integritynext.com")
-                    (user-full-name . "Thomas Sojka")
-                    (mu4e-compose-signature . "")
-                    (mu4e-drafts-folder . "/integritynext/[Gmail].Drafts")
-                    (mu4e-sent-folder   . "/integritynext/[Gmail].Sent Mail")
-                    (mu4e-trash-folder  ."/integritynext/[Gmail].Bin")
-                    (mu4e-refile-folder .  "/integritynext/Archives")
-                    (mu4e-sent-messages-behavior . delete)))))
+             :name "IntegrityNext"
+             :enter-func (lambda () (mu4e-message "Switch to IntegrityNext"))
+             :match-func (lambda (msg)
+                           (if msg
+                               (let ((maildir (mu4e-message-field-raw msg :maildir)))
+                                 (s-contains? "integritynext" maildir))
+                             nil))
+             :vars '((user-mail-address . "thomas.sojka@integritynext.com")
+                     (user-full-name . "Thomas Sojka")
+                     (mu4e-compose-signature . "")
+                     (mu4e-drafts-folder . "/integritynext/[Gmail].Drafts")
+                     (mu4e-sent-folder   . "/integritynext/[Gmail].Sent Mail")
+                     (mu4e-trash-folder  ."/integritynext/[Gmail].Bin")
+                     (mu4e-refile-folder .  "/integritynext/Archives")
+                     (mu4e-sent-messages-behavior . delete)
+                     (smtpmail-smtp-user . "thomas.sojka@integritynext.com")
+                     (smtpmail-smtp-server ."smtp.gmail.com")))
+           ))
 
 (setq mu4e-maildir-shortcuts
       '( ("/Gmail/INBOX"               . ?a)
@@ -89,14 +111,19 @@ Important Note: This e-mail and any attachment are confidential or protected by 
          ("/Gmail/[Gmail].Trash"       . ?f)
          ("/Gmail/[Gmail].All Mail"    . ?g)
          ("/integritynext/INBOX"               . ?z)
-         ("/integritynext/[Gmail].Gesendet"   . ?x)
+         ("/integritynext/.[Gmail].Sent Mail"   . ?x)
          ("/integritynext/Archives"   . ?c)
-         ("/integritynext/[Gmail].Trash"       . ?v)
+         ("/integritynext/[Gmail].Bin"       . ?v)
          ("/integritynext/[Gmail].All Mail"    . ?b)
          ("/Web/INBOX"               . ?q)
          ("/Web/Sent"   . ?w)
          ("/Web/Archives"       . ?e)
-         ("/Web/Trash"       . ?r)))
+         ("/Web/Trash"       . ?r)
+         ("/reply/INBOX"               . ?y)
+         ("/reply/[Gmail].Sent Mail"   . ?u)
+         ("/reply/Archives"   . ?i)
+         ("/reply/[Gmail].Trash"       . ?o)
+         ("/reply/[Gmail].All Mail"    . ?p)))
 
 ;; This sets `mu4e-user-mail-address-list' to the concatenation of all
 ;; `user-mail-address' values for all contexts.
@@ -123,7 +150,7 @@ Important Note: This e-mail and any attachment are confidential or protected by 
 ;; behavior.)
 
 ;; allow for updating mail using 'U' in the main view:
-(setq mu4e-get-mail-command "offlineimap")
+(setq mu4e-get-mail-command "mbsync reply web integritynext")
 
 ;; Get mail every 10 minutes
 (setq mu4e-update-interval 600)
@@ -142,19 +169,6 @@ Important Note: This e-mail and any attachment are confidential or protected by 
 (setq mu4e-headers-skip-duplicates t)
 
 
-;; sending mail -- replace USERNAME with your gmail username
-;; also, make sure the gnutls command line utils are installed
-;; package 'gnutls-bin' in Debian/Ubuntu
-
-(require 'smtpmail)
-
-;; Setup for sending mails
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-stream-type 'starttls
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587)
-
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
 
@@ -165,5 +179,16 @@ Important Note: This e-mail and any attachment are confidential or protected by 
         (:from-or-to . 25)
         (:thread-subject . 30)
         (:maildir . 9)))
+
+;;rename files when moving
+;;NEEDED FOR MBSYNC
+(setq mu4e-change-filenames-when-moving t)
+
+;;set up queue for offline email
+;;use mu mkdir  ~/Maildir/queue to set up first
+(setq smtpmail-queue-mail nil  ;; start in normal mode
+      smtpmail-queue-dir   "~/Maildir/queue/cur")
+
+
 
 (provide 'setup-mu)
