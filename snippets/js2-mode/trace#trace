@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Trace#trace
+# key: trace
+# binding: direct-keybinding
+# --
+const trace = a => console.log(a) || a

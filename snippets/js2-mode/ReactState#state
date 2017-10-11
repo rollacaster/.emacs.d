@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: JSX-state
+# key: state
+# --
+const {$0} = this.state

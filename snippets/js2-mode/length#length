@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: ArrowFunction#af
-# key: af
+# name: length#length
+# key: length
 # binding: direct-keybinding
 # --
-const $1 = ($2) => $0
+_.length

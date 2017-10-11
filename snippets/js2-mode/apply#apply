@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: apply#apply
+# key: apply
+# binding: direct-keybinding
+# --
+_.apply($0)

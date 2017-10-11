@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: sortBy#sortBy
+# key: sortBy
+# binding: direct-keybinding
+# --
+_.sortBy($0)

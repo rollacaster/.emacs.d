@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ifElse#ifElse
+# key: ifElse
+# binding: direct-keybinding
+# --
+_.ifElse($1, $2, $3)

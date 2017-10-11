@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Future#fut
+# key: fut
+# binding: direct-keybinding
+# --
+Future((reject, resolve) =>
+  $0
+)

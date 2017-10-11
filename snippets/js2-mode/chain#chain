@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: chain#chain
+# key: chain
+# binding: direct-keybinding
+# --
+_.chain($0)

@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: zip#zip
+# key: zip
+# binding: direct-keybinding
+# --
+_.zip

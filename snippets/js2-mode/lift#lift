@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: lift#lift
+# key: lift
+# binding: direct-keybinding
+# --
+_.lift($0)

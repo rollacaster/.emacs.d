@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: sequence#sequence
+# key: sequence
+# binding: direct-keybinding
+# --
+_.sequence($0)

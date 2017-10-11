@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: slice#slice
+# key: slice
+# binding: direct-keybinding
+# --
+_.slice($0)

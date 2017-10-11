@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: juxt#juxt
+# key: juxt
+# binding: direct-keybinding
+# --
+_.juxt($0)

@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: identity#id
+# key: id
+# binding: direct-keybinding
+# --
+_.identity

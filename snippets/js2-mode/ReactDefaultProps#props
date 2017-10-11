@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: JSX-defaultProps
-# key: props
-# --
-static defaultProps = {
-  $0
-}

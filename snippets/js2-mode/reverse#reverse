@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: reverse#reverse
+# key: reverse
+# binding: direct-keybinding
+# --
+_.reverse
