@@ -8,4 +8,9 @@
 
 (global-hl-line-mode 1)
 
+;; Allows to use fonts with ligatures
+(mac-auto-operator-composition-mode)
+(set-frame-font "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+(set-face-attribute 'default nil :height 140)
+
 (provide 'appearance)
