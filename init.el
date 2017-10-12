@@ -345,3 +345,6 @@
 (use-package beginend
   :config
   (beginend-global-mode))
+
+(use-package org-download)
+
