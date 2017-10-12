@@ -45,13 +45,7 @@
 
 (defun init-install-packages ()
   (packages-install
-   '(
-
-     rainbow-mode
-     use-package
-     )
-   )
-  )
+   '(use-package)))
 
 (condition-case nil
     (init-install-packages)
