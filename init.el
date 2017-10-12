@@ -309,7 +309,18 @@
   (use-package js2-refactor
     :config
     (js2r-add-keybindings-with-prefix "C-c C-j"))
-  (use-package xref-js2))
+  (use-package xref-js2)
+
+  (defun er/add-js2-mode-expansions ()
+    (make-variable-buffer-local 'er/try-expand-list)
+    (setq er/try-expand-list (append
+                              er/try-expand-list
+                              '(er/mark-html-attribute
+                                er/mark-inner-tag
+                                er/mark-outer-tag
+                                ))))
+
+  (add-hook 'js2-mode-hook 'er/add-js2-mode-expansions))
 
 (use-package web-mode
   :config
