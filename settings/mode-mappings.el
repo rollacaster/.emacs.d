@@ -58,6 +58,6 @@
           (lambda ()
             ;; meghanada-mode on
             (meghanada-mode t)
-            (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
+            (remove-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
 
 (provide 'mode-mappings)
