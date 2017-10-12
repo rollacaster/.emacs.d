@@ -183,7 +183,10 @@
   (projectile-global-mode)
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
   (add-to-list 'projectile-globally-ignored-directories "elm-stuff")
-  (setq projectile-completion-system 'ivy))
+  (setq projectile-completion-system 'ivy)
+  (setq projectile-mode-line
+        '(:eval (format " Projectile[%s]"
+                        (projectile-project-name)))))
 
 (use-package smartparens
   :bind (:map smartparens-mode-map
