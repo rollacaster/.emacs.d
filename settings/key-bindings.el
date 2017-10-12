@@ -40,8 +40,9 @@
 (global-set-key "\M-9" 'backward-sexp)
 (global-set-key "\M-0" 'forward-sexp)
 
-;; Expand mark
+;; Expand region
 (global-set-key "\M-2" 'er/expand-region)
+(global-set-key "\M-1" 'er/contract-region)
 
 ;; Multiple cursors
 (global-set-key (kbd "C-c RET") #'mc/mark-all-like-this-dwim)
