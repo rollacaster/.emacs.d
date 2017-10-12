@@ -341,3 +341,7 @@
   (setq TeX-parse-self t))
 
 (use-package rjsx-mode)
+
+(use-package beginend
+  :config
+  (beginend-global-mode))

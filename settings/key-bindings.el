@@ -74,4 +74,8 @@
 ; Dired
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 
+; Beginend
+(global-set-key (kbd "s-<") 'beginend-prog-mode-goto-beginning)
+(global-set-key (kbd "s->") 'beginend-prog-mode-goto-end)
+
 (provide 'key-bindings)
