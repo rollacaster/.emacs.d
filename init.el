@@ -122,6 +122,9 @@
 (require 'setup-mu)
 (require 'setup-tide)
 (use-package paredit
+  :bind (:map paredit-mode-map
+              ("C-M-s" . paredit-forward-slurp-sexp)
+              ("C-M-b" . paredit-forward-slurp-sexp))
   :diminish paredit-mode
   :config
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
@@ -183,6 +186,9 @@
   (setq projectile-completion-system 'ivy))
 
 (use-package smartparens
+  :bind (:map smartparens-mode-map
+              ("C-M-s" . sp-forward-slurp-sexp)
+              ("C-M-b" . sp-forward-barf-sexp))
   :config
   (smartparens-global-mode 1))
 
