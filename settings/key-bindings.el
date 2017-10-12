@@ -78,4 +78,7 @@
 (global-set-key (kbd "s-<") 'beginend-prog-mode-goto-beginning)
 (global-set-key (kbd "s->") 'beginend-prog-mode-goto-end)
 
+;; Narrowing
+(global-set-key (kbd "C-x C-n") #'eos/narrow-or-widen-dwim)
+
 (provide 'key-bindings)
