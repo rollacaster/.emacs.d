@@ -251,7 +251,6 @@
          ( "C-x b" . ivy-switch-buffer))
   :config
   (ivy-mode 1)
-  (require 'ivy-hydra)
   (setq ivy-initial-inputs-alist (append '((counsel-M-x . "")) ivy-initial-inputs-alist))
   (setq ivy-re-builders-alist
         '((t . ivy--regex-ignore-order)))
