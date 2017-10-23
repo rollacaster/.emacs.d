@@ -60,6 +60,7 @@
 
 ;; Navigate thourgh CamelCase words
 (global-subword-mode 1)
+(diminish 'subword-mode)
 
 ;; Truncate long lines
 (setq-default truncate-lines t)
