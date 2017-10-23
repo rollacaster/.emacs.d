@@ -45,7 +45,8 @@
 
 (defun init-install-packages ()
   (packages-install
-   '(use-package)))
+   '(use-package
+        s)))
 
 (condition-case nil
     (init-install-packages)
@@ -86,6 +87,9 @@
 ;; setup extensions
 ;; (require 'setup-conkeror)
 (require 'setup-use-package)
+(use-package expand-region)
+(use-package rainbow-mode
+  :diminish rainbow-mode)
 (use-package magit
   :config
   (setq magit-completing-read-function 'ivy-completing-read)
@@ -107,14 +111,16 @@
           ("C-c C-e" . eval-last-sexp)))
 (use-package company
   :diminish company-mode
-  :bind (("C-;" . company-complete)))
+  :bind (("C-;" . company-complete))
+  :config
+  (add-to-list 'company-backends 'company-restclient))
 (use-package company-web)
 (use-package company-emoji
   :config
   (add-to-list 'company-backends 'company-emoji))
 (use-package harvest)
 (require 'setup-mu)
-(require 'setup-tide)
+;; (require 'setup-tide)
 (use-package paredit
   :bind (:map paredit-mode-map
               ("C-M-s" . paredit-forward-slurp-sexp)
@@ -131,6 +137,7 @@
   (add-to-list 'company-backends 'company-elm)
   (define-key elm-mode-map (kbd "C-c TAB") 'elm-mode-format-buffer))
 (use-package flycheck
+  :diminish flycheck-mode
   :config
   ;; Show list of flycheck errors on the bottom in a small window
   (add-to-list 'display-buffer-alist
@@ -183,6 +190,7 @@
                         (projectile-project-name)))))
 
 (use-package smartparens
+  :diminish smartparens-mode
   :bind (:map smartparens-mode-map
               ("C-M-s" . sp-forward-slurp-sexp)
               ("C-M-b" . sp-forward-barf-sexp))
@@ -190,6 +198,7 @@
   (smartparens-global-mode 1))
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :config
   ;; Activate yasnippet
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
@@ -201,17 +210,17 @@
   (yas-reload-all))
 
 (use-package npm-mode
+  :diminish npm-mode
   :config
   (npm-global-mode))
-(use-package ox-jira)
-(use-package ox-gfm)
 (use-package meghanada)
 (use-package restclient)
 
 (use-package prettier-js
+  :diminish prettier-js-mode
   :config
   (add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
-  (setq prettier-js-args '("--single-quote" "--no-semi")))
+  (setq prettier-js-args '("--print-width 80" "--single-quote" "--no-semi")))
 
 (use-package wgrep
   :config
@@ -262,6 +271,7 @@
   (counsel-projectile-on))
 
 (use-package which-key
+  :diminish which-key-mode
   :config
   (which-key-mode))
 
@@ -287,7 +297,7 @@
   :config
   ;; Activate toggle indent with tab
   (setq js2-bounce-indent-p t)
-
+  (define-key js2-mode-map (kbd "C-c C-t") nil)
   ;; Set basic offset to 2
   (setq js2-basic-offset 2)
   (setq js-indent-level 2)
@@ -310,6 +320,7 @@
   (add-hook 'js2-mode-hook (lambda ()
                              (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
   (use-package js2-refactor
+    :diminish js2-refactor-mode
     :config
     (js2r-add-keybindings-with-prefix "C-c C-j"))
   (use-package xref-js2)
@@ -357,8 +368,15 @@
 (use-package rjsx-mode)
 
 (use-package beginend
+  :diminish beginend-global-mode
+  :diminish beginend-prog-mode
   :config
   (beginend-global-mode))
 
 (use-package org-download)
-
+(use-package ox-jira)
+(use-package ox-gfm)
+(use-package vlf   :config
+  (require 'vlf-setup))
+(use-package log4j-mode)
+(use-package pomidor)
