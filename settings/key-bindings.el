@@ -82,4 +82,7 @@
 ;; Narrowing
 (global-set-key (kbd "C-x C-n") #'eos/narrow-or-widen-dwim)
 
+
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C-+") 'text-scale-decrease)
 (provide 'key-bindings)
