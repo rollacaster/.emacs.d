@@ -3,4 +3,4 @@
 # key: traverse
 # binding: direct-keybinding
 # --
-_.traverse($0)
+traverse($0)

@@ -3,4 +3,4 @@
 # key: chain
 # binding: direct-keybinding
 # --
-_.chain($0)
+chain($0)

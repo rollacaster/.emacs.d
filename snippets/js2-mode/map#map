@@ -3,4 +3,4 @@
 # key: map
 # binding: direct-keybinding
 # --
-_.map($0)
+map($0)

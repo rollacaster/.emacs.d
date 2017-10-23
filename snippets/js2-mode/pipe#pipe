@@ -3,4 +3,4 @@
 # key: pipe
 # binding: direct-keybinding
 # --
-_.pipe($0)
+pipe($0)

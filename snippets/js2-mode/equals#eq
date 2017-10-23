@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: slice#slice
-# key: slice
+# name: equals#eq
+# key: eq
 # binding: direct-keybinding
 # --
-slice($0)
+_.equals($0)

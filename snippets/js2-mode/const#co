@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: slice#slice
-# key: slice
+# name: const#co
+# key: co
 # binding: direct-keybinding
 # --
-slice($0)
+const $1 = $2

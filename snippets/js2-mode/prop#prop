@@ -3,4 +3,4 @@
 # key: prop
 # binding: direct-keybinding
 # --
-_.prop('$0')
+prop('$0')
