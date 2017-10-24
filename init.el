@@ -127,7 +127,7 @@
               ("C-M-b" . paredit-forward-slurp-sexp))
   :diminish paredit-mode
   :config
-  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+;;  (add-hook 'emacs-lisp-mode-hook 'rainbow-mode)
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
 (use-package emojify
   :bind (("C-c e" . emojify-insert-emoji)))
@@ -370,12 +370,13 @@
 (use-package beginend
   :diminish beginend-global-mode
   :diminish beginend-prog-mode
+  :diminish beginend-magit-status-mode
   :config
   (beginend-global-mode))
 
 (use-package org-download)
-(use-package ox-jira)
-(use-package ox-gfm)
+;;(use-package ox-jira)
+;; (use-package ox-gfm)
 (use-package vlf   :config
   (require 'vlf-setup))
 (use-package log4j-mode)
