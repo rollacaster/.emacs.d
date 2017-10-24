@@ -35,7 +35,9 @@ module.exports = loadPage(
 
 (defun rac-insert-pretty ()
   (interactive)
-  (insert  "const { makeThingsPretty } = require('./pretty-fns')"))
+  (insert  "const { makeThingsPretty } = require('./pretty-fns')")
+  (kill-new "findStars")
+  (kill-new "makeThingsPretty"))
 
 (defun rac-insert-traverse ()
   (interactive)
@@ -111,7 +113,8 @@ module.exports = loadPage(
     chain(pipe(prop('children'), map(prop('data')))),
     slice(6, Infinity)
   )
-)"))
+)")
+    (kill-new "findTalks"))
 
 (defun rac-setup-talk ()
   (interactive)
@@ -120,12 +123,87 @@ module.exports = loadPage(
   (rac-kill-term-buffers)
   (rac-insert-init))
 
+(defun rac-insert-final ()
+  (interactive)
+  (insert "const _ = require('ramda')
+const {
+  // algebraic operations
+  map,
+  traverse,
+  chain,
+  // helper functions
+  pipe,
+  prop,
+  slice
+} = _
+const { Future } = require('ramda-fantasy')
+
+const {
+  // loadPage :: URL -> Future Error Response
+  loadPage,
+  // scrapePage :: Selector -> HTML -> [DOMElement]
+  scrapePage
+} = require('./scrape-fns')
+const crawlPage = pipe(
+  loadPage,
+  map(pipe(prop('data')))
+)
+const findStars = chain(
+  pipe(
+    scrapePage(
+      '.markup--anchor.markup--p-anchor'
+    ),
+    map(pipe(prop('attribs'), prop('href'))),
+    slice(2, Infinity),
+    traverse(Future.of, crawlPage),
+    map(
+      map(
+        pipe(
+          scrapePage('.social-count'),
+          chain(
+            pipe(
+              prop('children'),
+              map(prop('data'))
+            )
+          ),
+          _.init,
+          _.last,
+          parseInt
+        )
+      )
+    )
+  )
+)
+const findTalks = map(
+  pipe(
+    scrapePage(
+      '.markup--strong.markup--p-strong'
+    ),
+    chain(
+      pipe(prop('children'), map(prop('data')))
+    ),
+    slice(6, Infinity)
+  )
+)
+const {
+  makeThingsPretty
+} = require('./pretty-fns')
+module.exports = pipe(
+  crawlPage,
+  makeThingsPretty(findTalks, findStars)
+)(
+  'http://127.0.0.1/open-call-for-reactiveconf-lightning-talks-2017-a4f5394e5f96.html'
+)
+"))
+
+(global-set-key (kbd "C-c b f") 'rac-insert-final)
 (global-set-key (kbd "C-c b n") 'rac-insert-pretty)
 (global-set-key (kbd "C-c b i") 'rac-setup-talk)
 (global-set-key (kbd "C-c b s") 'rac-start-talk)
+(global-set-key (kbd "C-c b e") 'explain-emacs)
 (global-set-key (kbd "C-c b r") 'rac-class-to-class-selector)
 (global-set-key (kbd "C-c b p") 'wrap-in-pipe)
-(global-set-key (kbd "C-c b t") 'rac-insert-traverse) 
-(global-set-key (kbd "C-c b m") 'rac-insert-talks) 
+(global-set-key (kbd "C-c b t") 'rac-insert-traverse)
+(global-set-key (kbd "C-c b m") 'rac-insert-talks)
 (global-set-key (kbd "C-c b b") 'rac-blow-mind)
 (global-set-key (kbd "C-c b w") 'rac-wow)
