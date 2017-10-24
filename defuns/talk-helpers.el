@@ -196,6 +196,12 @@ module.exports = pipe(
 )
 "))
 
+(defun rac-enable-term-line-mode (&rest ignored)
+  (term-line-mode))
+
+(advice-add 'ansi-term :after #'rac-enable-term-line-mode)
+(advice-add 'term :after #'rac-enable-term-line-mode)
+
 (global-set-key (kbd "C-c b f") 'rac-insert-final)
 (global-set-key (kbd "C-c b n") 'rac-insert-pretty)
 (global-set-key (kbd "C-c b i") 'rac-setup-talk)
