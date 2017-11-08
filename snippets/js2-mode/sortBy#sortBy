@@ -3,4 +3,4 @@
 # key: sortBy
 # binding: direct-keybinding
 # --
-_.sortBy($0)
+sortBy($0)

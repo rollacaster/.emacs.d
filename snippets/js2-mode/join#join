@@ -3,4 +3,4 @@
 # key: join
 # binding: direct-keybinding
 # --
-_.join($0)
+join($0)

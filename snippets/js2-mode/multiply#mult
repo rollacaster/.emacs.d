@@ -1,6 +1,6 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: rev#reverse
-# key: rev
+# name: mult#multply
+# key: mult
 # binding: direct-keybinding
 # --
-reverse
+multiply($0)

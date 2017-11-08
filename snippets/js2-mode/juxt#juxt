@@ -3,4 +3,4 @@
 # key: juxt
 # binding: direct-keybinding
 # --
-_.juxt($0)
+juxt([$0])
