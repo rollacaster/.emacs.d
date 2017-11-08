@@ -381,3 +381,16 @@
   (require 'vlf-setup))
 (use-package log4j-mode)
 (use-package pomidor)
+(use-package hideshow
+  :bind (("C-c TAB" . hs-toggle-hiding)
+         ("C-\\" . hs-toggle-hiding)
+         ("M-+" . hs-show-all))
+  :init (add-hook #'prog-mode-hook #'hs-minor-mode)
+  :diminish hs-minor-mode
+  :config
+  (setq hs-special-modes-alist
+        (mapcar 'purecopy
+                '((java-mode "{" "}" "/[*/]" nil nil)
+                  (js-mode "{" "}" "/[*/]" nil)
+                  (json-mode "{" "}" "/[*/]" nil)
+                  (javascript-mode  "{" "}" "/[*/]" nil)))))
