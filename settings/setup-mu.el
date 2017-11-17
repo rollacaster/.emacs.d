@@ -6,12 +6,6 @@
 
 (setq mu4e-context-policy 'ask)
 
-(defun maildir-debugger (mailbox)
-  "MAILBOX."
-  (if (s-contains? mailbox (mu4e-message-field-raw msg :maildir))
-      (message (concat mailbox " match"))
-    (message (concat mailbox " no-match"))))
-
 ;; sending mail -- replace USERNAME with your gmail username
 ;; also, make sure the gnutls command line utils are installed
 ;; package 'gnutls-bin' in Debian/Ubuntu
