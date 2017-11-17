@@ -118,7 +118,6 @@
   (add-to-list 'company-backends 'company-emoji))
 (use-package harvest)
 (require 'setup-mu)
-;; (require 'setup-tide)
 (use-package paredit
   :bind (:map paredit-mode-map
               ("C-M-s" . paredit-forward-slurp-sexp)
