@@ -123,8 +123,7 @@
               ("C-M-s" . paredit-forward-slurp-sexp)
               ("C-M-b" . paredit-forward-slurp-sexp))
   :diminish paredit-mode
-  :config
-;;  (add-hook 'emacs-lisp-mode-hook 'rainbow-mode)
+  :init
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
 (use-package emojify
   :bind (("C-c e" . emojify-insert-emoji)))
