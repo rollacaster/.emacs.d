@@ -56,6 +56,8 @@
    )
   )
 
+(setq use-package-always-ensure t)
+
 (require 'appearance)
 (require 'key-bindings)
 
@@ -86,7 +88,6 @@
 
 ;; setup extensions
 ;; (require 'setup-conkeror)
-(require 'setup-use-package)
 (use-package expand-region)
 (use-package rainbow-mode
   :diminish rainbow-mode)
