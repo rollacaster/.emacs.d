@@ -366,7 +366,14 @@
   ;; Make AUCTex aware of style files and multi-files
   (setq TeX-parse-self t))
 
-(use-package rjsx-mode)
+(use-package rjsx-mode
+  :mode
+  ("\\.js\\'" . rjsx-mode)
+  :interpreter "node"
+  :config
+  (add-hook 'rjsx-mode-hook 'yas-minor-mode)
+  (add-hook 'rjsx-mode-hook 'js2-refactor-mode)
+  (add-hook 'rjsx-mode-hook 'rainbow-mode))
 
 (use-package beginend
   :diminish beginend-global-mode
