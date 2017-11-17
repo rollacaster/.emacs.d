@@ -16,7 +16,6 @@
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c s") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-x o") 'rac-find-org-project)
 (global-set-key (kbd "C-c o") 'org-iswitchb)
 
 ;; Windmove
@@ -36,27 +35,12 @@
 (global-set-key (kbd "C-c s") 'replace-string)
 (global-set-key (kbd "C-c C-s") 'replace-string)
 
-;; Move
-(global-set-key "\M-9" 'backward-sexp)
-(global-set-key "\M-0" 'forward-sexp)
-
 ;; Expand region
 (global-set-key "\M-2" 'er/expand-region)
 (global-set-key "\M-1" 'er/contract-region)
 
 ;; Multiple cursors
 (global-set-key (kbd "C-c RET") #'mc/mark-all-like-this-dwim)
-(global-set-key (kbd "M-3") #'mc/mark-next-like-this)
-(global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
-(global-set-key (kbd "M-#") #'mc/unmark-next-like-this)
-(global-set-key (kbd "M-$") #'mc/unmark-previous-like-this)
-
-(global-set-key (kbd "s-p") 'projectile-switch-project)
-(global-set-key (kbd "s-f") 'projectile-find-file)
-(global-set-key (kbd "s-d") 'projectile-find-dir)
-(global-set-key (kbd "s-g") 'projectile-grep)
-(global-set-key (kbd "s-s") 'projectile-ag)
-(global-set-key (kbd "s-k") 'projectile-kill-buffers)
 
 ; Move-text
 (global-set-key (kbd "M-P") 'move-text-up)
@@ -67,10 +51,7 @@
 (setq mac-command-modifier 'super)
 
 ; Pomidor
-(global-set-key (kbd "<f12>") #'pomidor)
-
-; rgrep
-(global-set-key (kbd "C-<") 'rgrep)
+(global-set-key (kbd "<f10>") #'pomidor)
 
 ; Dired
 (global-set-key (kbd "C-x C-j") 'dired-jump)
