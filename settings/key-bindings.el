@@ -41,6 +41,8 @@
 
 ;; Multiple cursors
 (global-set-key (kbd "C-c RET") #'mc/mark-all-like-this-dwim)
+(global-set-key (kbd "M-3") #'mc/mark-next-like-this)
+(global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
 
 ; Move-text
 (global-set-key (kbd "M-P") 'move-text-up)
