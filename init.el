@@ -82,10 +82,6 @@
   (when (file-regular-p file)
     (load file)))
 
-;; map files to modes
-(require 'mode-mappings)
-
-
 ;; setup extensions
 ;; (require 'setup-conkeror)
 (use-package expand-region)
@@ -115,6 +111,7 @@
   :bind (("C-;" . company-complete))
   :config
   (add-to-list 'company-backends 'company-restclient))
+(add-hook 'after-init-hook 'global-company-mode)
 (use-package company-web)
 (use-package company-emoji
   :config
@@ -136,7 +133,8 @@
   :config
   (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
   (add-to-list 'company-backends 'company-elm)
-  (define-key elm-mode-map (kbd "C-c TAB") 'elm-mode-format-buffer))
+  (define-key elm-mode-map (kbd "C-c TAB") 'elm-mode-format-buffer)
+  (add-hook 'elm-mode-hook 'yas-minor-mode))
 (use-package flycheck
   :diminish flycheck-mode
   :config
@@ -151,6 +149,7 @@
 
   (flycheck-add-mode 'html-tidy 'web-mode)
   (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode))
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (use-package framemove
   :config
@@ -161,7 +160,9 @@
   :config
   (setq alert-default-style 'notifier))
 (use-package all-the-icons)
-(use-package all-the-icons-dired)
+(use-package all-the-icons-dired
+  :config
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
 (use-package hydra
   :config
@@ -194,10 +195,8 @@
   :diminish smartparens-mode
   :bind (:map smartparens-mode-map
               ("C-M-s" . sp-forward-slurp-sexp)
-              ("C-M-b" . sp-forward-barf-sexp))
-  :config
-  (smartparens-global-mode 1))
-
+              ("C-M-b" . sp-forward-barf-sexp)))
+(add-hook 'after-init-hook (smartparens-global-mode 1))
 (use-package yasnippet
   :diminish yas-minor-mode
   :config
@@ -214,8 +213,16 @@
   :diminish npm-mode
   :config
   (npm-global-mode))
-(use-package meghanada)
-(use-package restclient)
+(use-package meghanada
+  :config
+  (add-to-list 'auto-mode-alist '("\\.java\\'" . java-mode))
+  (add-hook 'java-mode-hook
+          (lambda ()
+            ;; meghanada-mode on
+            (meghanada-mode t)
+            (remove-hook 'before-save-hook 'meghanada-code-beautify-before-save))))
+(use-package restclient
+ :mode ("\\.api\\'" . restclient-mode))
 
 (use-package prettier-js
   :diminish prettier-js-mode
@@ -338,6 +345,7 @@
   (add-hook 'js2-mode-hook 'er/add-js2-mode-expansions))
 
 (use-package web-mode
+  :mode "\\.html\\'"
   :config
   (setq web-mode-code-indent-offset 2)
   ;; No auto quote in html tags
@@ -358,13 +366,18 @@
   (define-key web-mode-map (kbd "C-;") 'company-web-html)
   (add-hook 'web-mode-hook (lambda ()
                              (set (make-local-variable 'company-backends) '(company-web-html company-files))
-                             (company-mode t))))
+                             (company-mode t)))
+  (add-hook 'web-mode-hook #'yas-minor-mode))
 
 (use-package auctex
+  :mode "\\.tex\\'"
   :defer t
   :config
   ;; Make AUCTex aware of style files and multi-files
-  (setq TeX-parse-self t))
+  (setq TeX-parse-self t)
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+  (add-hook 'LaTeX-mode-hook 'flyspell-mode))
 
 (use-package rjsx-mode
   :mode
