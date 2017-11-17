@@ -40,19 +40,6 @@
   (setq org-agenda-todo-ignore-deadlines t)
   (setq org-agenda-tags-todo-honor-ignore-options t)
 
-  ;; Mode Hooks
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  (add-hook 'org-capture 'auto-fill-mode)
-  (add-hook 'org-capture 'flyspell-mode)
-  (add-hook 'org-mode-hook #'flyspell-mode)
-  (add-hook 'org-mode-hook #'auto-fill-mode)
-  (add-hook 'org-mode-hook #'org-bullets-mode)
-  (add-hook 'org-mode-hook #'yas-minor-mode)
-  (defun rac-completion-hook ()
-    (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t)
-    )
-  (add-hook 'org-mode-hook #'rac-completion-hook)
-
   (setq org-agenda-custom-commands
         '(("h" "Agenda"
            ((agenda "")
@@ -81,7 +68,18 @@
       (org-capture)))
   :config
   (use-package org-pdfview)
-  (use-package org-bullets))
+  (use-package org-bullets)
+  ;; Mode Hooks
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  (add-hook 'org-capture 'auto-fill-mode)
+  (add-hook 'org-capture 'flyspell-mode)
+  (add-hook 'org-mode-hook #'flyspell-mode)
+  (add-hook 'org-mode-hook #'auto-fill-mode)
+  (add-hook 'org-mode-hook #'org-bullets-mode)
+  (add-hook 'org-mode-hook #'yas-minor-mode)
+  (defun rac-completion-hook ()
+    (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t))
+  (add-hook 'org-mode-hook #'rac-completion-hook))
 
 
 
