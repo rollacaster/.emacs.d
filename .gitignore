@@ -28,4 +28,6 @@ org-gcal
 /diary
 custom.el
 xkcd/
-meghanada
+/meghanada
+/quelpa
+/site-lisp
