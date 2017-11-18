@@ -136,5 +136,7 @@
 (put 'upcase-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 
+;; Move files between split panes
+(setq dired-dwim-target t)
 
 (provide 'sane-defaults)
