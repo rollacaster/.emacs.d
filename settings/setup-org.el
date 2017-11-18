@@ -69,6 +69,9 @@
   :config
   (use-package org-pdfview)
   (use-package org-bullets)
+  (use-package org-download)
+  (use-package ox-jira)
+  (use-package ox-gfm)
   ;; Mode Hooks
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (add-hook 'org-capture 'auto-fill-mode)

@@ -393,9 +393,6 @@
   :config
   (beginend-global-mode))
 
-(use-package org-download)
-;;(use-package ox-jira)
-;; (use-package ox-gfm)
 (use-package vlf   :config
   (require 'vlf-setup))
 (use-package log4j-mode)
