@@ -107,5 +107,8 @@
   (add-hook 'rjsx-mode-hook 'js2-refactor-mode)
   (add-hook 'rjsx-mode-hook 'rainbow-mode))
 
+(use-package purescript-mode
+  :mode "\\.purs\\'")
+
 
 (provide 'programming-packages)
