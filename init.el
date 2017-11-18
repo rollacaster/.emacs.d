@@ -41,23 +41,23 @@
 (require 'sane-defaults)
 
 ;; setup packages
-(require 'setup-package)
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
 
-(defun init-install-packages ()
-  (packages-install
-   '(use-package
-        s)))
+(package-initialize)
 
-(condition-case nil
-    (init-install-packages)
-  (error
-   (package-refresh-contents)
-   (init-install-packages)
-   )
-  )
+;; Refresh packages if archives do not exist yet
+(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
+  (package-refresh-contents))
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+	(package-install 'use-package))
 
 (setq use-package-always-ensure t)
-
+(use-package s)
 (require 'appearance)
 (require 'key-bindings)
 
