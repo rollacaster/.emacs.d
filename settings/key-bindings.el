@@ -12,12 +12,6 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;; Org-Mode
-(global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c s") 'org-store-link)
-(global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c o") 'org-iswitchb)
-
 ;; Windmove
 (global-set-key (kbd "C-c h")  'windmove-left)
 (global-set-key (kbd "C-c l") 'windmove-right)
@@ -35,17 +29,6 @@
 (global-set-key (kbd "C-c s") 'replace-string)
 (global-set-key (kbd "C-c C-s") 'replace-string)
 
-;; Expand region
-(global-set-key "\M-2" 'er/expand-region)
-(global-set-key "\M-1" 'er/contract-region)
-
-;; Multiple cursors
-(global-set-key (kbd "C-c RET") #'mc/mark-all-like-this-dwim)
-(global-set-key (kbd "M-3") #'mc/mark-next-like-this)
-(global-set-key (kbd "M-4") #'mc/mark-previous-like-this)
-(global-set-key (kbd "M-#") #'mc/unmark-next-like-this)
-(global-set-key (kbd "M-$") #'mc/unmark-previous-like-this)
-
 ; Move-text
 (global-set-key (kbd "M-P") 'move-text-up)
 (global-set-key (kbd "M-N") 'move-text-down)
@@ -54,15 +37,8 @@
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super)
 
-; Pomidor
-(global-set-key (kbd "<f10>") #'pomidor)
-
 ; Dired
 (global-set-key (kbd "C-x C-j") 'dired-jump)
-
-; Beginend
-(global-set-key (kbd "s-<") 'beginend-prog-mode-goto-beginning)
-(global-set-key (kbd "s->") 'beginend-prog-mode-goto-end)
 
 ;; Narrowing
 (global-set-key (kbd "C-x C-n") #'eos/narrow-or-widen-dwim)

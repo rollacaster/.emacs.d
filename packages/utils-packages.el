@@ -30,6 +30,8 @@
   :diminish beginend-global-mode
   :diminish beginend-prog-mode
   :diminish beginend-magit-status-mode
+  :bind (("M-<" . beginend-prog-mode-goto-beginning)
+         ("M->" . beginend-prog-mode-goto-end))
   :config
   (beginend-global-mode))
 
@@ -52,7 +54,8 @@
 
 (use-package swiper
   :diminish ivy-mode
-  :bind (("C-c C-r" . ivy-resume)
+  :bind (("C-s" . swiper)
+         ("C-c C-r" . ivy-resume)
          ("C-x m" . counsel-M-x)
          ("C-x C-m" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
@@ -85,7 +88,8 @@
   :config
   (counsel-projectile-on))
 
-(use-package pomidor)
+(use-package pomidor
+ :bind (("<f10>" . pomidor)))
 
 (use-package neotree
   :bind (([f8] . neotree-toggle)))
@@ -107,6 +111,10 @@
          ( "C-x M-g" . magit-dispatch-popup)))
 
 (use-package org
+  :bind (("C-c c" . org-capture)
+         ("C-c s" . org-store-link)
+         ("C-c a" . org-agenda)
+         ("C-c o" . org-iswitchb))
   :init
   ;; Org capture templates to add todos or learn actions
   (setq org-capture-templates '(("i" "Inbox" entry (file "~/Dropbox/org/Inbox.org")

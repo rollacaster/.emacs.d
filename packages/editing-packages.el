@@ -11,7 +11,9 @@
                   (json-mode "{" "}" "/[*/]" nil)
                   (javascript-mode  "{" "}" "/[*/]" nil)))))
 
-(use-package expand-region)
+(use-package expand-region
+  :bind (("M-2" . er/expand-region)
+         ("M-1" . er/contract-region)))
 
 (use-package rainbow-mode
   :diminish rainbow-mode)
@@ -116,5 +118,12 @@
 
 (use-package restclient
  :mode ("\\.api\\'" . restclient-mode))
+
+(use-package multiple-cursors
+  :bind (( "C-c RET" . mc/mark-all-like-this-dwim)
+         ( "M-3" . mc/mark-next-like-this)
+         ( "M-4" . mc/mark-previous-like-this)
+         ( "M-#" . mc/unmark-next-like-this)
+         ( "M-$" . mc/unmark-previous-like-this)))
 
 (provide 'editing-packages)
