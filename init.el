@@ -18,7 +18,9 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
+(require 'appearance)
 (require 'sane-defaults)
+
 
 ;; setup packages
 (require 'package)
@@ -37,11 +39,14 @@
 	(package-install 'use-package))
 
 (setq use-package-always-ensure t)
-(use-package s)
-(require 'appearance)
-(require 'key-bindings)
 
 (package-initialize)
+
+(use-package s)
+
+(use-package solarized-theme
+  :config
+  (require 'solarized-light-theme))
 
 ;; Setup env variables on mac
 (when (equal system-type 'darwin)
@@ -266,9 +271,6 @@
   :bind
   (( "C-x t" . multi-term)
    ( "C-c t" . multi-term)))
-(use-package solarized-theme
-  :config
-  (require 'solarized-light-theme))
 
 (use-package js2-mode
   :bind (:map js2-mode-map
@@ -383,3 +385,6 @@
                   (js-mode "{" "}" "/[*/]" nil)
                   (json-mode "{" "}" "/[*/]" nil)
                   (javascript-mode  "{" "}" "/[*/]" nil)))))
+
+(require 'key-bindings)
+
