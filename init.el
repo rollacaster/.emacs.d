@@ -5,12 +5,16 @@
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
 
+(setq packages-dir
+      (expand-file-name "settings" user-emacs-directory))
+
 (setq custom-file
       (expand-file-name "custom.el" user-emacs-directory))
 
 ;; load paths
 (add-to-list 'load-path settings-dir)
 (add-to-list 'load-path site-lisp-dir)
+(add-to-list 'load-path packages-dir)
 (load custom-file)
 
 ;; add external projects to load path
@@ -42,17 +46,11 @@
 
 (package-initialize)
 
-(use-package s)
+(require 'utils-packages)
 
 (use-package solarized-theme
   :config
   (require 'solarized-light-theme))
-
-;; Setup env variables on mac
-(when (equal system-type 'darwin)
-  (use-package exec-path-from-shell
-    :config
-    (exec-path-from-shell-initialize)))
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
@@ -127,14 +125,6 @@
   (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode))
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(use-package framemove
-  :config
-  (setq framemove-hook-into-windmove t))
-
-(use-package alert
-  :commands (alert)
-  :config
-  (setq alert-default-style 'notifier))
 (use-package all-the-icons)
 (use-package all-the-icons-dired
   :config
@@ -254,11 +244,6 @@
   :config
   (counsel-projectile-on))
 
-(use-package which-key
-  :diminish which-key-mode
-  :config
-  (which-key-mode))
-
 (use-package avy
   :bind (( "C-c g" . avy-goto-line)
          ( "C-c v" . avy-goto-char)
@@ -267,10 +252,6 @@
          ( "C-c ." . avy-copy-region)))
 (use-package json-mode
   :mode "\\.json\\'")
-(use-package multi-term
-  :bind
-  (( "C-x t" . multi-term)
-   ( "C-c t" . multi-term)))
 
 (use-package js2-mode
   :bind (:map js2-mode-map
@@ -361,30 +342,8 @@
   (add-hook 'rjsx-mode-hook 'js2-refactor-mode)
   (add-hook 'rjsx-mode-hook 'rainbow-mode))
 
-(use-package beginend
-  :diminish beginend-global-mode
-  :diminish beginend-prog-mode
-  :diminish beginend-magit-status-mode
-  :config
-  (beginend-global-mode))
-
-(use-package vlf   :config
-  (require 'vlf-setup))
 (use-package log4j-mode)
 (use-package pomidor)
-(use-package hideshow
-  :bind (("C-c TAB" . hs-toggle-hiding)
-         ("C-\\" . hs-toggle-hiding)
-         ("M-+" . hs-show-all))
-  :init (add-hook #'prog-mode-hook #'hs-minor-mode)
-  :diminish hs-minor-mode
-  :config
-  (setq hs-special-modes-alist
-        (mapcar 'purecopy
-                '((java-mode "{" "}" "/[*/]" nil nil)
-                  (js-mode "{" "}" "/[*/]" nil)
-                  (json-mode "{" "}" "/[*/]" nil)
-                  (javascript-mode  "{" "}" "/[*/]" nil)))))
 
 (require 'key-bindings)
 
