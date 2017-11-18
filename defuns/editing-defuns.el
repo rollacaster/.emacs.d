@@ -87,8 +87,6 @@
     (fill-paragraph nil region)))
 
 
-(define-key global-map "\M-Q" 'unfill-paragraph)
-
 (defun eos/narrow-or-widen-dwim (p)
   "Widen if buffer is narrowed, narrow-dwim otherwise.
 Dwim means: region, org-src-block, org-subtree, or

@@ -67,7 +67,17 @@
 ;; Narrowing
 (global-set-key (kbd "C-x C-n") #'eos/narrow-or-widen-dwim)
 
+;; Unfill
+(global-set-key (kbd "M-Q") 'unfill-paragraph)
 
+;; Scale
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C-+") 'text-scale-decrease)
+
+;; Move downladed file to current folder
+(global-set-key (kbd "C-c C-h") 'bjm/move-file-here)
+
+;; Copy full path
+(global-set-key (kbd "C-c C-p") 'copy-file-path)
+
 (provide 'key-bindings)
