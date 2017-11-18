@@ -18,9 +18,6 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-;; Mac test
-(setq is-mac (equal system-type 'darwin))
-
 (require 'sane-defaults)
 
 ;; setup packages
@@ -47,9 +44,10 @@
 (package-initialize)
 
 ;; Setup env variables on mac
-(when is-mac
-  (require-package 'exec-path-from-shell)
-  (exec-path-from-shell-initialize))
+(when (equal system-type 'darwin)
+  (use-package exec-path-from-shell
+    :config
+    (exec-path-from-shell-initialize)))
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
