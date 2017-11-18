@@ -1,6 +1,5 @@
 (add-to-list 'load-path "/Users/thomas/.emacs.d/site-lisp/mu/mu4e")
 
-(require 's)
 (require 'mu4e)
 (require 'smtpmail)
 
@@ -185,4 +184,4 @@ Important Note: This e-mail and any attachment are confidential or protected by 
 
 
 
-(provide 'setup-mu)
+(provide 'mail-packages)
