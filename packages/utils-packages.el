@@ -40,6 +40,7 @@
   :bind ( ("C-c r" . crux-rename-buffer-and-file)
           ("C-c TAB" . crux-cleanup-buffer-or-region)
           ("C-x C-e" . crux-eval-and-replace)
+          ("C-c C-o" . crux-open-with)
           ("C-c C-e" . eval-last-sexp)))
 
 (use-package undo-tree

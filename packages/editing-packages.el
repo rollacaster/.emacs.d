@@ -1,6 +1,5 @@
 (use-package hideshow
-  :bind (("C-c TAB" . hs-toggle-hiding)
-         ("C-\\" . hs-toggle-hiding)
+  :bind (("C-\\" . hs-toggle-hiding)
          ("M-+" . hs-show-all))
   :init (add-hook #'prog-mode-hook #'hs-minor-mode)
   :diminish hs-minor-mode
@@ -100,7 +99,7 @@
                  (window-height   . 0.2)))
 
   (flycheck-add-mode 'html-tidy 'web-mode)
-  (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode))
+  (flycheck-add-mode 'javascript-eslint 'js2-mode))
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (use-package yasnippet
