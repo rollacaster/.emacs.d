@@ -18,25 +18,8 @@
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-;; write backup to own directories
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
-
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-
-;; make always backup files
-(setq vc-make-backup-files t)
-
-;; save point position
-(require 'saveplace)
-(setq-default save-place t)
-(setq save-place-file (expand-file-name ".places" user-emacs-directory))
-
 ;; Mac test
 (setq is-mac (equal system-type 'darwin))
-
 
 (require 'sane-defaults)
 
@@ -60,14 +43,6 @@
 (use-package s)
 (require 'appearance)
 (require 'key-bindings)
-
-;; enable forbidden commands
-(put 'narrow-to-region 'disabled nil)
-(put 'narrow-to-page 'disabled nil)
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
-(put 'set-goal-column 'disabled nil)
-
 
 (package-initialize)
 

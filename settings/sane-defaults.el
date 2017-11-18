@@ -1,3 +1,5 @@
+(setq inhibit-startup-message t)
+
 ;; disable sounds
 (setq ring-bell-function 'ignore)
 
@@ -110,5 +112,29 @@
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-diff-options "-w")
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+;; write backup to own directories
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+                 (concat user-emacs-directory "backups")))))
+
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+;; make always backup files
+(setq vc-make-backup-files t)
+
+;; save point position
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
+
+;; enable forbidden commands
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'set-goal-column 'disabled nil)
+
 
 (provide 'sane-defaults)
