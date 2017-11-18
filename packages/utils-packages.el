@@ -200,4 +200,6 @@
 
 (use-package noflet)
 
+(use-package try)
+
 (provide 'utils-packages)
