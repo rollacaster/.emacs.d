@@ -36,10 +36,10 @@
 
 (use-package smartparens
   :diminish smartparens-mode
+  :init (smartparens-global-mode 1)
   :bind (:map smartparens-mode-map
               ("C-M-s" . sp-forward-slurp-sexp)
               ("C-M-b" . sp-forward-barf-sexp)))
-(add-hook 'after-init-hook (smartparens-global-mode 1))
 
 (use-package wgrep
   :config
@@ -80,9 +80,10 @@
 (use-package company
   :diminish company-mode
   :bind (("C-;" . company-complete))
+  :init (global-company-mode)
   :config
   (add-to-list 'company-backends 'company-restclient))
-(add-hook 'after-init-hook 'global-company-mode)
+
 (use-package company-web)
 (use-package company-emoji
   :config
@@ -90,6 +91,7 @@
 
 (use-package flycheck
   :diminish flycheck-mode
+  :init (global-flycheck-mode)
   :config
   ;; Show list of flycheck errors on the bottom in a small window
   (add-to-list 'display-buffer-alist
@@ -102,7 +104,6 @@
 
   (flycheck-add-mode 'html-tidy 'web-mode)
   (flycheck-add-mode 'javascript-eslint 'js2-mode))
-(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (use-package yasnippet
   :diminish yas-minor-mode
