@@ -110,6 +110,8 @@
   :bind (( "C-x g" . magit-status)
          ( "C-x M-g" . magit-dispatch-popup)))
 
+(use-package git-timemachine)
+
 (use-package org
   :bind (("C-c c" . org-capture)
          ("C-c s" . org-store-link)
