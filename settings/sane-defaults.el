@@ -139,4 +139,7 @@
 ;; Move files between split panes
 (setq dired-dwim-target t)
 
+;; Save all pastes in kill ring
+(setq save-interprogram-paste-before-kill t)
+
 (provide 'sane-defaults)
