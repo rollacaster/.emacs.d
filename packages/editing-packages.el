@@ -54,7 +54,7 @@
 
 (use-package avy
   :bind (( "C-c g" . avy-goto-line)
-         ( "C-c v" . avy-goto-char)
+         ( "C-'" . avy-goto-char)
          ( "C-c ," . avy-copy-line)
          ( "C-c m" . avy-move-line)
          ( "C-c ." . avy-copy-region)))
