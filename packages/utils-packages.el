@@ -139,8 +139,6 @@
 
   ;; Use "⤵" instead of "..." for indicating sub-items
   (setq org-ellipsis "⤵")
-  ;; Use utf8 org bullets
-  (setq org-bullets-bullet-list '("🔴" "🔵" "🔘" "⚪️" "🔹" "🔻"))
 
   ;; Add all files in the org-directory to the agenda
   (setq org-folder "~/Dropbox/org")
