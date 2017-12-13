@@ -30,7 +30,9 @@
 
 (use-package js2-mode
   :bind (:map js2-mode-map
-              ("C-k" . js2r-kill))
+              ("C-k" . js2r-kill)
+              ("C-c s" . replace-string)
+              ("C-c C-s" . replace-string))
   :config
   ;; Activate toggle indent with tab
   (setq js2-bounce-indent-p t)
