@@ -210,4 +210,13 @@
 
 (use-package try)
 
+(use-package docker)
+
+(use-package pcre2el
+  :ensure t
+  :config
+  (pcre-mode))
+
+(use-package markdown-mode
+  :mode "\\.md\\'")
 (provide 'utils-packages)
