@@ -1,5 +1,3 @@
-(add-to-list 'load-path "/Users/thomas/.emacs.d/site-lisp/mu/mu4e")
-
 (require 'mu4e)
 (require 'smtpmail)
 
