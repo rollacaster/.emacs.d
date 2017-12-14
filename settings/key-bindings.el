@@ -57,4 +57,6 @@
 ;; Copy full path
 (global-set-key (kbd "C-c C-p") 'copy-file-path)
 
+(global-set-key (kbd "C-c i") (lambda () (interactive)(find-file "~/.emacs.d/init.el")))
+
 (provide 'key-bindings)
