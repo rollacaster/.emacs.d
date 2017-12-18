@@ -72,7 +72,7 @@
 (use-package paredit
   :bind (:map paredit-mode-map
               ("C-M-s" . paredit-forward-slurp-sexp)
-              ("C-M-b" . paredit-forward-slurp-sexp))
+              ("C-M-b" . paredit-forward-barf-sexp))
   :diminish paredit-mode
   :init
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
