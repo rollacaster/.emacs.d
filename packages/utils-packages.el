@@ -54,8 +54,7 @@
 
 (use-package swiper
   :diminish ivy-mode
-  :bind (("C-s" . swiper)
-         ("C-c C-r" . ivy-resume)
+  :bind (("C-c C-r" . ivy-resume)
          ("C-x m" . counsel-M-x)
          ("C-x C-m" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
