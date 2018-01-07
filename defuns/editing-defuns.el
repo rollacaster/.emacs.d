@@ -133,3 +133,18 @@ is already narrowed."
   (delete-other-windows)
   (noflet ((switch-to-buffer-other-window (buf) (switch-to-buffer buf)))
     (org-capture)))
+
+(defun rac-json-to-string (@begin @end)
+  "Replace 「\"」 by 「\\\"」 in current line or text selection"
+  (interactive
+   (if (use-region-p)
+       (list (region-beginning) (region-end))
+     (list (line-beginning-position) (line-end-position))))
+  (save-excursion
+      (save-restriction
+        (narrow-to-region @begin @end)
+        (goto-char (point-min))
+        (while (search-forward "\"" nil t)
+          (replace-match "\\\"" "FIXEDCASE" "LITERAL"))
+        (unfill-paragraph t))))
+
