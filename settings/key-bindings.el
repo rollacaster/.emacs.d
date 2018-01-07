@@ -51,4 +51,7 @@
 
 (global-set-key (kbd "C-c i") (lambda () (interactive)(find-file "~/.emacs.d/init.el")))
 
+;; Refresh buffer
+(global-set-key (kbd "<f5>") 'revert-buffer)
+
 (provide 'key-bindings)
