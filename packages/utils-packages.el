@@ -83,9 +83,7 @@
   (use-package counsel-osx-app
     :bind (("C-c x" . counsel-osx-app))))
 
-(use-package counsel-projectile
-  :config
-  (counsel-projectile-on))
+(use-package counsel-projectile)
 
 (use-package pomidor
  :bind (("<f10>" . pomidor)))
