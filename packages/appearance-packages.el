@@ -1,3 +1,7 @@
+(use-package org-beautify-theme
+  :config
+  (require 'org-beautify-theme))
+
 (use-package solarized-theme
   :config
   (require 'solarized-light-theme))
