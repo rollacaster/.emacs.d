@@ -38,8 +38,10 @@
   :diminish smartparens-mode
   :init (smartparens-global-mode 1)
   :bind (:map smartparens-mode-map
-              ("C-M-s" . sp-forward-slurp-sexp)
-              ("C-M-b" . sp-forward-barf-sexp)))
+              ("C-)" . sp-forward-slurp-sexp)
+              ("C-(" . sp-backward-slurp-sexp)
+              ("C-}" . sp-forward-barf-sexp)
+              ("C-{" . sp-backward-barf-sexp)))
 
 (use-package wgrep
   :config
@@ -70,9 +72,6 @@
   (add-hook 'LaTeX-mode-hook 'flyspell-mode))
 
 (use-package paredit
-  :bind (:map paredit-mode-map
-              ("C-M-s" . paredit-forward-slurp-sexp)
-              ("C-M-b" . paredit-forward-barf-sexp))
   :diminish paredit-mode
   :init
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
