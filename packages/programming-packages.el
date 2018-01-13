@@ -26,6 +26,8 @@
   (setq prettier-js-args '("--print-width 80" "--single-quote" "--no-semi")))
 
 (use-package json-mode
+  :bind (:map json-mode-map
+              ("C-c TAB" . json-pretty-print))
   :mode "\\.json\\'")
 
 (use-package js2-mode
