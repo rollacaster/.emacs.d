@@ -216,4 +216,9 @@
 
 (use-package markdown-mode
   :mode "\\.md\\'")
+
+(use-package uuidgen)
+
+(use-package f)
+
 (provide 'utils-packages)

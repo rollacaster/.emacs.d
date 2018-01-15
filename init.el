@@ -43,5 +43,3 @@
 (dolist (file (directory-files defuns-dir t "\\w+"))
   (when (file-regular-p file)
     (load file)))
-(use-package uuidgen)
-(use-package f)
