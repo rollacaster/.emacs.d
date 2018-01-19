@@ -200,7 +200,7 @@
   (add-hook 'org-mode-hook #'rac-completion-hook)
   (define-key flyspell-mode-map (kbd "C-.") nil)
   (define-key dired-mode-map (kbd "M-o") nil)
-  (define-key org-mode-map (kbd "C-.") 'counsel-imenu)
+  (define-key org-mode-map (kbd "C-.") 'counsel-imenu))
 
 ;; Make dired less verbose
 (use-package dired-details
