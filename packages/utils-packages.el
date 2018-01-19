@@ -191,16 +191,16 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   (add-hook 'org-capture 'auto-fill-mode)
   (add-hook 'org-capture 'flyspell-mode)
-  (add-hook 'org-mode-hook #'flyspell-mode)
+  (add-hook 'org-mode-hook (lambda ()
+                             (flyspell-mode)
+                             (define-key flyspell-mode-map (kbd "C-.") 'counsel-imenu)))
   (add-hook 'org-mode-hook #'auto-fill-mode)
   (add-hook 'org-mode-hook #'org-bullets-mode)
   (add-hook 'org-mode-hook #'yas-minor-mode)
   (defun rac-completion-hook ()
     (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t))
   (add-hook 'org-mode-hook #'rac-completion-hook)
-  (define-key flyspell-mode-map (kbd "C-.") nil)
-  (define-key dired-mode-map (kbd "M-o") nil)
-  (define-key org-mode-map (kbd "C-.") 'counsel-imenu))
+  (define-key dired-mode-map (kbd "M-o") nil))
 
 ;; Make dired less verbose
 (use-package dired-details
