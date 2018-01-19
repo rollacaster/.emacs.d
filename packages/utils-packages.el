@@ -113,7 +113,9 @@
   :bind (("C-c c" . org-capture)
          ("C-c s" . org-store-link)
          ("C-c a" . org-agenda)
-         ("C-c o" . org-iswitchb))
+         ("C-c o" . org-iswitchb)
+         ("M-p" . org-move-subtree-up)
+         ("M-n" . org-move-subtree-down))
   :init
   ;; Org capture templates to add todos or learn actions
   (setq org-capture-templates '(("i" "Inbox" entry (file "~/Dropbox/org/Inbox.org")
@@ -195,7 +197,10 @@
   (add-hook 'org-mode-hook #'yas-minor-mode)
   (defun rac-completion-hook ()
     (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t))
-  (add-hook 'org-mode-hook #'rac-completion-hook))
+  (add-hook 'org-mode-hook #'rac-completion-hook)
+  (define-key flyspell-mode-map (kbd "C-.") nil)
+  (define-key dired-mode-map (kbd "M-o") nil)
+  (define-key org-mode-map (kbd "C-.") 'counsel-imenu)
 
 ;; Make dired less verbose
 (use-package dired-details
