@@ -117,7 +117,8 @@
   (yas-reload-all))
 
 (use-package restclient
- :mode ("\\.api\\'" . restclient-mode))
+  :bind (("C-c TAB" . json-pretty-print))
+  :mode ("\\.api\\'" . restclient-mode))
 
 (use-package multiple-cursors
   :bind (( "C-c RET" . mc/mark-all-like-this-dwim)
