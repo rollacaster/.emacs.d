@@ -23,6 +23,7 @@
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "packages" user-emacs-directory))
+(add-to-list 'load-path "~/Projects/elcontext")
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 ;; add external projects to load path
@@ -39,9 +40,4 @@
 (require 'editing-packages)
 (require 'programming-packages)
 (require 'mail-packages)
-
-;; Functions (load all files in defuns-dir)
-(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-(dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
+(require 'elcontext)
