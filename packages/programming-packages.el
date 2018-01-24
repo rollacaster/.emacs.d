@@ -114,5 +114,7 @@
 (use-package purescript-mode
   :mode "\\.purs\\'")
 
+(use-package package-lint)
+(use-package flycheck-package)
 
 (provide 'programming-packages)
