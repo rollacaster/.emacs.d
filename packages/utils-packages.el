@@ -235,6 +235,11 @@
  :config
  (custom-set-variables '(org-trello-files '("~/Dropbox/org/Klaka.org"))))
 
+(use-package org-gcal
+  :config
+  (add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync)))
+  (add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync))))
+
 (use-package osx-location)
 
 (provide 'utils-packages)
