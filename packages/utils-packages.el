@@ -235,4 +235,6 @@
  :config
  (custom-set-variables '(org-trello-files '("~/Dropbox/org/Klaka.org"))))
 
+(use-package osx-location)
+
 (provide 'utils-packages)
