@@ -130,7 +130,7 @@
                                  "* %? %^L")))
 
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" "DEFERRED(f)")))
+        '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)")))
 
   (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p) ("Train" . ?t) ("Mamming" . ?m)))
 
@@ -158,12 +158,17 @@
   (setq org-agenda-custom-commands
         '(("h" "Agenda"
            ((agenda "")
-            (tags-todo "*")))))
+            (todo "TODO")))
+          ("k" "Klaka"
+           ((todo "ToDo")
+            (todo "Doing")
+            (todo  "Waiting")
+            (todo "Review")))))
 
   ;; Capture everywhere with emacsclient -ne "(make-capture-frame)"
   (defadvice org-capture-finalize
       (after delete-capture-frame activate)
-    "Advise capture-finalize to close the frame"
+  "Advise capture-finalize to close the frame"
     (if (equal "capture" (frame-parameter nil 'name))
         (delete-frame)))
 
