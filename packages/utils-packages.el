@@ -240,6 +240,10 @@
   (add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync)))
   (add-hook 'org-capture-after-finalize-hook (lambda () (org-gcal-sync))))
 
+(use-package demo-it)
+(use-package org-tree-slide)
+(use-package fancy-narrow)
+
 (use-package osx-location)
 
 (provide 'utils-packages)
