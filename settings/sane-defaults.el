@@ -142,4 +142,7 @@
 ;; Save all pastes in kill ring
 (setq save-interprogram-paste-before-kill t)
 
+;; Load auto-revert-mode for log files
+(add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
+
 (provide 'sane-defaults)
