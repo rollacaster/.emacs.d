@@ -115,7 +115,9 @@
          ("C-c a" . org-agenda)
          ("C-c o" . org-iswitchb)
          ("M-p" . org-move-subtree-up)
-         ("M-n" . org-move-subtree-down))
+         ("M-n" . org-move-subtree-down)
+         (:map org-mode-map
+               ("C-'" . avy-goto-char)))
   :init
   ;; Org capture templates to add todos or learn actions
   (setq org-capture-templates '(("i" "Inbox" entry (file "~/Dropbox/org/Inbox.org")
