@@ -239,7 +239,7 @@
 
 (use-package org-gcal
   :config
-  (add-hook 'org-agenda-mode-hook (lambda () (org-gcal-sync))))
+  (add-hook 'org-agenda-mode-hook #'org-gcal-sync))
 
 (use-package demo-it)
 (use-package org-tree-slide)
