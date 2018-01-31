@@ -586,6 +586,9 @@
   (bind-key "s-f"  (lambda () (interactive) (insert (grab-mac-link 'firefox))))
   (bind-key "s-c"  (lambda () (interactive) (insert (grab-mac-link 'chrome)))))
 
+(use-package google-this
+  :bind (("s-g" . google-this)))
+
 (load-file "~/.emacs.d/mail.el")
 (require 'mail)
 
