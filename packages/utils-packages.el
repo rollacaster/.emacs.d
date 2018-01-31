@@ -247,4 +247,7 @@
 
 (use-package osx-location)
 
+(use-package grab-mac-link
+  :bind (("s-g" . grab-mac-link)))
+
 (provide 'utils-packages)
