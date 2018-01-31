@@ -116,5 +116,6 @@
 
 (use-package package-lint)
 (use-package flycheck-package)
+(use-package log4j-mode)
 
 (provide 'programming-packages)
