@@ -69,13 +69,10 @@
 
 (use-package dash)
 
-(use-package org-beautify-theme
-  :config
-  (require 'org-beautify-theme))
-
-(use-package solarized-theme
-  :config
-  (require 'solarized-light-theme))
+(use-package org-beautify-theme)
+(use-package solarized-theme)
+(load-theme 'org-beautify)
+(load-theme 'solarized-light)
 
 (use-package powerline
   :config
