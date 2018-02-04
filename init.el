@@ -25,7 +25,6 @@
 (add-to-list 'load-path (expand-file-name "packages" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "defuns" user-emacs-directory))
 
-(add-to-list 'load-path "~/Projects/elcontext")
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 ;; add external projects to load path
@@ -36,9 +35,6 @@
 (require 'appearance)
 (require 'sane-defaults)
 (require 'key-bindings)
-
-(require 'elcontext)
-(elcontext-global-mode)
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
@@ -588,5 +584,9 @@
 
 (load-file "~/.emacs.d/mail.el")
 (require 'mail)
+
+(use-package elcontext
+  :config
+  (elcontext-global-mode))
 
 
