@@ -2,6 +2,6 @@
 # name: TestIt
 # key: it
 # --
-it('should $1', () => {
+it('$1', () => {
   $0
 })
