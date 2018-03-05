@@ -10,4 +10,5 @@
 (set-frame-font "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 (set-face-attribute 'default nil :height 150)
 
+(set-frame-name "🐦")
 (provide 'appearance)
