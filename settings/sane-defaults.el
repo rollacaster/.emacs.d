@@ -1,5 +1,3 @@
-(setq inhibit-startup-message t)
-
 ;; disable sounds
 (setq ring-bell-function 'ignore)
 
@@ -91,9 +89,6 @@
 
 ;; No electric indent
 (setq electric-indent-mode nil)
-
-;; No start message
-(setq initial-scratch-message nil)
 
 ;; Kill process without asking
 (setq kill-buffer-query-functions nil)

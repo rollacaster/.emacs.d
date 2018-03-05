@@ -614,5 +614,10 @@
           "https://jlongster.com/atom.xml"
           "https://medium.com/feed/@sxywu")))
 
+(use-package adafruit-wisdom
+  :config
+  (setq inhibit-startup-message t)
+  (setq initial-scratch-message (concat ";; " (adafruit-wisdom-select) "\n")))
+
 
 
