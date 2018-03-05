@@ -587,4 +587,6 @@
   :config
   (elcontext-global-mode))
 
+(use-package ob-restclient)
+
 
