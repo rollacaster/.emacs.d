@@ -65,14 +65,27 @@
 
 (use-package dash)
 
-(use-package org-beautify-theme)
-(use-package solarized-theme)
-(load-theme 'org-beautify)
-(load-theme 'solarized-light)
-
-(use-package powerline
+(use-package org-beautify-theme
   :config
-  (powerline-default-theme))
+  (load-theme 'org-beautify t))
+(use-package solarized-theme
+  :config
+  (load-theme 'solarized-light t)
+  (let ((line (face-attribute 'mode-line :underline)))
+    (set-face-attribute 'mode-line-inactive nil :overline   line)
+    (set-face-attribute 'mode-line          nil :overline   line)
+    (set-face-attribute 'mode-line          nil :underline  line)
+    (set-face-attribute 'mode-line          nil :box        nil)
+    (set-face-attribute 'mode-line-inactive nil :box        nil)
+    (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
+(use-package moody
+  :config
+  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode))
+(use-package minions
+  :config
+  (minions-mode))
 
 (use-package all-the-icons)
 (use-package all-the-icons-dired
@@ -588,5 +601,18 @@
   (elcontext-global-mode))
 
 (use-package ob-restclient)
+
+(use-package elfeed
+  :config
+  (setq elfeed-feeds
+        '("http://blog.functorial.com/feed.rss"
+          "http://planet.emacsen.org/atom.xml"
+          "https://medium.com/feed/@drboolean"
+          "http://www.tomharding.me/feed"
+          "http://chrispenner.ca/atom.xml"
+          "http://swannodette.github.io/atom.xml"
+          "https://jlongster.com/atom.xml"
+          "https://medium.com/feed/@sxywu")))
+
 
 
