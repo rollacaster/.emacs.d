@@ -564,9 +564,7 @@
  :config
  (custom-set-variables '(org-trello-files '("~/Dropbox/org/Klaka.org"))))
 
-(use-package org-gcal
-  :config
-  (add-hook 'org-agenda-mode-hook #'org-gcal-sync))
+(use-package org-gcal)
 
 (use-package demo-it)
 (use-package org-tree-slide)
