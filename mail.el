@@ -72,7 +72,7 @@ Important Note: This e-mail and any attachment are confidential or protected by 
                     (mu4e-sent-folder   . "/Gmail/[Gmail].Sent Mail")
                     (mu4e-trash-folder  ."/Gmail/[Gmail].Trash")
                     (mu4e-refile-folder .  "/Gmail/Archives")
-                    (mu4e-sent-messages-behavior . delete)
+                    (mu4e-sent-messages-behavior . sent)
                     (smtpmail-smtp-user ."t.sojka@reply.de")
                     (smtpmail-smtp-server ."smtp.reply.it")))
            ,(make-mu4e-context
