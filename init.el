@@ -175,6 +175,7 @@
   :bind (("C-;" . company-complete))
   :init (global-company-mode)
   :config
+  (setq company-show-numbers t)
   (add-to-list 'company-backends 'company-restclient))
 
 (use-package company-web)
