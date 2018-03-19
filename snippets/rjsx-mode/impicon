@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: impicon
+# key: impicon
+# --
+import { Ionicons } from "@expo/vector-icons";

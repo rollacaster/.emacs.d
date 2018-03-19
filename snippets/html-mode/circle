@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: circle
+# key: circle
+# --
+<circle cx="$1" cy="$2" r="$3" />

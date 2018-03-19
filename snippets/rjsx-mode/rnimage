@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: rnimage
+# key: rnimage
+# --
+<Image
+  style={{width: $1, height: $2}}
+  source={{uri: '$3'}}
+/>

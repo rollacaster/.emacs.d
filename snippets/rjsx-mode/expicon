@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: expicon
+# key: expicon
+# --
+<Ionicons name="$1" />

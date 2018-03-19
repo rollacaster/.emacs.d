@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: rnindex
+# key: rnindex
+# --
+import React from 'react'
+import { StackNavigator } from 'react-navigation'
+
+import $1 from '$2'
+
+const MainStack = StackNavigator({
+  $1
+})
+
+const App = props => <MainStack />
+
+export default App
