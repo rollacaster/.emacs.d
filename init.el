@@ -622,3 +622,5 @@
 
 
 
+(load-file "./frame-move.el")
+(setq framemove-hook-into-windmove t)
