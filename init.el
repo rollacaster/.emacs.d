@@ -348,10 +348,6 @@
     :config
     (exec-path-from-shell-initialize)))
 
-(use-package framemove
-  :config
-  (setq framemove-hook-into-windmove t))
-
 (use-package alert
   :commands (alert)
   :config
