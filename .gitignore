@@ -35,3 +35,5 @@ xkcd/
 /.trello
 /request
 /adafruit-wisdom.cache
+/cider-history
+/magithub
