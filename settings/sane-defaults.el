@@ -140,4 +140,7 @@
 ;; Load auto-revert-mode for log files
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
 
+;; No need for ~ files when editing
+(setq create-lockfiles nil)
+
 (provide 'sane-defaults)
