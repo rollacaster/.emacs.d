@@ -54,4 +54,7 @@
 ;; Refresh buffer
 (global-set-key (kbd "<f5>") (lambda () (interactive)(revert-buffer nil t)))
 
+;; browse-url
+(global-set-key (kbd "C-c u") 'browse-url)
+
 (provide 'key-bindings)
