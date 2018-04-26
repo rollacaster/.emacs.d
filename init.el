@@ -620,6 +620,7 @@
   (setq inhibit-startup-message t)
   (setq initial-scratch-message (concat ";; " (adafruit-wisdom-select) "\n")))
 
+(use-package vmd-mode)
 
 
 (load-file "./frame-move.el")
