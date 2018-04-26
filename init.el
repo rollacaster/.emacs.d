@@ -620,6 +620,7 @@
 
 (use-package vmd-mode)
 
+(use-package dictcc)
 
 (load-file "./frame-move.el")
 (setq framemove-hook-into-windmove t)
