@@ -613,7 +613,9 @@
           "http://chrispenner.ca/atom.xml"
           "http://swannodette.github.io/atom.xml"
           "https://jlongster.com/atom.xml"
-          "https://medium.com/feed/@sxywu")))
+          "https://medium.com/feed/@sxywu"
+          "https://oremacs.com/atom.xml"
+          "http://feeds.feedburner.com/KrisJenkinsBlog")))
 
 (use-package adafruit-wisdom
   :init
