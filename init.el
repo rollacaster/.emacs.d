@@ -616,9 +616,9 @@
           "https://medium.com/feed/@sxywu")))
 
 (use-package adafruit-wisdom
-  :config
+  :init
   (setq inhibit-startup-message t)
-  (setq initial-scratch-message (concat ";; " (adafruit-wisdom-select) "\n")))
+  (setq initial-scratch-message (format ";; %s\n" (adafruit-wisdom-select))))
 
 (use-package vmd-mode)
 
