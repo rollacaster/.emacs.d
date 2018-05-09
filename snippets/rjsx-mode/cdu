@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: react-componentDidUpdate
+# key: cdu
+# --
+componentDidUpdate () {
+  $0
+}
