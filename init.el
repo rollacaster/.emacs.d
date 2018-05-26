@@ -653,7 +653,7 @@
 
 (use-package dictcc)
 
-(load-file "./frame-move.el")
+(load-file "~/.emacs.d/frame-move.el")
 (setq framemove-hook-into-windmove t)
 
 (defun fd-switch-dictionary()
