@@ -59,9 +59,6 @@
 
 (use-package dash)
 
-(use-package org-beautify-theme
-  :config
-  (load-theme 'org-beautify t))
 (use-package solarized-theme
   :config
   (load-theme 'solarized-light t)
@@ -72,6 +69,9 @@
     (set-face-attribute 'mode-line          nil :box        nil)
     (set-face-attribute 'mode-line-inactive nil :box        nil)
     (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
+(use-package org-beautify-theme
+  :config
+  (load-theme 'org-beautify t))
 (use-package moody
   :config
   (setq x-underline-at-descent-line t)
