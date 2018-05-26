@@ -136,11 +136,26 @@
 
 ;; Save all pastes in kill ring
 (setq save-interprogram-paste-before-kill t)
+(setq select-enable-clipboard t)
+(setq select-enable-primary t)
 
 ;; Load auto-revert-mode for log files
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
 
 ;; No need for ~ files when editing
 (setq create-lockfiles nil)
+
+;; Non blinking cursor
+(blink-cursor-mode 0)
+
+;; Lisp-friendly hippie expand
+(setq hippie-expand-try-functions-list
+      '(try-expand-dabbrev
+        try-expand-dabbrev-all-buffers
+        try-expand-dabbrev-from-kill
+        try-complete-lisp-symbol-partially
+        try-complete-lisp-symbol))
+
+(setq explicit-shell-file-name "/bin/bash")
 
 (provide 'sane-defaults)
