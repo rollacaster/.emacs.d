@@ -555,10 +555,6 @@
 
 (use-package f)
 
-(use-package org-trello
- :config
- (custom-set-variables '(org-trello-files '("~/Dropbox/org/Klaka.org"))))
-
 (use-package org-gcal)
 
 (use-package demo-it)
