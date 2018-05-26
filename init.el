@@ -571,8 +571,10 @@
 (use-package google-this
   :bind (("s-g" . google-this)))
 
-(load-file "~/.emacs.d/mail.el")
-(require 'mail)
+(when (file-exists-p "~/.emacs.d/mail.el")
+  (progn
+    (load-file "~/.emacs.d/mail.el")
+    (require 'mail)))
 
 (use-package elcontext
   :config
