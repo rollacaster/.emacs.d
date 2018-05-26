@@ -602,7 +602,9 @@
 
 (use-package vmd-mode)
 
-(use-package eldoc)
+(use-package eldoc
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode))
 (use-package cider
   :bind (:map cider-mode-map
               ("C-c RET" . mc/mark-all-like-this-dwim))
