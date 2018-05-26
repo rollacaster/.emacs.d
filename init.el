@@ -540,12 +540,6 @@
   (add-hook 'org-mode-hook #'rac-completion-hook)
   (define-key dired-mode-map (kbd "M-o") nil))
 
-;; Make dired less verbose
-(use-package dired-details
- :config
-  (setq-default dired-details-hidden-string " ") 
-  (dired-details-install))
-
 (use-package noflet)
 
 (use-package try)
