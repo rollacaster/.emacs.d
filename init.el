@@ -633,6 +633,9 @@
 (load-file "~/.emacs.d/frame-move.el")
 (setq framemove-hook-into-windmove t)
 
+(load-file "~/.emacs.d/dired-details.el")
+(add-hook 'dired-mode-hook 'dired-hide-details-mode)
+
 (defun fd-switch-dictionary()
   (interactive)
   (let* ((dic ispell-current-dictionary)
