@@ -121,12 +121,7 @@
 
 (use-package smartparens
   :diminish smartparens-mode
-  :init (smartparens-global-mode 1)
-  :bind (:map smartparens-mode-map
-              ("C-)" . sp-forward-slurp-sexp)
-              ("C-(" . sp-backward-slurp-sexp)
-              ("C-}" . sp-forward-barf-sexp)
-              ("C-{" . sp-backward-barf-sexp)))
+  :init (smartparens-global-mode 1))
 
 (use-package wgrep
   :config
@@ -249,7 +244,9 @@
   :bind (:map js2-mode-map
               ("C-k" . js2r-kill)
               ("C-c s" . replace-string)
-              ("C-c C-s" . replace-string))
+              ("C-c C-s" . replace-string)
+              ("C-)" . paredit-forward-slurp-sexp)
+              ("C-(" . paredit-backward-slurp-sexp))
   :config
   ;; Activate toggle indent with tab
   (setq js2-bounce-indent-p t)
