@@ -57,6 +57,10 @@
 ;; browse-url
 (global-set-key (kbd "C-c u") 'browse-url)
 
+;; eshell
+(global-set-key (kbd "C-c t") (lambda () (interactive (eshell 'N))))
+(global-set-key (kbd "C-x t") (lambda () (interactive (eshell 'N))))
+
 ;; switch-git
 (global-set-key (kbd "C-x p") 'rac-switch-git)
 (global-set-key (kbd "C-x C-p") 'rac-switch-git)
