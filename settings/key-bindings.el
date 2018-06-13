@@ -61,4 +61,7 @@
 (global-set-key (kbd "C-x p") 'rac-switch-git)
 (global-set-key (kbd "C-x C-p") 'rac-switch-git)
 
+;; Connect to db
+(global-set-key (kbd "C-x C-d") 'rac-connect-db)
+
 (provide 'key-bindings)
