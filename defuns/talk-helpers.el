@@ -206,10 +206,38 @@ module.exports = pipe(
 (global-set-key (kbd "C-c b n") 'rac-insert-pretty)
 (global-set-key (kbd "C-c b i") 'rac-setup-talk)
 (global-set-key (kbd "C-c b s") 'rac-start-talk)
-(global-set-key (kbd "C-c b e") 'explain-emacs)
+(global-set-key (kbd "C-c b m") 'explain-emacs)
 (global-set-key (kbd "C-c b r") 'rac-class-to-class-selector)
 (global-set-key (kbd "C-c b p") 'wrap-in-pipe)
 (global-set-key (kbd "C-c b t") 'rac-insert-traverse)
 (global-set-key (kbd "C-c b m") 'rac-insert-talks)
 (global-set-key (kbd "C-c b b") 'rac-blow-mind)
 (global-set-key (kbd "C-c b w") 'rac-wow)
+
+
+(defun rac-bugs-rectangles ()
+  (interactive)
+  (insert "const leftEar = rect(30, 70).map(c(move(110, 0), fill('#848e9b')))
+const leftInnerEar = rect(10, 50).map(c(move(120, 10), fill('white')))
+const leftHead = map(c(move(110, 70), fill('#848e9b')), rect(40, 40))
+const leftBeard = map(c(move(80, 110), fill('white')))(rect(70, 40))
+const leftEye = map(c(move(120, 80), fill('black')))(rect(20, 30))
+const leftEyePupil = map(c(move(130, 90), fill('white')))(rect(10, 15))
+const leftNose = map(c(move(140, 110), fill('red')))(rect(10, 10))
+const leftmouth = map(c(move(120, 130), fill('black')))(rect(30, 10))
+
+const leftSide = [
+  leftEar,
+  leftInnerEar,
+  leftHead,
+  leftBeard,
+  leftEye,
+  leftEyePupil,
+  leftNose,
+  leftmouth
+]
+"))
+(global-set-key (kbd "C-c b b") 'rac-bugs-rectangles)
+
+
+
