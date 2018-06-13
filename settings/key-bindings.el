@@ -57,4 +57,8 @@
 ;; browse-url
 (global-set-key (kbd "C-c u") 'browse-url)
 
+;; switch-git
+(global-set-key (kbd "C-x p") 'rac-switch-git)
+(global-set-key (kbd "C-x C-p") 'rac-switch-git)
+
 (provide 'key-bindings)
