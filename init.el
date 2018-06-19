@@ -427,7 +427,7 @@
   :bind (("C-c c" . org-capture)
          ("C-c s" . org-store-link)
          ("C-c a" . org-agenda)
-         ("C-c o" . org-iswitchb)
+         ("C-c o" . org-switchb)
          ("M-p" . org-move-subtree-up)
          ("M-n" . org-move-subtree-down)
          (:map org-mode-map
