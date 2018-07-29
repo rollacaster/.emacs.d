@@ -304,6 +304,8 @@
   (add-hook 'web-mode-hook #'yas-minor-mode))
 
 (use-package rjsx-mode
+  :bind (:map rjsx-mode-map
+              ("C-c w" . web-mode-element-wrap))
   :mode
   ("\\.js\\'" . rjsx-mode)
   :interpreter "node"
