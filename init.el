@@ -413,13 +413,33 @@
   (setq projectile-completion-system 'ivy)
   (setq projectile-mode-line
         '(:eval (format " Projectile[%s]"
-                        (projectile-project-name)))))
+                        (projectile-project-name))))
+  (setq projectile-switch-project-action 'magit-status)
+  (setq magit-display-buffer-function
+      (lambda (buffer)
+        (display-buffer
+         buffer
+         (cond ((and (derived-mode-p 'magit-mode)
+                     (eq (with-current-buffer buffer major-mode)
+                         'magit-status-mode))
+                nil)
+               ((memq (with-current-buffer buffer major-mode)
+                      '(magit-process-mode
+                        magit-revision-mode
+                        magit-diff-mode
+                        magit-stash-mode))
+                nil)
+               (t
+                '(display-buffer-same-window)))))))
 
 (use-package magit
   :config
   (setq magit-completing-read-function 'ivy-completing-read)
   :bind (( "C-x g" . magit-status)
-         ( "C-x M-g" . magit-dispatch-popup)))
+         ( "C-x M-g" . magit-dispatch-popup)
+         (:map magit-mode-map
+               ("M-2" . er/expand-region)
+               ("M-1" . er/contract-region))))
 
 (use-package git-timemachine)
 
