@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: quil
+# key: quil
+# --
+(defn setup []
+  )
+
+(defn draw []
+  )
+
+(q/defsketch $1
+  :title "$1"
+  :settings #(q/smooth 2)
+  :setup setup
+  :draw draw
+  :size [500 500])
