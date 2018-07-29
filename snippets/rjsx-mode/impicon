@@ -2,4 +2,16 @@
 # name: impicon
 # key: impicon
 # --
-import { Ionicons } from "@expo/vector-icons";
+import { ${1:$$(yas-choose-value '(
+"Entypo"
+"EvilIcons"
+"Feather"
+"FontAwesome"
+"Foundation"
+"Ionicons"
+"MaterialIcons"
+"MaterialCommunityIcons "
+"Octicons"
+"Zocial"
+"SimpleLineIcons"
+))} } from "@expo/vector-icons";

@@ -2,4 +2,16 @@
 # name: expicon
 # key: expicon
 # --
-<Ionicons name="$1" />
+<${1:$$(yas-choose-value '(
+"Entypo"
+"EvilIcons"
+"Feather"
+"FontAwesome"
+"Foundation"
+"Ionicons"
+"MaterialIcons"
+"MaterialCommunityIcons "
+"Octicons"
+"Zocial"
+"SimpleLineIcons"
+))} name="$2" />
