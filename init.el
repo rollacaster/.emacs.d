@@ -621,6 +621,7 @@
   :config
   (setq cider-repl-history-file "~/.emacs.d/cider-history")
   (setq cider-repl-wrap-history t)
+  (setq cider-prompt-for-symbol nil)
   (add-hook 'cider-repl-mode-hook 'paredit-mode)
   (add-hook 'cider-repl-mode-hook #'eldoc-mode)
   (add-hook 'cider-repl-mode-hook #'cider-company-enable-fuzzy-completion)
@@ -628,7 +629,7 @@
   (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
   (setq cider-show-error-buffer nil)
   (setq cider-auto-select-error-buffer nil)
-  (setq cider-repl-pop-to-buffer-on-connect t)
+  (setq cider-repl-pop-to-buffer-on-connect 'display-only)
   (setq cider-repl-use-pretty-printing t))
 
 (use-package clj-refactor
@@ -639,6 +640,7 @@
 (use-package clojure-mode
   :config
   (add-hook 'clojure-mode-hook 'enable-paredit-mode)
+  (add-hook 'clojure-mode-hook 'yas-minor-mode)
   (use-package clojure-mode-extra-font-locking)
   ;; Use clojure mode for other extensions
   (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
