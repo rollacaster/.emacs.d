@@ -246,7 +246,8 @@
               ("C-c s" . replace-string)
               ("C-c C-s" . replace-string)
               ("C-)" . paredit-forward-slurp-sexp)
-              ("C-(" . paredit-backward-slurp-sexp))
+              ("C-(" . paredit-backward-slurp-sexp)
+              ("C-c t" . rac-string-to-template))
   :config
   ;; Activate toggle indent with tab
   (setq js2-bounce-indent-p t)
