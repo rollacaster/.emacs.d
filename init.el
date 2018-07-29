@@ -78,11 +78,6 @@
   (moody-replace-mode-line-buffer-identification)
   (moody-replace-vc-mode))
 
-(use-package all-the-icons)
-(use-package all-the-icons-dired
-  :config
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
-
 (use-package hideshow
   :bind (("C-\\" . hs-toggle-hiding)
          ("M-+" . hs-show-all))
