@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: react-shouldComponentUpdate
+# key: scu
+# --
+shouldComponentUpdate () {
+  $0
+}
