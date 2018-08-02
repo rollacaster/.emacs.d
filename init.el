@@ -404,6 +404,8 @@
   :bind (([f8] . neotree-toggle)))
 
 (use-package projectile
+  :bind (:map projectile-mode-map
+              ("C-c p" . projectile-command-map))
   :config
   (projectile-global-mode)
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
