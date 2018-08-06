@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: range
+# key: range
+# --
+const range = x => [...Array(x).keys()]
