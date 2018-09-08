@@ -691,3 +691,6 @@
   (when (file-regular-p file)
     (load file)))
 
+(use-package simple-httpd)
+(use-package impatient-mode)
+(use-package htmlize)
