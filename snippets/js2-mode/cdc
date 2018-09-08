@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: cdc
+# key: cdc
+# --
+componentDidCatch () {
+  $0
+}
