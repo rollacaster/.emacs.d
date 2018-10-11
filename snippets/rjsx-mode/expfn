@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: expfn
+# key: expfn
+# --
+expect($0).toHaveBeenCalledWith()

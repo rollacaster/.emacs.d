@@ -2,6 +2,4 @@
 # name: TestExp
 # key: exp
 # --
-expect($1).toEqual({
-  $0
-})
+expect($1).toEqual($0)

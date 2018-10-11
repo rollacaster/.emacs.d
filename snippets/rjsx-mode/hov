@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: hov
+# key: hov
+# --
+<HoverText
+  text="$0"
+  position={{ x: -1, y: 3.5, z: 3 }}
+/>

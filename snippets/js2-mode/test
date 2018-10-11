@@ -2,9 +2,9 @@
 # name: TestCase
 # key: test
 # --
-import $1 from './$1'
+import $1 from './$2'
 
-describe('$1 $2', () => {
+describe('$1', () => {
   it('$3', ($4) => {
      $0
   })
