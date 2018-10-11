@@ -32,8 +32,12 @@ recent first."
                   (sort file-list
                         #'(lambda (x y) (time-less-p (nth 6 y) (nth 6 x))))))
 
-    (setq start-file (completing-read (format "Move selected file to %s:" target-dir)
-                                      file-list-sorted))
+  (setq start-file (ivy-read
+                    (concat "Move selected file to " target-dir ":")
+                    file-list-sorted
+                    :re-builder #'ivy--regex
+                    :sort nil
+                    :initial-input nil))
 
     ;; add full path to start file and end-file
     (setq start-file-full
