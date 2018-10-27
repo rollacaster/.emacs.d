@@ -68,4 +68,8 @@
 ;; Connect to db
 (global-set-key (kbd "C-x C-d") 'rac-connect-db)
 
+(global-set-key (kbd "C-x e") 'explain-emacs)
+
+(global-set-key (kbd "C-z") (lambda () (message "yes")))
+
 (provide 'key-bindings)

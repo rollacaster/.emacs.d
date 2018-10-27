@@ -239,5 +239,50 @@ const leftSide = [
 "))
 (global-set-key (kbd "C-c b b") 'rac-bugs-rectangles)
 
+(defun rac-reactive-green ()
+    (interactive)
+  (insert "#4eb363"))
 
+(global-set-key (kbd "C-c b g") 'rac-reactive-green)
 
+(defun rac-setup-compose ()
+  (interactive)
+  (find-file "/Users/thomas/Projects/compose-all-the-things/src/index.js")
+  (erase-buffer)
+  (insert "import {
+  render,
+  ellipse,
+  fill,
+  stroke,
+  rotate
+} from './slowest-graphics-library-ever-created'
+import {
+  compose as c,
+  range,
+  map,
+  applyTo,
+  multiply,
+  ap
+} from 'ramda'
+
+// Build shapes
+
+// Rotate vertical ellipse
+
+// Rotate all ellipses
+
+// Render
+
+")
+  (setq text-scale-mode-amount 1)
+  (text-scale-mode (if (zerop text-scale-mode-amount) -1 1))
+  (visual-line-mode)
+  (delete-other-windows)
+  (rac-kill-term-buffers)
+  (npm-mode--exec-process (format "npm run %s" "start"))
+  (delete-other-windows &optional WINDOW))
+
+(global-set-key (kbd "C-c b s") 'rac-setup-compose)
+
+(provide 'talk-helpers.el)
+;;; talk-helpers.el ends here
