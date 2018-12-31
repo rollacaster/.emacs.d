@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: match
+# key: match
+# --
+expect($1).toMatchSnapshot()

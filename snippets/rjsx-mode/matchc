@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: matchc
+# key: matchc
+# --
+expect(renderer.create($0).toJSON()).toMatchSnapshot()
