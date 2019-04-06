@@ -694,6 +694,12 @@
 (use-package simple-httpd)
 (use-package impatient-mode)
 (use-package htmlize)
+(use-package pdf-tools)
+
+(use-package ob-clojurescript)
+
 (use-package visual-fill-column
   :config
   (add-hook 'visual-line-mode-hook #'visual-fill-column-mode))
+
+(add-hook 'sql-mode-hook 'yas-minor-mode)

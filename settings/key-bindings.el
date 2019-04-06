@@ -27,8 +27,8 @@
 (global-set-key (kbd "M-N") 'move-text-down)
 
 ; Change keys for mac port
-(setq mac-option-modifier 'meta)
-(setq mac-command-modifier 'super)
+(setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
 
 ; Dired
 (global-set-key (kbd "C-x C-j") 'dired-jump)

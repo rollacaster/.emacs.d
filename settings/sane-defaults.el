@@ -13,7 +13,7 @@
 (show-paren-mode 1)
 
 ;; Move to trash when deleting
-;; (setq delete-by-moving-to-trash t)      
+(setq delete-by-moving-to-trash t)
 
 ;; No use of shift for marking
 (setq shift-select-mode nil)
@@ -155,5 +155,9 @@
         try-complete-lisp-symbol))
 
 (setq explicit-shell-file-name "/bin/bash")
+
+;; Use visual line mode for text
+(remove-hook 'text-mode-hook #'auto-fill-mode)
+(add-hook 'text-mode-hook #'visual-line-mode)
 
 (provide 'sane-defaults)
