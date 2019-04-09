@@ -16,17 +16,12 @@
 (setq use-package-always-ensure t)
 
 ;; load paths
-(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "packages" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "defuns" user-emacs-directory))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
-;; add external projects to load path
-(dolist (project (directory-files (expand-file-name "site-lisp" user-emacs-directory) t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
 
 (require 'appearance)
 (require 'sane-defaults)
