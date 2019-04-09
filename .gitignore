@@ -40,3 +40,4 @@ xkcd/
 /mail.el
 /network-security.data
 /.edbi-ds-history
+/transient/history.el
