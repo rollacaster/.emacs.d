@@ -17,7 +17,6 @@
 
 ;; load paths
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "packages" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "defuns" user-emacs-directory))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -41,6 +40,7 @@
     (set-face-attribute 'mode-line          nil :box        nil)
     (set-face-attribute 'mode-line-inactive nil :box        nil)
     (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
+
 (use-package org-beautify-theme
   :config
   (load-theme 'org-beautify t))
@@ -276,8 +276,6 @@
   (add-hook 'web-mode-hook #'yas-minor-mode))
 
 (use-package rjsx-mode
-  :bind (:map rjsx-mode-map
-              ("C-c w" . web-mode-element-wrap))
   :mode
   ("\\.js\\'" . rjsx-mode)
   :interpreter "node"
@@ -286,18 +284,13 @@
   (add-hook 'rjsx-mode-hook 'js2-refactor-mode)
   (add-hook 'rjsx-mode-hook 'rainbow-mode))
 
-(use-package purescript-mode
-  :mode "\\.purs\\'")
-
 (use-package package-lint)
 (use-package flycheck-package)
-(use-package log4j-mode)
 
 ;; Setup env variables on mac
-(when (equal system-type 'darwin)
-  (use-package exec-path-from-shell
-    :config
-    (exec-path-from-shell-initialize)))
+(use-package exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 (use-package alert
   :commands (alert)
