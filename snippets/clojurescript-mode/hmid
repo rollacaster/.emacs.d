@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: hmid
+# key: hmid
+# --
+(/ (q/height) 2)

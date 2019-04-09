@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: mover
+# key: mover
+# --
+{:acceleration [0 0]
+ :velocity [0 0]
+ :location [0 0]}

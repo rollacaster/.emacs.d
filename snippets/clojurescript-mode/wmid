@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: wmid
+# key: wmid
+# --
+(/ (q/width) 2)
