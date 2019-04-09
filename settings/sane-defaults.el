@@ -160,4 +160,9 @@
 (remove-hook 'text-mode-hook #'auto-fill-mode)
 (add-hook 'text-mode-hook #'visual-line-mode)
 
+;; German
+(setq input-method-highlight-flag nil)
+(add-hook 'text-mode-hook (lambda () (set-input-method "german-postfix")))
+
+
 (provide 'sane-defaults)
