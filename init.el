@@ -148,6 +148,10 @@
 
 (use-package paredit
   :diminish paredit-mode
+  :bind (("M-[" . paredit-wrap-square)
+         ("M-{" . paredit-wrap-curly)
+         ("M-i" . paredit-splice-sexp-killing-backward)
+         ("M-k" . paredit-splice-sexp-killing-forward))
   :init
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
 
