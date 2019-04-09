@@ -711,3 +711,5 @@
   (add-hook 'visual-line-mode-hook #'visual-fill-column-mode))
 
 (add-hook 'sql-mode-hook 'yas-minor-mode)
+
+(set-input-method "german-postfix")
