@@ -1,9 +1,7 @@
 (require 'package)
 (setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives
-             '("org" . "https://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
 
 (package-initialize)
 
@@ -16,8 +14,6 @@
 	(package-install 'use-package))
 
 (setq use-package-always-ensure t)
-
-(package-initialize)
 
 ;; load paths
 (add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
@@ -35,25 +31,6 @@
 (require 'appearance)
 (require 'sane-defaults)
 (require 'key-bindings)
-
-(require 'package)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/"))
-
-(package-initialize)
-
-;; Refresh packages if archives do not exist yet
-(unless (file-exists-p "~/.emacs.d/elpa/archives/melpa")
-  (package-refresh-contents))
-
-;; Bootstrap `use-package'
-(unless (package-installed-p 'use-package)
-	(package-install 'use-package))
-
-(setq use-package-always-ensure t)
-
-(package-initialize)
 
 (use-package s)
 
