@@ -41,3 +41,4 @@ xkcd/
 /network-security.data
 /.edbi-ds-history
 /transient/history.el
+/dbs.el

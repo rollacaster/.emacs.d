@@ -586,6 +586,10 @@
     (load-file "~/.emacs.d/mail.el")
     (require 'mail)))
 
+(when (file-exists-p "~/.emacs.d/dbs.el")
+  (progn
+    (load-file "~/.emacs.d/dbs.el")))
+
 (use-package elcontext
   :config
   (elcontext-global-mode))
