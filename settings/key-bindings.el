@@ -37,7 +37,7 @@
 (global-set-key (kbd "C-x C-n") #'eos/narrow-or-widen-dwim)
 
 ;; Unfill
-(global-set-key (kbd "M-Q") 'unfill-paragraph)
+(global-set-key (kbd "s-q") 'unfill-paragraph)
 
 ;; Scale
 (global-set-key (kbd "C-=") 'text-scale-increase)
