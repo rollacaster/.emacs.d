@@ -17,3 +17,10 @@
       (re-search-forward "\\([0-9]*\\)\sthomas")
       (shell-command (concat "kill " (match-string 1))))))
 
+(defun shell-command-to-kill-ring (command)
+  (kill-new (shell-command-to-string command)))
+
+(defun rac-my-current-ip ()
+  (interactive)
+  (shell-command-to-kill-ring "internal-ip -4"))
+
