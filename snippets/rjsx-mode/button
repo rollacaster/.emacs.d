@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: button
+# key: button
+# --
+<button className="bg-transparent pa0 pointer bn">$0</button>

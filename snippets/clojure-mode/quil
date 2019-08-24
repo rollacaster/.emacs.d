@@ -2,17 +2,25 @@
 # name: quil
 # key: quil
 # --
+(ns 
+  (:require [quil.core :as q]
+            [quil.middleware :as md]))
+
 (defn setup []
   )
 
-(defn draw []
+(defn update-state [state]
+  )
+
+(defn draw [state]
   )
 
 (q/defsketch $1
   :title "$1"
   :settings #(q/smooth 2)
-  :middleware [md/pause-on-error]
+  :middleware [md/pause-on-error md/fun-mode]
   :setup setup
   :draw draw
+  :update update-state
   :features [:no-bind-output]
   :size [700 500])

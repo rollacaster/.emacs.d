@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: eis
+# key: eis
+# --
+expect($0).toMatchInlineSnapshot()

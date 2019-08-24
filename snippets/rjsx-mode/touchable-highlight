@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: TouchableHighlight
+# key: th
+# --
+<TouchableHighlight onPress={$1}>$0</TouchableHighlight>
