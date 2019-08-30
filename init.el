@@ -634,7 +634,7 @@
 (defun fd-switch-dictionary()
   (interactive)
   (let* ((dic ispell-current-dictionary)
-    	 (change (if (string= dic "deutsch8") "english" "deutsch8")))
+    	 (change (if (string= dic "de_DE_frami") "en_US" "de_DE_frami")))
     (ispell-change-dictionary change)
     (message "Dictionary switched from %s to %s" dic change)))
 
@@ -649,8 +649,7 @@
   (setq ispell-local-dictionary-alist
         ;; Please note the list `("-d" "en_US")` contains ACTUAL parameters passed to hunspell
         ;; You could use `("-d" "en_US,en_US-med")` to check with multiple dictionaries
-        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)
-          )))
+        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))))
 
  ((executable-find "aspell")
   (setq ispell-program-name "aspell")
