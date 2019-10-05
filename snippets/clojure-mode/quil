@@ -22,5 +22,6 @@
   :setup setup
   :draw draw
   :update update-state
+  :display 1
   :features [:no-bind-output]
   :size [700 500])
