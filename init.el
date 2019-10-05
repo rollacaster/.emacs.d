@@ -276,6 +276,9 @@
   (add-hook 'web-mode-hook #'yas-minor-mode))
 
 (use-package rjsx-mode
+  :bind
+  ( "M-[" . rjsx-jump-opening-tag)
+  ( "M-]" . rjsx-jump-closing-tag)
   :mode
   ("\\.js\\'" . rjsx-mode)
   :interpreter "node"
@@ -304,7 +307,9 @@
 
 (use-package multi-term
   :bind
-  (( "C-x t" . multi-term)
+  (( "C-x c" . term-char-mode)
+   ( "C-x l" . term-line-mode)
+   ( "C-x t" . multi-term)
    ( "C-c t" . multi-term)))
 
 (use-package beginend
@@ -432,21 +437,25 @@
                                 ("r" "Read" entry (file "~/Dropbox/org/Inbox.org")
                                  "* %? %^L" :prepend t)
                                 ("l" "Links" entry (file "~/Dropbox/org/Links.org")
-                                 "* %? %^L")))
+                                 "* %? %^L")
+                                ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
+                                 "* %?\n%U\n  %i")))
 
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)")))
 
-  (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p) ("Train" . ?t) ("Mamming" . ?m)))
+  (setq org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p)))
 
-  (setq org-refile-targets '(("Links.org" :level . 1) ("Todo.org" :level . 1) ("Maybe.org" :level . 1)))
+  ;; (setq org-refile-targets '(("Links.org" :level . 1) ("Todo.org" :level . 1) ("Maybe.org" :level . 1)))
 
   ;; Use "⤵" instead of "..." for indicating sub-items
   (setq org-ellipsis "⤵")
 
   ;; Add all files in the org-directory to the agenda
   (setq org-folder "~/Dropbox/org")
-  (setq org-agenda-files (nthcdr 2 (directory-files org-folder t)))
+  (setq org-agenda-files (seq-filter
+                          (lambda (file) (not (string-match-p "archive" file)))
+                          (nthcdr 2 (directory-files org-folder t))))
 
   ;; Ask if work time should be substracted after 15 minutes
   (setq org-clock-idle-time 15)
@@ -519,6 +528,7 @@
 (use-package docker)
 
 (use-package pcre2el
+  :diminish pcre-mode
   :ensure t
   :config
   (pcre-mode))
@@ -609,6 +619,9 @@
   (cljr-add-keybindings-with-prefix "C-c C-r"))
 
 (use-package clojure-mode
+    :bind (:map clojure-mode-map
+              ("C-c s" . replace-string)
+              ("C-c C-s" . replace-string))
   :config
   (add-hook 'clojure-mode-hook 'enable-paredit-mode)
   (add-hook 'clojure-mode-hook 'yas-minor-mode)
