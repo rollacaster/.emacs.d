@@ -11,7 +11,7 @@
 
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
-	(package-install 'use-package))
+        (package-install 'use-package))
 
 (setq use-package-always-ensure t)
 
@@ -30,6 +30,15 @@
 
 (use-package dash)
 
+(use-package org-beautify-theme
+  :config
+  (load-theme 'org-beautify t))
+
+(use-package moody
+  :config
+  (setq x-underline-at-descent-line t)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode))
 (use-package solarized-theme
   :config
   (load-theme 'solarized-light t)
@@ -41,27 +50,8 @@
     (set-face-attribute 'mode-line-inactive nil :box        nil)
     (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
 
-(use-package org-beautify-theme
-  :config
-  (load-theme 'org-beautify t))
-(use-package moody
-  :config
-  (setq x-underline-at-descent-line t)
-  (moody-replace-mode-line-buffer-identification)
-  (moody-replace-vc-mode))
-
-(use-package hideshow
-  :bind (("C-\\" . hs-toggle-hiding)
-         ("M-+" . hs-show-all))
-  :init (add-hook #'prog-mode-hook #'hs-minor-mode)
-  :diminish hs-minor-mode
-  :config
-  (setq hs-special-modes-alist
-        (mapcar 'purecopy
-                '((java-mode "{" "}" "/[*/]" nil nil)
-                  (js-mode "{" "}" "/[*/]" nil)
-                  (json-mode "{" "}" "/[*/]" nil)
-                  (javascript-mode  "{" "}" "/[*/]" nil)))))
+(use-package yafolding
+  :bind (("C-\\" . yafolding-toggle-element)))
 
 (use-package expand-region
   :bind (("M-2" . er/expand-region)
@@ -71,7 +61,10 @@
   :diminish rainbow-mode)
 
 (use-package emojify
-  :bind (("C-c e" . emojify-insert-emoji)))
+  :bind (("C-c e" . emojify-insert-emoji))
+  :config
+  (setq emojify-display-style 'image)
+  (setq emojify-emoji-styles (quote (unicode))))
 
 (use-package hydra
   :config
@@ -140,6 +133,14 @@
   :config
   (add-to-list 'company-backends 'company-emoji))
 
+(add-to-list 'display-buffer-alist
+               `(,(rx bos "*Org tags*" eos)
+                 (display-buffer-reuse-window
+                  display-buffer-in-side-window)
+                 (reusable-frames . visible)
+                 (side            . bottom)
+                 (window-height   . 0.2)))
+
 (use-package flycheck
   :diminish flycheck-mode
   :init (global-flycheck-mode)
@@ -193,6 +194,7 @@
 
 (use-package meghanada
   :config
+  (setq jdee-server-dir "~/Projects/jdee-server/target")
   (add-to-list 'auto-mode-alist '("\\.java\\'" . java-mode))
   (add-hook 'java-mode-hook
           (lambda ()
@@ -203,13 +205,16 @@
 (use-package prettier-js
   :diminish prettier-js-mode
   :config
-  (add-hook 'js2-jsx-mode-hook 'prettier-js-mode)
+  (setq prettier-js-show-errors 'echo)
+  (add-hook 'js2-mode-hook 'prettier-js-mode)
+  (add-hook '-mode-hook 'prettier-js-mode)
   (setq prettier-js-args '("--print-width 80" "--single-quote" "--no-semi")))
 
 (use-package json-mode
   :bind (:map json-mode-map
               ("C-c TAB" . json-pretty-print))
-  :mode "\\.json\\'")
+  :mode "\\.json\\'"
+  :hook yafolding-mode)
 
 (use-package js2-mode
   :bind (:map js2-mode-map
@@ -296,6 +301,7 @@
   (exec-path-from-shell-initialize))
 
 (use-package alert
+
   :commands (alert)
   :config
   (setq alert-default-style 'notifier))
@@ -357,7 +363,7 @@
          ( "C-x b" . ivy-switch-buffer))
   :config
   (ivy-mode 1)
-  (setq ivy-initial-inputs-alist (append '((counsel-M-x . "")) ivy-initial-inputs-alist))
+  (setq ivy-initial-inputs-alist nil)
   (setq ivy-re-builders-alist
         '((t . ivy--regex-ignore-order)))
 
@@ -365,7 +371,7 @@
   (setq ivy-height 15)
   (setq ivy-count-format "%d/%d ")
   (setq counsel-yank-pop-separator "\n------------\n")
-
+  (setq counsel-rg-base-command "rg --no-heading --line-number --color never %s .")
   (use-package counsel-osx-app
     :bind (("C-c x" . counsel-osx-app))))
 
@@ -431,15 +437,13 @@
   (setq org-capture-templates '(("i" "Inbox" entry (file "~/Dropbox/org/Inbox.org")
                                  "* %?  %i\n %a")
                                 ("t" "Todo" entry (file+headline "~/Dropbox/org/Todo.org" "TODOs")
-                                 "* TODO %? %^g")
+                                 "* TODO %?")
                                 ("m" "Maybe" entry (file "~/Dropbox/org/Maybe.org")
                                  "* %?\n")
                                 ("r" "Read" entry (file "~/Dropbox/org/Inbox.org")
                                  "* %? %^L" :prepend t)
-                                ("l" "Links" entry (file "~/Dropbox/org/Links.org")
-                                 "* %? %^L")
-                                ("j" "Journal" entry (file+datetree "~/Dropbox/org/journal.org")
-                                 "* %?\n%U\n  %i")))
+                                ("j" "Journal" entry (file+datetree "~/Dropbox/org/Journal.org")
+                                 "* %?%i\n%U\n")))
 
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)")))
@@ -457,12 +461,40 @@
                           (lambda (file) (not (string-match-p "archive" file)))
                           (nthcdr 2 (directory-files org-folder t))))
 
+  ;; babel
+  (setq org-babel-load-languages
+   '((emacs-lisp . t)
+    (js . t)
+    (shell . t)
+    (clojure . t)))
+  (setq org-confirm-babel-evaluate nil)
+
+  (setq org-list-indent-offset 2)
+
+  ;; logging
+  (setq org-log-into-drawer t)
+
+  ;; export
+  (setq org-export-with-toc nil)
+
   ;; Ask if work time should be substracted after 15 minutes
   (setq org-clock-idle-time 15)
 
   ;; Parent TODOs cannot be resolved when a child has a TODO state
   (setq org-enforce-todo-dependencies t)
   (setq org-enforce-todo-checkbox-dependencies t)
+
+ (setq org-refile-allow-creating-parent-nodes (quote confirm))
+ (setq org-refile-targets
+   (quote
+    ((org-agenda-files :level . 1)
+     (org-agenda-files :level . 2)
+     (org-agenda-files :level . 3))))
+ (setq org-refile-use-outline-path 'file
+      org-outline-path-complete-in-steps nil)
+
+ ;; images
+ (setq org-image-actual-width '(150))
 
   ;; Ignore schedule & deadline items in TODO agenda
   (setq org-agenda-todo-ignore-scheduled t)
@@ -503,8 +535,11 @@
   :config
   (use-package org-pdfview)
   (use-package org-bullets)
-  (use-package org-download)
-  (use-package ox-jira)
+  (use-package org-download
+    :config
+    (setq org-download-screenshot-method "screencapture -i %s"))
+  ;; (use-package ox-jira)
+  (use-package ox-json)
   (use-package ox-gfm)
   ;; Mode Hooks
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -539,8 +574,6 @@
 (use-package uuidgen)
 
 (use-package f)
-
-(use-package org-gcal)
 
 (use-package demo-it)
 (use-package org-tree-slide)
@@ -600,6 +633,7 @@
   :bind (:map cider-mode-map
               ("C-c RET" . mc/mark-all-like-this-dwim))
   :config
+  (setq cider-figwheel-main-default-options ":dev")
   (setq cider-repl-history-file "~/.emacs.d/cider-history")
   (setq cider-repl-wrap-history t)
   (setq cider-prompt-for-symbol nil)
@@ -619,12 +653,16 @@
   (cljr-add-keybindings-with-prefix "C-c C-r"))
 
 (use-package clojure-mode
-    :bind (:map clojure-mode-map
+  :bind (:map clojure-mode-map
+              ("C-c w" . rac-start-sketch)
+              ("C-c q" . rac-exit-sketch)
               ("C-c s" . replace-string)
               ("C-c C-s" . replace-string))
   :config
   (add-hook 'clojure-mode-hook 'enable-paredit-mode)
   (add-hook 'clojure-mode-hook 'yas-minor-mode)
+  (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'clojure-mode-hook 'rainbow-mode)
   (use-package clojure-mode-extra-font-locking)
   ;; Use clojure mode for other extensions
   (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
@@ -647,7 +685,7 @@
 (defun fd-switch-dictionary()
   (interactive)
   (let* ((dic ispell-current-dictionary)
-    	 (change (if (string= dic "de_DE_frami") "en_US" "de_DE_frami")))
+         (change (if (string= dic "de_DE_frami") "en_US" "de_DE_frami")))
     (ispell-change-dictionary change)
     (message "Dictionary switched from %s to %s" dic change)))
 
@@ -679,7 +717,10 @@
 (use-package simple-httpd)
 (use-package impatient-mode)
 (use-package htmlize)
-(use-package pdf-tools)
+(use-package pdf-tools
+  :config
+  (pdf-loader-install))
+
 
 (use-package ob-clojurescript)
 
@@ -687,6 +728,73 @@
   :config
   (add-hook 'visual-line-mode-hook #'visual-fill-column-mode))
 
-(add-hook 'sql-mode-hook 'yas-minor-mode)
+(add-hook 'sql-interactive-mode-hook 'yas-minor-mode)
+
+;; (put 'erase-buffer 'disabled nil)
+;; (put 'magit-diff-edit-hunk-commit 'disabled nil)
 
 (set-input-method "german-postfix")
+(use-package nov
+  :mode ("\\.epub\\'" . nov-mode)
+  :init
+  (defun my-nov-font-setup ()
+    (face-remap-add-relative 'variable-pitch :family "Helvetica"
+                             :height 1.0))
+  (add-hook 'nov-mode-hook 'my-nov-font-setup))
+
+(add-to-list 'safe-local-variable-values
+             '(flycheck-javascript-eslint-executable . "/Users/thomas/Projects/tsr-campaign-manager/node_modules/eslint/bin/eslint.js"))
+(add-to-list 'safe-local-variable-values
+             '(flycheck-javascript-eslint-executable . "/Users/thomas/Projects/IntegrityNext/react-app/node_modules/eslint/bin/eslint.js"))
+
+(use-package calfw
+  :config
+  (setq calendar-week-start-day 1)
+  (setq cfw:fchar-junction ?╋
+      cfw:fchar-vertical-line ?┃
+      cfw:fchar-horizontal-line ?━
+      cfw:fchar-left-junction ?┣
+      cfw:fchar-right-junction ?┫
+      cfw:fchar-top-junction ?┯
+      cfw:fchar-top-left-corner ?┏
+      cfw:fchar-top-right-corner ?┓)
+  (use-package calfw-org)
+  (use-package calfw-ical))
+
+(use-package typescript-mode
+    :mode "\\.ts\\'")
+
+(use-package tide
+  :config
+  (defun setup-tide-mode ()
+    (interactive)
+    (tide-setup)
+    (flycheck-mode +1)
+    (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    (eldoc-mode +1)
+    (tide-hl-identifier-mode +1)
+    ;; company is an optional dependency. You have to
+    ;; install it separately via package-install
+    ;; `M-x package-install [ret] company`
+    (company-mode +1))
+
+  ;; aligns annotation to the right hand side
+  (setq company-tooltip-align-annotations t)
+
+  ;; formats the buffer before saving
+  (remove-hook 'before-save-hook 'tide-format-before-save)
+
+  (add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                (setup-tide-mode))))
+  ;; enable typescript-tslint checker
+  (flycheck-add-mode 'typescript-tslint 'web-mode))
+
+(use-package german-holidays
+  :config
+  (setq calendar-holidays holiday-german-BY-holidays))
+(put 'dired-find-alternate-file 'disabled nil)

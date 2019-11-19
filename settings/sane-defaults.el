@@ -1,3 +1,7 @@
+;; When both the source file and its compiled bytecode are present load the
+;; source file first.
+(setq load-prefer-newer t)
+
 ;; disable sounds
 (setq ring-bell-function 'ignore)
 
@@ -131,6 +135,9 @@
 (put 'upcase-region 'disabled nil)
 (put 'set-goal-column 'disabled nil)
 
+;; case search
+(setq case-fold-search t)
+
 ;; Move files between split panes
 (setq dired-dwim-target t)
 
@@ -157,12 +164,18 @@
 (setq explicit-shell-file-name "/bin/bash")
 
 ;; Use visual line mode for text
-(remove-hook 'text-mode-hook #'auto-fill-mode)
-(add-hook 'text-mode-hook #'visual-line-mode)
+(add-hook 'text-mode-hook #'auto-fill-mode)
+(remove-hook 'text-mode-hook #'visual-line-mode)
 
 ;; German
+(setq default-input-method "german-postfix")
 (setq input-method-highlight-flag nil)
 (add-hook 'text-mode-hook (lambda () (set-input-method "german-postfix")))
 
+;; Browse
+(setq browse-url-browser-function 'browse-url-default-browser)
+
+;; add js to rgrep
+;; (add-to-list 'grep-files-aliases '("js" . "*.js"))
 
 (provide 'sane-defaults)

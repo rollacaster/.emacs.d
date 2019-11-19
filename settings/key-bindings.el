@@ -49,6 +49,7 @@
 ;; Copy full path
 (global-set-key (kbd "C-c C-p") 'copy-file-path)
 
+;; goto config
 (global-set-key (kbd "C-c i") (lambda () (interactive)(find-file "~/.emacs.d/init.el")))
 
 ;; Refresh buffer
@@ -71,5 +72,8 @@
 (global-set-key (kbd "C-x e") 'explain-emacs)
 
 (global-set-key (kbd "C-z") (lambda () (message "yes")))
+
+;; Calendar
+(global-set-key (kbd "C-x j") 'rac-open-calendar)
 
 (provide 'key-bindings)
