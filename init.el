@@ -125,6 +125,8 @@
          ("M-i" . paredit-splice-sexp-killing-backward)
          ("M-k" . paredit-splice-sexp-killing-forward)))
 
+(use-package company-restclient)
+
 (use-package company
   :diminish company-mode
   :bind (("C-;" . company-complete))
@@ -661,22 +663,11 @@
   :config
   (setq calendar-holidays holiday-german-BY-holidays))
 
-(use-package swiper
+(use-package ivy
   :diminish ivy-mode
   :bind (("C-c C-r" . ivy-resume)
-         ("C-x m" . counsel-M-x)
-         ("C-x C-m" . counsel-M-x)
-         ("C-x C-f" . counsel-find-file)
-         ("C-M-i" . complete-symbol)
-         ("C-." . counsel-imenu)
-         ("C-c 8" . counsel-unicode-char)
          ("C-c v" . ivy-push-view)
          ("C-c V" . ivy-pop-view)
-         ( "C-h f" . counsel-describe-function)
-         ( "C-h v" . counsel-describe-variable)
-         ( "C-h l" . counsel-find-library)
-         ( "C-h u" . counsel-unicode-char)
-         ( "C-c f" . counsel-rg)
          ( "C-x b" . ivy-switch-buffer))
   :custom
   (ivy-initial-inputs-alist nil)
@@ -684,13 +675,30 @@
   (ivy-use-virtual-buffers t)
   (ivy-height 15)
   (ivy-count-format "%d/%d ")
+  :config
+  (ivy-mode 1))
+
+(use-package counsel
+  :bind (("C-x m" . counsel-M-x)
+         ("C-x C-m" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file)
+         ("C-M-i" . complete-symbol)
+         ("C-." . counsel-imenu)
+         ("C-c 8" . counsel-unicode-char)
+         ( "C-h f" . counsel-describe-function)
+         ( "C-h v" . counsel-describe-variable)
+         ( "C-h l" . counsel-find-library)
+         ( "C-h u" . counsel-unicode-char)
+         ( "C-c f" . counsel-rg))
+  :custom
   (counsel-yank-pop-separator "\n------------\n")
   (counsel-rg-base-command "rg --no-heading --line-number --color never %s .")
   (counsel-rg-base-command "rg --with-filename --no-heading --line-number --color never %s")
   :config
-  (ivy-mode 1)
   (use-package counsel-osx-app
     :bind (("C-c x" . counsel-osx-app))))
+
+(use-package swiper)
 
 ;; Load auto-revert-mode for log files
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
@@ -713,3 +721,5 @@
 (when (file-exists-p "~/.emacs.d/slack.el")
   (progn
     (load-file "~/.emacs.d/slack.el")))
+
+(setq ivy-initial-inputs-alist nil)
