@@ -42,3 +42,4 @@ xkcd/
 /.edbi-ds-history
 /transient/history.el
 /dbs.el
+/slack.el
