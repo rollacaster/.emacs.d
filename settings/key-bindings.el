@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 ;; Avoid quitting emacs by accident
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-x C-c") 'delete-frame)
@@ -5,12 +11,14 @@
 ;; Change keys for faster editing
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
-(global-set-key (kbd "C-c C-k") 'kill-region)
+;; (global-set-key (kbd "C-c C-k") 'kill-region)
 (global-set-key (kbd "C-c g") 'goto-line)
 
 ;; Use hippie-expand
 (global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+;; ibuffer
+(global-set-key (kbd "C-x C-b") 'counsel-ibuffer)
 
 ;; Windmove
 (global-set-key (kbd "C-c h")  'windmove-left)
@@ -71,9 +79,12 @@
 
 (global-set-key (kbd "C-x e") 'explain-emacs)
 
-(global-set-key (kbd "C-z") (lambda () (message "yes")))
+;; TODO Call mac switch to locale
+(global-set-key (kbd "C-z") (lambda () (interactive) (message "Switch the locale!")))
 
 ;; Calendar
 (global-set-key (kbd "C-x j") 'rac-open-calendar)
 
 (provide 'key-bindings)
+
+;;; key-bindings.el ends here

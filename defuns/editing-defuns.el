@@ -148,3 +148,9 @@ is already narrowed."
           (replace-match "\\\"" "FIXEDCASE" "LITERAL"))
         (unfill-paragraph t))))
 
+(defun rac-insert-shrug ()
+  (interactive)
+  (insert "¯\\_(ツ)_/¯"))
+
+
+

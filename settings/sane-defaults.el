@@ -1,3 +1,9 @@
+;;; package --- Summary
+
+;;; Commentary:
+
+;;; Code:
+
 ;; When both the source file and its compiled bytecode are present load the
 ;; source file first.
 (setq load-prefer-newer t)
@@ -45,9 +51,6 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
-;; Set line length to 90
-(setq fill-column 90)
-
 ;; Activate recent mode and set max saved item to 100
 (recentf-mode 1)
 (setq recentf-max-saved-items 100)
@@ -64,7 +67,6 @@
 
 ;; Navigate thourgh CamelCase words
 (global-subword-mode 1)
-;; (diminish 'subword-mode)
 
 ;; Truncate long lines
 (setq-default truncate-lines t)
@@ -80,16 +82,6 @@
 
 ;; Use uniquify
 (setq uniquify-buffer-name-style 'forward)
-
-;; TODO ediff settings
-
-(defun my-create-non-existent-directory ()
-  (let ((parent-directory (file-name-directory buffer-file-name)))
-    (when (and (not (file-exists-p parent-directory))
-               (y-or-n-p (format "Directory `%s' does not exist! Create it?" parent-directory)))
-      (make-directory parent-directory t))))
-
-(add-to-list 'find-file-not-found-functions 'my-create-non-existent-directory)
 
 ;; No electric indent
 (setq electric-indent-mode nil)
@@ -141,11 +133,10 @@
 ;; Move files between split panes
 (setq dired-dwim-target t)
 
+(put 'dired-find-alternate-file 'disabled nil)
+
 ;; Save all pastes in kill ring
 (setq save-interprogram-paste-before-kill t)
-
-;; Load auto-revert-mode for log files
-(add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
 
 ;; No need for ~ files when editing
 (setq create-lockfiles nil)
@@ -163,14 +154,11 @@
 
 (setq explicit-shell-file-name "/bin/bash")
 
-;; Use visual line mode for text
-(add-hook 'text-mode-hook #'auto-fill-mode)
-(remove-hook 'text-mode-hook #'visual-line-mode)
-
 ;; German
 (setq default-input-method "german-postfix")
 (setq input-method-highlight-flag nil)
 (add-hook 'text-mode-hook (lambda () (set-input-method "german-postfix")))
+(set-input-method "german-postfix")
 
 ;; Browse
 (setq browse-url-browser-function 'browse-url-default-browser)
@@ -178,4 +166,17 @@
 ;; add js to rgrep
 ;; (add-to-list 'grep-files-aliases '("js" . "*.js"))
 
+;; Add week numbers to calendar
+(copy-face font-lock-constant-face 'calendar-iso-week-face)
+(set-face-attribute 'calendar-iso-week-face nil
+                    :height 0.7)
+(setq calendar-intermonth-text
+      '(propertize
+        (format "%2d"
+                (car
+                 (calendar-iso-from-absolute
+                  (calendar-absolute-from-gregorian (list month day year)))))
+        'font-lock-face 'calendar-iso-week-face))
+
 (provide 'sane-defaults)
+;;; sane-defaults.el ends here
