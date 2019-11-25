@@ -311,7 +311,7 @@
 
 (use-package pomidor
  :bind (("<f10>" . pomidor)))
-
+(use-package counsel-projectile)
 (use-package projectile
   :bind (:map projectile-mode-map
               ("C-c p" . projectile-command-map))
