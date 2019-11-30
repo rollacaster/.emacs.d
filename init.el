@@ -92,9 +92,9 @@
 
 (use-package hydra)
 
-;; (use-package smartparens
-;;   :diminish smartparens-mode
-;;   :config (smartparens-global-mode 1))
+(use-package smartparens
+  :diminish smartparens-mode
+  :hook ((js2-mode web-mode) . smartparens-mode))
 
 (use-package wgrep
   :bind (:map grep-mode-map
@@ -206,7 +206,7 @@
   :custom
   (prettier-js-show-errors 'echo)
   (prettier-js-args '("--print-width 80" "--single-quote" "--no-semi"))
-  :hook (j2-mode prettier-js-mode))
+  :hook ((js2-mode web-mode) . prettier-js-mode))
 
 (use-package json-mode
   :bind (:map json-mode-map
@@ -244,7 +244,7 @@
 
 (use-package js2-refactor
   :diminish js2-refactor-mode
-  :hook rjsx-mode
+  :hook (rjsx-mode . js2-refactor-mode)
   :config
   (js2r-add-keybindings-with-prefix "C-c C-j"))
 
@@ -699,6 +699,8 @@
     :bind (("C-c x" . counsel-osx-app))))
 
 (use-package swiper)
+
+(use-package smex)
 
 ;; Load auto-revert-mode for log files
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
