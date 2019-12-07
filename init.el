@@ -21,6 +21,26 @@
 
 (setq use-package-always-ensure t)
 
+(use-package use-package-ensure-system-package)
+
+(use-package emacs
+  :ensure nil
+  :ensure-system-package
+  ("/Users/thomas/Library/Fonts/FiraCode-Retina.otf" . "brew tap homebrew/cask-fonts; brew cask install font-fira-code")
+  :config
+  ;; Disable UI Elements
+  (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+  (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+  (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
+  (global-hl-line-mode 1)
+  (mac-auto-operator-composition-mode)
+  (set-frame-font "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
+  (set-face-attribute 'default nil :height 150)
+  (set-frame-name "🐦")
+
+  (setq inhibit-startup-message t))
+
 ;; load paths
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "defuns" user-emacs-directory))
@@ -28,7 +48,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
-(require 'appearance)
 (require 'sane-defaults)
 (require 'key-bindings)
 
