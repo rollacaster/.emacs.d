@@ -17,10 +17,11 @@
 (setq auto-revert-verbose nil)
 
 ;; Show keystrokes in progress
-(setq echo-keystrokes 0.1)
+(setq echo-keystrokes 0.02)
 
 ;; Show paren mode
 (show-paren-mode 1)
+(setq show-paren-delay 0)
 
 ;; Move to trash when deleting
 (setq delete-by-moving-to-trash t)
@@ -56,8 +57,18 @@
 (setq recentf-max-saved-items 100)
 
 ;; Save minibuffer history
+(setq savehist-additional-variables
+        '(kill-ring
+          search-ring
+          regexp-search-ring
+          last-kbd-macro
+          kmacro-ring
+          shell-command-history))
 (savehist-mode 1)
 (setq history-length 1000)
+
+  (setq desktop-restore-eager 5)
+  (desktop-save-mode)
 
 ;; Undo redo window configuration with C-c left/right
 (winner-mode 1)
@@ -177,6 +188,19 @@
                  (calendar-iso-from-absolute
                   (calendar-absolute-from-gregorian (list month day year)))))
         'font-lock-face 'calendar-iso-week-face))
+
+(global-font-lock-mode)
+
+(size-indication-mode)
+
+(global-prettify-symbols-mode)
+
+;; Cannot kill scratch
+(with-current-buffer "*scratch*"
+    (emacs-lock-mode 'kill))
+
+;; focus on hel- views
+(setq help-window-select t)
 
 (provide 'sane-defaults)
 ;;; sane-defaults.el ends here
