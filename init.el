@@ -611,6 +611,10 @@
   :hook (nov-mode . (lambda ()
                       (face-remap-add-relative 'variable-pitch :family "Helvetica"
                              :height 1.0))))
+(use-package all-the-icons)
+(use-package all-the-icons-dired
+  :hook
+  (dired-mode . all-the-icons-dired-mode))
 
 (use-package calfw
   :custom
@@ -702,6 +706,12 @@
 
 (use-package smex)
 
+(use-package eshell
+  :ensure nil
+  :bind (("M-r" . counsel-esh-history)
+         :map eshell-mode-map
+         ("M-r" . counsel-esh-history)))
+
 ;; Load auto-revert-mode for log files
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))
 
@@ -710,6 +720,13 @@
 (dolist (file (directory-files defuns-dir t "\\w+"))
   (when (file-regular-p file)
     (load file)))
+
+(use-package multi-term
+  :bind
+  (( "C-x c" . term-char-mode)
+   ( "C-x l" . term-line-mode)
+   ( "C-x t" . multi-term)
+   ( "C-c t" . multi-term)))
 
 (when (file-exists-p "~/.emacs.d/mail.el")
   (progn
