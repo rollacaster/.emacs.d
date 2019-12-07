@@ -126,13 +126,6 @@
          ( "C-c m" . avy-move-line)
          ( "C-c ." . avy-copy-region)))
 
-;; (use-package auctex
-;;   :mode "\\.tex\\'"
-;;   :defer t
-;;   :custom
-;;   (TeX-parse-self t)
-;;   :hook (turn-on-reftex auto-fill-mode flyspell-mode))
-
 (use-package paredit
   :diminish paredit-mode
   :hook ((emacs-lisp-mode clojure-mode cider-repl-mode eval-expression-minibuffer-setup) . paredit-mode)
@@ -193,13 +186,6 @@
          ( "M-4" . mc/mark-previous-like-this)
          ( "M-#" . mc/unmark-next-like-this)
          ( "M-$" . mc/unmark-previous-like-this)))
-
-;; (use-package elm-mode
-;;   :config
-;;   (add-hook 'elm-mode-hook #'elm-oracle-setup-completion)
-;;   (add-to-list 'company-backends 'company-elm)
-;;   (define-key elm-mode-map (kbd "C-c TAB") 'elm-mode-format-buffer)
-;;   (add-hook 'elm-mode-hook 'yas-minor-mode))
 
 (use-package npm-mode
   :ensure-system-package node
