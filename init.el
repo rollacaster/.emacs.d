@@ -90,11 +90,7 @@
 ;; Setup env variables on mac
 (use-package exec-path-from-shell
   :defer t
-  :if (memq window-system '(mac ns))
-  :config
-  ;; needs to be called twice ¯\_(ツ)_/¯
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-initialize))
+  :if (memq window-system '(mac ns)))
 
 (use-package expand-region
   :bind (("M-2" . er/expand-region)
@@ -206,12 +202,15 @@
 ;;   (add-hook 'elm-mode-hook 'yas-minor-mode))
 
 (use-package npm-mode
+  :ensure-system-package node
   :diminish npm-mode
   :config
   (npm-global-mode))
 
 (use-package meghanada
   :mode ("\\.java\\'" . java-mode)
+  :ensure-system-package
+  ("/usr/bin/java" . "brew cask install java")
   :custom
   (jdee-server-dir "~/Projects/jdee-server/target")
   :config
@@ -222,6 +221,7 @@
             (remove-hook 'before-save-hook 'meghanada-code-beautify-before-save))))
 
 (use-package prettier-js
+  :ensure-system-package prettier
   :diminish prettier-js-mode
   :custom
   (prettier-js-show-errors 'echo)
@@ -361,6 +361,7 @@
   (add-to-list 'projectile-globally-ignored-directories "elm-stuff"))
 
 (use-package magit
+  :ensure-system-package git
   :custom
   (magit-completing-read-function 'ivy-completing-read)
   :bind (( "C-x g" . magit-status)
@@ -376,24 +377,16 @@
   :ensure nil)
 
 (use-package flyspell
+  :ensure-system-package hunspell
   :diminish flyspell-mode
   :ensure nil
   :config
-  (cond
-   ;; try hunspell at first
-   ;; if hunspell does NOT exist, use aspell
-   ((executable-find "hunspell")
-    (setq ispell-program-name "hunspell")
-    (setq ispell-local-dictionary "en_US")
-    (setq ispell-local-dictionary-alist
-          ;; Please note the list `("-d" "en_US")` contains ACTUAL parameters passed to hunspell
-          ;; You could use `("-d" "en_US,en_US-med")` to check with multiple dictionaries
-          '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8))))
-
-   ((executable-find "aspell")
-    (setq ispell-program-name "aspell")
-    ;; Please note ispell-extra-args contains ACTUAL parameters passed to aspell
-    (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))))
+  (setq ispell-program-name "hunspell")
+  (setq ispell-local-dictionary "en_US")
+  (setq ispell-local-dictionary-alist
+        ;; Please note the list `("-d" "en_US")` contains ACTUAL parameters passed to hunspell
+        ;; You could use `("-d" "en_US,en_US-med")` to check with multiple dictionaries
+        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
 
   (defun fd-switch-dictionary()
     (interactive)
@@ -537,7 +530,8 @@
 
 (use-package try)
 
-(use-package docker)
+(use-package docker
+  :ensure-system-package (docker . "brew cask install docker"))
 
 (use-package pcre2el
   :diminish pcre-mode
@@ -556,6 +550,9 @@
 (use-package osx-location)
 
 (use-package google-this
+  :ensure-system-package
+  (("/Applications/Google Chrome.app" . "brew cask install google-chrome")
+   ("/Applications/Firefox.app" . "brew cask install firefox"))
   :bind (("s-g" . google-this)))
 
 (use-package elcontext
@@ -565,7 +562,8 @@
 
 (use-package ob-restclient)
 
-(use-package vmd-mode)
+(use-package vmd-mode
+  :ensure-system-package (vmd . "npm i -g vmd"))
 
 (use-package eldoc
   :diminish eldoc-mode
@@ -596,6 +594,7 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package clojure-mode
+  :ensure-system-package clojure
   :bind (:map clojure-mode-map
               ("C-c w" . rac-start-sketch)
               ("C-c q" . rac-exit-sketch)
@@ -709,6 +708,7 @@
   (ivy-mode 1))
 
 (use-package counsel
+  :ensure-system-package (rg . ripgrep)
   :bind (("C-x m" . counsel-M-x)
          ("C-x C-m" . counsel-M-x)
          ("C-x C-f" . counsel-find-file)
@@ -723,10 +723,10 @@
   :custom
   (counsel-yank-pop-separator "\n------------\n")
   (counsel-rg-base-command "rg --no-heading --line-number --color never %s .")
-  (counsel-rg-base-command "rg --with-filename --no-heading --line-number --color never %s")
-  :config
-  (use-package counsel-osx-app
-    :bind (("C-c x" . counsel-osx-app))))
+  (counsel-rg-base-command "rg --with-filename --no-heading --line-number --color never %s"))
+
+(use-package counsel-osx-app
+    :bind (("C-c x" . counsel-osx-app)))
 
 (use-package swiper)
 
