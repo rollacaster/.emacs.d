@@ -4,7 +4,8 @@
              (when (and (not (eq buffer (current-buffer)))
                         (or
                          (eq 'term-mode (buffer-local-value 'major-mode buffer))
-                         (eq 'eshell-mode (buffer-local-value 'major-mode buffer))))
+                         (eq 'eshell-mode (buffer-local-value 'major-mode buffer))
+                         (eq 'cider-repl-mode (buffer-local-value 'major-mode buffer))))
              (kill-buffer buffer)))
          (buffer-list)))
 
