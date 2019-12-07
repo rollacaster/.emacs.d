@@ -70,6 +70,7 @@
 
 ;; Setup env variables on mac
 (use-package exec-path-from-shell
+  :defer t
   :if (memq window-system '(mac ns))
   :config
   ;; needs to be called twice ¯\_(ツ)_/¯
@@ -489,15 +490,7 @@
     (noflet ((switch-to-buffer-other-window (buf) (switch-to-buffer buf)))
       (org-capture)))
   :config
-  (use-package org-pdfview)
-  (use-package org-bullets
-    :hook (org-mode . org-bullets-mode))
-  (use-package org-download
-    :config
-    (setq org-download-screenshot-method "screencapture -i %s"))
-  ;; (use-package ox-jira)
-  (use-package ox-json)
-  (use-package ox-gfm)
+
   ;; (defun rac-completion-hook ()
   ;;   (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t))
   ;; (add-hook 'org-mode-hook #'rac-completion-hook)
@@ -509,6 +502,19 @@
                  (reusable-frames . visible)
                  (side            . bottom)
                  (window-height   . 0.2))))
+
+(use-package org-pdfview
+  :defer t)
+
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode))
+
+(use-package org-download
+  :config
+  (setq org-download-screenshot-method "screencapture -i %s"))
+  ;; (use-package ox-jira)
+(use-package ox-json)
+(use-package ox-gfm)
 
 (use-package try)
 
@@ -596,6 +602,7 @@
 
 
 (use-package pdf-tools
+  :defer t
   :config
   (pdf-loader-install))
 
