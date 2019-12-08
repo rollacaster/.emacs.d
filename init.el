@@ -20,6 +20,7 @@
         (package-install 'use-package))
 
 (setq use-package-always-ensure t)
+(setq use-package-compute-statistics nil)
 
 (use-package use-package-ensure-system-package)
 
@@ -519,12 +520,13 @@
   :config
   (setq org-download-screenshot-method "screencapture -i %s"))
   ;; (use-package ox-jira)
-(use-package ox-json)
+
 (use-package ox-gfm)
 
 (use-package try)
 
 (use-package docker
+  :defer t
   :ensure-system-package (docker . "brew cask install docker"))
 
 (use-package pcre2el
@@ -578,6 +580,7 @@
   (cider-repl-use-pretty-printing t))
 
 (use-package clj-refactor
+  :defer t
   :custom
   (cljr-warn-on-eval nil)
   :config
