@@ -753,9 +753,66 @@
     (load-file "~/.emacs.d/mail.el")
     (require 'mail)))
 
+(use-package mu4e
+  :ensure nil
+  :custom
+  (mu4e-context-policy 'ask)
+  (mu4e-hide-index-messages t)
+  (message-send-mail-function  'smtpmail-send-it)
+  (smtpmail-stream-type  'starttls)
+  (smtpmail-smtp-service 587)
+  (mu4e-use-fancy-chars t)
+  (mu4e-view-show-images t)
+  (mu4e-get-mail-command "mbsync -a")
+  (mu4e-update-interval 600)
+  (mu4e-compose-signature-auto-include nil)
+  (mu4e-compose-dont-reply-to-self t)
+  (mu4e-bookmarks
+  `( ,(make-mu4e-bookmark
+	:name  "Unread messages"
+	:query "flag:unread AND NOT flag:trashed AND NOT subject:JIRA*"
+	:key ?u)
+     ,(make-mu4e-bookmark
+	:name "Today's messages"
+	:query "date:today..now"
+	:key ?t)
+     ,(make-mu4e-bookmark
+	:name "Last 7 days"
+	:query "date:7d..now"
+	:key ?w)))
+  (mu4e-headers-skip-duplicates t)
+  (message-kill-buffer-on-exit t)
+  (mu4e-headers-fields
+      '((:human-date . 12)
+        (:flags . 6)
+        (:mailing-list . 8)
+        (:from-or-to . 25)
+        (:thread-subject . 30)
+        (:maildir . 20)))
+  (mu4e-change-filenames-when-moving t)
+  (smtpmail-queue-mail nil  ;; start in normal mode
+      smtpmail-queue-dir   "~/Maildir/queue/cur")
+  :config
+  (require 'smtpmail)
+  (require 'org-mu4e)
+  (when (fboundp 'imagemagick-register-types)
+    (imagemagick-register-types)))
+
 (when (file-exists-p "~/.emacs.d/dbs.el")
   (progn
     (load-file "~/.emacs.d/dbs.el")))
+
+(use-package slack
+  :commands (slack-start)
+  :ensure-system-package ("/Applications/Slack.app" . "brew cask install slack")
+  :hook (slack-mode . (lambda () (set-input-method "german-postfix")))
+  :bind (:map slack-mode-map
+              ("@" . slack-message-embed-mention)
+              ("#" . slack-message-embed-channel))
+  :custom
+  (slack-buffer-emojify t)
+  (slack-prefer-current-team t)
+  (slack-typing-visibility 'never))
 
 (when (file-exists-p "~/.emacs.d/slack.el")
   (progn
