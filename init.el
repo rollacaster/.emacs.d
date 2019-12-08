@@ -26,7 +26,12 @@
 (use-package emacs
   :ensure nil
   :ensure-system-package
-  ("/Users/thomas/Library/Fonts/FiraCode-Retina.otf" . "brew tap homebrew/cask-fonts; brew cask install font-fira-code")
+  (("/Users/thomas/Library/Fonts/FiraCode-Retina.otf" . "brew tap homebrew/cask-fonts; brew cask install font-fira-code")
+   mu
+   isync
+   (fuck . "npm i -g fuck-you")
+   (kill-port . "npm i -g kill-port")
+   (psql . postgresql))
   :config
   ;; Disable UI Elements
   (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -39,7 +44,8 @@
   (set-face-attribute 'default nil :height 150)
   (set-frame-name "🐦")
 
-  (setq inhibit-startup-message t))
+  (setq inhibit-startup-message t)
+  (add-to-list 'load-path "/usr/local/Cellar/mu/1.2.0_1/share/emacs/site-lisp/mu/mu4e/"))
 
 ;; load paths
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
@@ -386,6 +392,8 @@
 (use-package noflet)
 
 (use-package org
+  :ensure-system-package
+  (("/Applications/Dropbox.app" . "brew cask install dropbox"))
   :mode ("\\.org" . org-mode)
   :bind (("C-c c" . org-capture)
          ("C-c s" . org-store-link)
@@ -752,5 +760,9 @@
 (when (file-exists-p "~/.emacs.d/slack.el")
   (progn
     (load-file "~/.emacs.d/slack.el")))
+
+(use-package counsel-spotify
+  :ensure-system-package
+  ("/Applications/Spotify.app" . "brew cask install spotify"))
 
 (setq ivy-initial-inputs-alist nil)
