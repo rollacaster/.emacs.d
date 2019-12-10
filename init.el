@@ -30,6 +30,7 @@
   (("/Users/thomas/Library/Fonts/FiraCode-Retina.otf" . "brew tap homebrew/cask-fonts; brew cask install font-fira-code")
    mu
    isync
+   node
    (fuck . "npm i -g fuck-you")
    (kill-port . "npm i -g kill-port")
    (psql . postgresql))
@@ -195,7 +196,6 @@
          ( "M-$" . mc/unmark-previous-like-this)))
 
 (use-package npm-mode
-  :ensure-system-package node
   :diminish npm-mode
   :config
   (npm-global-mode))
