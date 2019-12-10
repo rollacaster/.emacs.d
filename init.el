@@ -825,4 +825,10 @@
   :ensure-system-package
   ("/Applications/Spotify.app" . "brew cask install spotify"))
 
+(use-package dired-omit-mode
+  :ensure nil
+  :hook dired-mode
+  :custom
+  (dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$"))
+
 (setq ivy-initial-inputs-alist nil)
