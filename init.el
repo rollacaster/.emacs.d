@@ -791,7 +791,7 @@
         (:mailing-list . 8)
         (:from-or-to . 25)
         (:thread-subject . 30)
-        (:maildir . 20)))
+        (:maildir . 40)))
   (mu4e-change-filenames-when-moving t)
   (smtpmail-queue-mail nil  ;; start in normal mode
       smtpmail-queue-dir   "~/Maildir/queue/cur")
