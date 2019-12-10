@@ -197,6 +197,8 @@
          ( "M-$" . mc/unmark-previous-like-this)))
 
 (use-package npm-mode
+  :ensure-system-package
+  (nodemon . "npm i -g nodemon")
   :diminish npm-mode
   :config
   (npm-global-mode))
