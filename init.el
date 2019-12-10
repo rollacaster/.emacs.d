@@ -591,7 +591,8 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package clojure-mode
-  :ensure-system-package clojure
+  :ensure-system-package (clojure
+                          (lein . leiningen))
   :bind (:map clojure-mode-map
               ("C-c w" . rac-start-sketch)
               ("C-c q" . rac-exit-sketch)
