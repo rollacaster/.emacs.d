@@ -609,11 +609,6 @@
 
 (use-package dictcc)
 
-;; (use-package framemove
-;;   :load-path "frame-move.el"
-;;   :custom
-;;   (framemove-hook-into-windmove t))
-
 (use-package dired-details
   :load-path "dired-details.el"
   :hook (dired-mode . dired-hide-details-mode)
@@ -806,8 +801,9 @@
     (imagemagick-register-types)))
 
 (when (file-exists-p "~/.emacs.d/dbs.el")
-  (progn
-    (load-file "~/.emacs.d/dbs.el")))
+  (load-file "~/.emacs.d/dbs.el"))
+
+(load-file "~/.emacs.d/frame-move.el")
 
 (use-package slack
   :commands (slack-start)
@@ -822,8 +818,7 @@
   (slack-typing-visibility 'never))
 
 (when (file-exists-p "~/.emacs.d/slack.el")
-  (progn
-    (load-file "~/.emacs.d/slack.el")))
+  (load-file "~/.emacs.d/slack.el"))
 
 (use-package counsel-spotify
   :ensure-system-package
