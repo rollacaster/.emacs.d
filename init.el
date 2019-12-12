@@ -29,6 +29,7 @@
   :ensure-system-package
   (("/Users/thomas/Library/Fonts/FiraCode-Retina.otf" . "brew tap homebrew/cask-fonts; brew cask install font-fira-code")
    ("/Applications/TeamViewer.app" . "brew cask install teamviewer")
+   (aws . awscli)
    mu
    isync
    node
@@ -198,7 +199,8 @@
 
 (use-package npm-mode
   :ensure-system-package
-  (nodemon . "npm i -g nodemon")
+  ((nodemon . "npm i -g nodemon")
+   yarn)
   :diminish npm-mode
   :config
   (npm-global-mode))
