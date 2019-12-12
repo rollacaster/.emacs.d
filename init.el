@@ -655,7 +655,8 @@
   (use-package calfw-ical))
 
 (use-package typescript-mode
-    :mode "\\.ts\\'")
+    :mode ("\\.ts\\'"
+           "\\.tsx\\'"))
 
 (use-package tide
   :custom
