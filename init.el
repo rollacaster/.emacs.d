@@ -830,6 +830,8 @@
   :ensure nil
   :hook dired-mode
   :custom
-  (dired-omit-files "^\\.?#\\|^\\.$\\|^\\.\\.$\\|^\\..*$"))
+  (dired-omit-files "^\\.?#\\|^\\.\\.$|^\\..*$"))
+
+
 
 (setq ivy-initial-inputs-alist nil)
