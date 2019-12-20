@@ -428,7 +428,9 @@
   (org-ellipsis "⤵")
   (org-folder "~/Dropbox/org")
   (org-agenda-files (seq-filter
-                     (lambda (file) (not (string-match-p "archive" file)))
+                     (lambda (file) (and
+                                (not (string-match-p "archive" file))
+                                (not (string-match-p "organice" file))))
                      (nthcdr 2 (directory-files org-folder t))))
   ;; babel
   (org-babel-load-languages
