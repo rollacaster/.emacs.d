@@ -120,7 +120,7 @@
 
 (use-package smartparens
   :diminish smartparens-mode
-  :hook ((js2-mode web-mode) . smartparens-mode))
+  :hook ((js2-mode web-mode json-mode) . smartparens-mode))
 
 (use-package wgrep
   :bind (:map grep-mode-map
@@ -834,10 +834,6 @@
 
 (use-package dired-omit-mode
   :ensure nil
-  :hook dired-mode
-  :custom
-  (dired-omit-files "^\\.?#\\|^\\.\\.$|^\\..*$"))
-
-
+  :hook dired-mode)
 
 (setq ivy-initial-inputs-alist nil)
