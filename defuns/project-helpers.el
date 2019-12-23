@@ -5,5 +5,5 @@
 
 (defun rac-open-localhost ()
   (interactive)
-  (let ((port (read-number "Port:" )))
-    (browse-url "http://localhost:")))
+  (let ((port (read-string "Port:" )))
+    (browse-url  (concat "http://localhost:" port))))
