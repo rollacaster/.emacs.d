@@ -200,7 +200,9 @@
 (use-package npm-mode
   :ensure-system-package
   ((nodemon . "npm i -g nodemon")
-   yarn)
+   yarn
+   watchman
+   (eslint . "npm i -g eslint"))
   :diminish npm-mode
   :config
   (npm-global-mode))
@@ -399,7 +401,8 @@
 
 (use-package org
   :ensure-system-package
-  (("/Applications/Dropbox.app" . "brew cask install dropbox"))
+  (("/Applications/Dropbox.app" . "brew cask install dropbox")
+   (pdflatex . "brew cask install mactex-no-gui"))
   :mode ("\\.org" . org-mode)
   :bind (("C-c c" . org-capture)
          ("C-c s" . org-store-link)
