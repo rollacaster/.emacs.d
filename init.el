@@ -832,8 +832,6 @@
   :ensure-system-package
   ("/Applications/Spotify.app" . "brew cask install spotify"))
 
-(use-package dired-omit-mode
-  :ensure nil
-  :hook dired-mode)
+(use-package inf-clojure)
 
 (setq ivy-initial-inputs-alist nil)
