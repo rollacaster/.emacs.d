@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: svg
+# key: svg
+# --
+(-> d3
+    (.select "#app")
+    (.append "svg")
+    (.attr "width" width)
+    (.attr "height" height)
+    (.attr "viewBox" (str "0 0 " width " "height)))
