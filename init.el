@@ -34,6 +34,7 @@
    isync
    node
    (fuck . "npm i -g fuck-you")
+   (internal-ip . "npm i -g internal-ip-cli")
    (kill-port . "npm i -g kill-port")
    (psql . postgresql))
   :config
