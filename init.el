@@ -204,7 +204,8 @@
   ((nodemon . "npm i -g nodemon")
    yarn
    watchman
-   (eslint . "npm i -g eslint"))
+   (eslint . "npm i -g eslint")
+   (n . "npm i -g n"))
   :diminish npm-mode
   :config
   (npm-global-mode))
