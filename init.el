@@ -405,7 +405,7 @@
 (use-package org
   :ensure-system-package
   (("/Applications/Dropbox.app" . "brew cask install dropbox")
-   (pdflatex . "brew cask install mactex-no-gui"))
+   (latex . "brew cask install mactex-no-gui"))
   :mode ("\\.org" . org-mode)
   :bind (("C-c c" . org-capture)
          ("C-c s" . org-store-link)
