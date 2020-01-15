@@ -45,12 +45,13 @@
 
   (global-hl-line-mode 1)
   (mac-auto-operator-composition-mode)
-  (set-frame-font "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
   (set-face-attribute 'default nil :height 150)
   (set-frame-name "🐦")
 
   (setq inhibit-startup-message t)
   (add-to-list 'load-path "/usr/local/Cellar/mu/1.2.0_1/share/emacs/site-lisp/mu/mu4e/"))
+
+(set-frame-font "-*-Fira Code-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 
 ;; load paths
 (add-to-list 'load-path (expand-file-name "settings" user-emacs-directory))
