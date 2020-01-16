@@ -29,6 +29,7 @@
   :ensure-system-package
   (("/Users/thomas/Library/Fonts/FiraCode-Retina.otf" . "brew tap homebrew/cask-fonts; brew cask install font-fira-code")
    ("/Applications/TeamViewer.app" . "brew cask install teamviewer")
+   ("/Applications/Kap.app" . "brew cask install kap")
    (aws . awscli)
    mu
    isync
