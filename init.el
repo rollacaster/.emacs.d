@@ -384,6 +384,7 @@
   :diminish flyspell-mode
   :ensure nil
   :config
+  (setq ispell-current-dictionary "en_US")
   (setq ispell-program-name "hunspell")
   (setq ispell-local-dictionary "en_US")
   (setq ispell-local-dictionary-alist
