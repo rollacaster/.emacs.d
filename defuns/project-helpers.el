@@ -7,3 +7,11 @@
   (interactive)
   (let ((port (read-string "Port:" )))
     (browse-url  (concat "http://localhost:" port))))
+
+(defun rac-add-project ()
+  (interactive)
+  (let ((project (read-string "Project: ")))
+    (apply #'magit-clone-internal
+           (list (concat "https://github.com/rollacaster/" project ".git")
+                 (concat "/Users/thomas/projects/" project)
+                 nil))))
