@@ -5,7 +5,7 @@
 
 (defun rac-open-localhost ()
   (interactive)
-  (let ((port (read-string "Port:" )))
+  (let ((port (completing-read "Port:" '("8080" "8904" "9500"))))
     (browse-url  (concat "http://localhost:" port))))
 
 (defun rac-add-project ()
