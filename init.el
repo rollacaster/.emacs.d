@@ -773,9 +773,11 @@
     (load-file "~/.emacs.d/mail.el")
     (require 'mail)))
 
+(when (file-exists-p "~/.emacs.d/work.el")
+  (load-file "~/.emacs.d/work.el"))
+
 (when (file-exists-p "~/.emacs.d/calendar.el")
-  (progn
-    (load-file "~/.emacs.d/calendar.el")))
+  (load-file "~/.emacs.d/calendar.el"))
 
 (use-package mu4e
   :ensure nil

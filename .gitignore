@@ -48,3 +48,4 @@ xkcd/
 /elpa-old
 /forge-database.sqlite
 /.emacs.desktop*
+/work.el
