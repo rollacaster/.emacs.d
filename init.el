@@ -846,3 +846,7 @@
 (use-package inf-clojure)
 
 (setq ivy-initial-inputs-alist nil)
+(use-package pandoc-mode
+  :hook markdown-mode
+  :ensure-system-package pandoc)
+
