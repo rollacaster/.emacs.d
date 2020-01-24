@@ -607,8 +607,10 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package clojure-mode
-  :ensure-system-package (clojure
-                          (lein . leiningen))
+  :ensure-system-package (((java . "brew tap AdoptOpenJDK/openjdk && brew cask install adoptopenjdk11"))
+                          clojure
+                          (lein . leiningen)
+                          (heroku . "brew tap heroku/brew && brew install heroku"))
   :bind (:map clojure-mode-map
               ("C-c w" . rac-start-sketch)
               ("C-c q" . rac-exit-sketch)
