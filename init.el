@@ -438,7 +438,8 @@
   (org-agenda-files (seq-filter
                      (lambda (file) (and
                                 (not (string-match-p "archive" file))
-                                (not (string-match-p "organice" file))))
+                                (not (string-match-p "organice" file))
+                                (string-match-p "\\.org" file)))
                      (nthcdr 2 (directory-files org-folder t))))
   ;; babel
   (org-babel-load-languages
