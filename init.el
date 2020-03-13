@@ -179,6 +179,8 @@
   (flycheck-add-mode 'html-tidy 'web-mode)
   (flycheck-add-mode 'javascript-eslint 'js2-mode))
 
+(use-package flycheck-clj-kondo)
+
 (use-package yasnippet
   :diminish yas-minor-mode
   :hook ((prog-mode org-mode sql-interactive-mode) . yas-minor-mode)
@@ -617,6 +619,7 @@
               ("C-c s" . replace-string)
               ("C-c C-s" . replace-string))
   :config
+  (require 'flycheck-clj-kondo)
   (use-package clojure-mode-extra-font-locking)
   ;; Use clojure mode for other extensions
   (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
