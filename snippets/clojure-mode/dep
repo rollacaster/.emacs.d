@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dep
+# key: dep
+# --
+$1 {:mvn/version "$2"}
