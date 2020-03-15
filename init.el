@@ -858,3 +858,7 @@
   :hook markdown-mode
   :ensure-system-package pandoc)
 
+(use-package csv-mode
+  :hook (csv-mode . csv-align-mode)
+  :mode ("\\.csv\\'" . csv-mode))
+
