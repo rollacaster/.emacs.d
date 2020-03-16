@@ -202,5 +202,9 @@
 ;; focus on hel- views
 (setq help-window-select t)
 
+;; git comits should wrap
+(remove-hook 'git-commit-mode-hook 'auto-fill-mode)
+(add-hook 'git-commit-mode-hook 'visual-line-mode)
+
 (provide 'sane-defaults)
 ;;; sane-defaults.el ends here
