@@ -862,3 +862,15 @@
   :hook (csv-mode . csv-align-mode)
   :mode ("\\.csv\\'" . csv-mode))
 
+(use-package forge)
+
+(use-package ox-jira)
+
+
+(use-package quelpa-use-package)
+(require 'quelpa-use-package)
+
+(use-package so-long
+  :quelpa (so-long :url "https://raw.githubusercontent.com/emacs-mirror/emacs/master/lisp/so-long.el" :fetcher url)
+  :config (global-so-long-mode 1))
+
