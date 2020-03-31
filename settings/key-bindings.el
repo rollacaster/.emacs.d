@@ -85,6 +85,9 @@
 ;; Calendar
 (global-set-key (kbd "C-x j") 'rac-open-calendar)
 
+;; Counsel Rg with default
+(global-set-key (kbd "C-c f") 'rac-rg)
+
 (provide 'key-bindings)
 
 ;;; key-bindings.el ends here

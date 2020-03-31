@@ -733,8 +733,7 @@
          ( "C-h f" . counsel-describe-function)
          ( "C-h v" . counsel-describe-variable)
          ( "C-h l" . counsel-find-library)
-         ( "C-h u" . counsel-unicode-char)
-         ( "C-c f" . counsel-rg))
+         ( "C-h u" . counsel-unicode-char))
   :custom
   (counsel-yank-pop-separator "\n------------\n")
   (counsel-rg-base-command "rg --no-heading --line-number --color never %s .")
