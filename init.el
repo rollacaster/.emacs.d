@@ -336,7 +336,8 @@
   (global-undo-tree-mode))
 
 (use-package pomidor
- :bind (("<f10>" . pomidor)))
+ :bind (("<f10>" . pomidor))
+ :custom (pomidor-play-sound-file . nil))
 (use-package counsel-projectile)
 (use-package projectile
   :bind (:map projectile-mode-map
