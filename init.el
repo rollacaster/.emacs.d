@@ -183,7 +183,7 @@
 
 (use-package yasnippet
   :diminish yas-minor-mode
-  :hook ((prog-mode org-mode sql-interactive-mode) . yas-minor-mode)
+  :hook ((prog-mode org-mode sql-interactive-mode mu4e-compose-mode) . yas-minor-mode)
   :custom
   (yas-snippet-dirs '("~/.emacs.d/snippets"))
   ;; Manually define indents
