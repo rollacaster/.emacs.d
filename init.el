@@ -473,6 +473,8 @@
     ((org-agenda-files :level . 1)
      (org-agenda-files :level . 2)
      (org-agenda-files :level . 3))))
+  (org-refile-use-outline-path 'file)
+  (org-outline-path-complete-in-steps nil)
   (org-refile-use-outline-path 'file
                                org-outline-path-complete-in-steps nil)
 
