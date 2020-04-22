@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: depsnode
+# key: depsnode
+# --
+{:deps {org.clojure/clojurescript {:mvn/version "1.10.520"}}
+ :target "node"
+ :npm-deps {:node-fetch "2.6.0"}
+ :install-deps true}
