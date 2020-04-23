@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: ImmutableArraySlice
-# key: [sli
+# key: ias
 # --
 [...$1.slice(0,i), $0, ...$1.slice(i+1)
