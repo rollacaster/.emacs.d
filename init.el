@@ -716,6 +716,8 @@
          ("C-c v" . ivy-push-view)
          ("C-c V" . ivy-pop-view)
          ( "C-x b" . ivy-switch-buffer))
+  :custom-face
+  (ivy-highlight-face ((t nil)))
   :custom
   (ivy-initial-inputs-alist nil)
   (ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
