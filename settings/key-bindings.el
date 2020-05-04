@@ -85,6 +85,9 @@
 ;; Calendar
 (global-set-key (kbd "C-x j") 'rac-open-calendar)
 
+;; Open localhost
+(global-set-key (kbd "C-x o") 'rac-open-localhost)
+
 (provide 'key-bindings)
 
 ;;; key-bindings.el ends here
