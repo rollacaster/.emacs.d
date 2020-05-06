@@ -616,7 +616,7 @@
                           clojure
                           (lein . leiningen)
                           (heroku . "brew tap heroku/brew && brew install heroku")
-                          borkdude/brew/jet)
+                          (jet . borkdude/brew/jet))
   :bind (:map clojure-mode-map
               ("C-c w" . rac-start-sketch)
               ("C-c q" . rac-exit-sketch)
