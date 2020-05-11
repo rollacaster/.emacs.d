@@ -67,9 +67,6 @@
 (savehist-mode 1)
 (setq history-length 1000)
 
-  (setq desktop-restore-eager 5)
-  (desktop-save-mode)
-
 ;; Undo redo window configuration with C-c left/right
 (winner-mode 1)
 
