@@ -880,3 +880,5 @@
   :quelpa (so-long :url "https://raw.githubusercontent.com/emacs-mirror/emacs/master/lisp/so-long.el" :fetcher url)
   :config (global-so-long-mode 1))
 
+(use-package grab-mac-link)
+
