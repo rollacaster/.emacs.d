@@ -591,6 +591,8 @@
               ("C-c RET" . mc/mark-all-like-this-dwim))
   :hook ((cider-repl-mode cider-mode) . cider-company-enable-fuzzy-completion)
   :custom
+  (cider-print-quota 10485)
+  (cider-print-options '(("length" 100) ("level" 10) ("print-length" 100) ("print-level" 10)))
   (cider-figwheel-main-default-options ":dev")
   (cider-repl-history-file "~/.emacs.d/cider-history")
   (cider-repl-wrap-history t)
