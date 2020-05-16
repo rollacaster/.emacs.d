@@ -8,7 +8,8 @@
 
 (defn setup [])
 
-(defn update-state [])
+(defn update-state [state]
+  state)
 
 (defn draw [])
 
