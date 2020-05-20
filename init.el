@@ -795,6 +795,7 @@
   :custom
   (mu4e-context-policy 'ask)
   (mu4e-hide-index-messages t)
+  (mu4e-attachment-dir "~/Downloads")
   (message-send-mail-function  'smtpmail-send-it)
   (smtpmail-stream-type  'starttls)
   (smtpmail-smtp-service 587)
