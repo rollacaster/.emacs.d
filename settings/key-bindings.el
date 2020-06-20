@@ -88,6 +88,9 @@
 ;; Open localhost
 (global-set-key (kbd "C-x o") 'rac-open-localhost)
 
+;; grab mac-link
+(global-set-key (kbd "s-c") 'grab-mac-link)
+
 (provide 'key-bindings)
 
 ;;; key-bindings.el ends here
