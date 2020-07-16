@@ -407,6 +407,12 @@
 
 (use-package noflet)
 
+(defun rac-org-files-list ()
+  (delq nil
+        (mapcar (lambda (buffer)
+                  (buffer-file-name buffer))
+                (org-buffer-list 'files t))))
+
 (use-package org
   :ensure-system-package
   (("/Applications/Dropbox.app" . "brew cask install dropbox")
@@ -472,7 +478,9 @@
    (quote
     ((org-agenda-files :level . 1)
      (org-agenda-files :level . 2)
-     (org-agenda-files :level . 3))))
+     (org-agenda-files :level . 3)
+     (rac-org-files-list :maxlevel . 3)))))
+
   (org-refile-use-outline-path 'file)
   (org-outline-path-complete-in-steps nil)
   (org-refile-use-outline-path 'file
@@ -795,6 +803,7 @@
   :custom
   (mu4e-context-policy 'ask)
   (mu4e-hide-index-messages t)
+  (mu4e-attachment-dir "~/Downloads")
   (message-send-mail-function  'smtpmail-send-it)
   (smtpmail-stream-type  'starttls)
   (smtpmail-smtp-service 587)
