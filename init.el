@@ -424,20 +424,20 @@
          ("C-." . counsel-imenu))
   :custom
   ;; Org capture templates to add todos or learn actions
-  (org-capture-templates '(("i" "Inbox" entry (file "~/Dropbox/org/Inbox.org")
+  (org-capture-templates '(("i" "Inbox" entry (file "~/org/Inbox.org")
                             "* %?  %i\n %a")
-                           ("t" "Todo" entry (file+headline "~/Dropbox/org/Todo.org" "TODOs")
+                           ("t" "Todo" entry (file+headline "~/org/Todo.org" "TODOs")
                             "* TODO %?")
-                           ("m" "Maybe" entry (file "~/Dropbox/org/Maybe.org")
+                           ("m" "Maybe" entry (file "~/org/Maybe.org")
                             "* %?\n")
-                           ("r" "Read" entry (file "~/Dropbox/org/Inbox.org")
+                           ("r" "Read" entry (file "~/org/Inbox.org")
                             "* %? %^L" :prepend t)
-                           ("j" "Journal" entry (file+datetree "~/Dropbox/org/Journal.org")
+                           ("j" "Journal" entry (file+datetree "~/org/Journal.org")
                             "* %?%i\n%U\n")))
   (org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)")))
   (org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p)))
   (org-ellipsis "⤵")
-  (org-folder "~/Dropbox/org")
+  (org-folder "~/org")
   (org-agenda-files (seq-filter
                      (lambda (file) (and
                                 (not (string-match-p "archive" file))
