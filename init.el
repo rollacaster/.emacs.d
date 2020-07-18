@@ -232,7 +232,7 @@
   :custom
   (prettier-js-show-errors 'echo)
   (prettier-js-args '("--print-width 80" "--single-quote" "--no-semi"))
-  :hook ((js2-mode web-mode) . prettier-js-mode))
+  :hook ((js2-mode web-mode css-mode) . prettier-js-mode))
 
 (use-package json-mode
   :bind (:map json-mode-map
