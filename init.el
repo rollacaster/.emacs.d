@@ -479,7 +479,7 @@
     ((org-agenda-files :level . 1)
      (org-agenda-files :level . 2)
      (org-agenda-files :level . 3)
-     (rac-org-files-list :maxlevel . 3)))))
+     (rac-org-files-list :maxlevel . 3))))
 
   (org-refile-use-outline-path 'file)
   (org-outline-path-complete-in-steps nil)
