@@ -1,0 +1,9 @@
+#+AUTHOR: Thomas Sojka
+#+EMAIL: contact@thomas-sojka.tech
+#+OPTIONS: author:nil date:nil num:nil timestamp:nil
+#+HTML_DOCTYPE: html5
+#+HTML_CONTAINER: section
+#+DESCRIPTION: data visualizations | frontend development | functional programming
+#+KEYWORDS: programming emacs clojure javascript blog tech
+#+OPTIONS: html-postamble:t html-scripts:nil html-style:nil html5-fancy:t
+#+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/>
