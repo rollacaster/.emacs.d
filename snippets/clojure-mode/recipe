@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: recipe
+# key: recipe
+# --
+{:id ""
+ :name ""
+ :link ""
+ :image ""}

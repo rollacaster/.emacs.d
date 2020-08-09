@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: tailwind-rn
+# key: tail
+# --
+style={tailwind('$0')}
