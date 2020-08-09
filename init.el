@@ -479,10 +479,12 @@
     ((org-agenda-files :level . 1)
      (org-agenda-files :level . 2)
      (org-agenda-files :level . 3)
-     (rac-org-files-list :maxlevel . 3))))
+     (rac-org-files-list :level . 1)
+     (rac-org-files-list :level . 2))))
 
   (org-refile-use-outline-path 'file)
   (org-outline-path-complete-in-steps nil)
+  (org-goto-interface 'outline-path-completion)
   (org-refile-use-outline-path 'file
                                org-outline-path-complete-in-steps nil)
 
@@ -923,3 +925,10 @@
           :recursive t
           :publishing-function org-publish-attachment)
          ("website" :components ("org-notes"  "org-static"))))
+
+(use-package ox-json)
+
+(add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
+            (auto-save-mode)))
