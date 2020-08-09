@@ -740,6 +740,9 @@
   :config
   (ivy-mode 1))
 
+(use-package counsel-css)
+(add-hook 'css-mode-hook #'counsel-css-imenu-setup)
+
 (use-package counsel
   :ensure-system-package (rg . ripgrep)
   :bind (("C-x m" . counsel-M-x)
