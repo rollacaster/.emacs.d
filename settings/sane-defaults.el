@@ -203,5 +203,8 @@
 (remove-hook 'git-commit-mode-hook 'auto-fill-mode)
 (add-hook 'git-commit-mode-hook 'visual-line-mode)
 
+;; Allow to find ä for a
+(setq search-default-mode 'char-fold-to-regexp)
+
 (provide 'sane-defaults)
 ;;; sane-defaults.el ends here
