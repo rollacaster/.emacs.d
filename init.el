@@ -409,9 +409,12 @@
 
 (defun rac-org-files-list ()
   (delq nil
-        (mapcar (lambda (buffer)
-                  (buffer-file-name buffer))
-                (org-buffer-list 'files t))))
+        (seq-filter
+         (lambda (file-name)
+           (if file-name (not (string-match-p (regexp-quote "archive") file-name))))
+         (mapcar (lambda (buffer) (buffer-file-name buffer))
+                 (org-buffer-list 'files t)))))
+
 
 (use-package org
   :ensure-system-package
@@ -480,7 +483,8 @@
      (org-agenda-files :level . 2)
      (org-agenda-files :level . 3)
      (rac-org-files-list :level . 1)
-     (rac-org-files-list :level . 2))))
+     (rac-org-files-list :level . 2)
+     (rac-org-files-list :level . 3))))
 
   (org-refile-use-outline-path 'file)
   (org-outline-path-complete-in-steps nil)
