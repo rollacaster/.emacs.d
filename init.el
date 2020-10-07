@@ -611,7 +611,7 @@
   (cider-repl-history-file "~/.emacs.d/cider-history")
   (cider-repl-wrap-history t)
   (cider-prompt-for-symbol nil)
-  (cider-show-error-buffer nil)
+  (cider-show-error-buffer t)
   (cider-auto-select-error-buffer nil)
   (cider-repl-pop-to-buffer-on-connect 'display-only)
   (cider-repl-use-pretty-printing t))
