@@ -298,6 +298,7 @@
   ( "M-]" . rjsx-jump-closing-tag)
   :mode
   ("\\.js\\'" . rjsx-mode)
+  ("\\.mjs\\'" . rjsx-mode)
   :interpreter "node")
 
 (use-package package-lint)
