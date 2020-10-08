@@ -394,7 +394,8 @@
   (setq ispell-local-dictionary-alist
         ;; Please note the list `("-d" "en_US")` contains ACTUAL parameters passed to hunspell
         ;; You could use `("-d" "en_US,en_US-med")` to check with multiple dictionaries
-        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
+        '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)
+          ("de_DE_frami" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "de_DE_frami") nil utf-8)))
 
   (defun fd-switch-dictionary()
     (interactive)
