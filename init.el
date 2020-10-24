@@ -941,5 +941,20 @@
           (lambda ()
             (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
             (auto-save-mode)))
+
 (use-package lorem-ipsum)
+
+(use-package org-super-agenda
+  :custom
+  (org-super-agenda-groups '((:auto-group t)))
+  :config
+  (org-super-agenda--def-auto-group items "their AGENDA-GROUP property"
+    :keyword :auto-group
+    :key-form (org-entry-get (org-super-agenda--get-marker item)
+                             org-super-agenda-group-property-name
+                             org-super-agenda-properties-inherit)
+    :header-form key)
+  (org-super-agenda-mode))
+
+
 
