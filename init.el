@@ -947,6 +947,7 @@
 (use-package org-super-agenda
   :custom
   (org-super-agenda-groups '((:auto-group t)))
+  (org-super-agenda-header-separator "")
   :config
   (org-super-agenda--def-auto-group items "their AGENDA-GROUP property"
     :keyword :auto-group
