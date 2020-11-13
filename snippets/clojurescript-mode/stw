@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: tailwind-rn-style
+# key: stw
+# --
+{:style (tw "$0")}
