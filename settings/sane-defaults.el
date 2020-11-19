@@ -207,5 +207,8 @@
 ;; Allow to find ä for a
 (setq search-default-mode 'char-fold-to-regexp)
 
+;; Resize windows proportionally
+(setq window-combination-resize t)
+
 (provide 'sane-defaults)
 ;;; sane-defaults.el ends here
