@@ -607,6 +607,7 @@
               ("C-c RET" . mc/mark-all-like-this-dwim))
   :hook ((cider-repl-mode cider-mode) . cider-company-enable-fuzzy-completion)
   :custom
+  (cider-offer-to-open-cljs-app-in-browser nil)
   (cider-print-quota 10485)
   (cider-print-options '(("length" 100) ("level" 10) ("print-length" 100) ("print-level" 10)))
   (cider-figwheel-main-default-options ":dev")
