@@ -994,3 +994,5 @@
   (bibtex-completion-bibliography "~/org-roam/biblography.bib"))
 (use-package org-ref)
 
+(use-package html-to-hiccup)
+
