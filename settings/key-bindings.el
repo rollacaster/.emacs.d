@@ -91,6 +91,9 @@
 ;; grab mac-link
 (global-set-key (kbd "s-c") 'grab-mac-link)
 
+;; vterm-toggle
+(global-set-key (kbd "C-c C-z") 'vterm-toggle)
+
 (provide 'key-bindings)
 
 ;;; key-bindings.el ends here

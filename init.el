@@ -994,5 +994,14 @@
   (bibtex-completion-bibliography "~/org-roam/biblography.bib"))
 (use-package org-ref)
 
+
 (use-package html-to-hiccup)
+
+(use-package vterm
+  :bind
+  (( "C-x t" . vterm)
+   ( "C-c t" . vterm)))
+
+(use-package vterm-toggle)
+
 
