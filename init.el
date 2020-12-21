@@ -968,6 +968,7 @@
       (after-init . org-roam-mode)
       :custom
       (org-roam-directory "~/org-roam")
+      (org-roam-dailies-directory "daily/")
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
@@ -991,8 +992,14 @@
 
 (use-package ivy-bibtex
   :custom
-  (bibtex-completion-bibliography "~/org-roam/biblography.bib"))
-(use-package org-ref)
+  (bibtex-completion-bibliography "~/references/biblography.bib")
+  (bibtex-completion-library-path "~/references/"))
+(use-package org-ref
+  :custom
+  (reftex-default-bibliography "~/references/biblography.bib")
+  (org-ref-default-bibliography "~/references/biblography.bib")
+  (org-ref-default-bibliography "~/references/biblography.bib")
+  (org-ref-pdf-directory "~/references/"))
 
 
 (use-package html-to-hiccup)
