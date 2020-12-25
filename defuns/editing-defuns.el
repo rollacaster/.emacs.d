@@ -152,5 +152,10 @@ is already narrowed."
   (interactive)
   (insert "¯\\_(ツ)_/¯"))
 
+(defun rac-insert-date ()
+  "Insert a timestamp according in yyyy-MM-dd time format."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d" (current-time))))
+
 
 
