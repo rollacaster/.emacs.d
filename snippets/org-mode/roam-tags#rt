@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: roam_tags#rt
+# key: rt
+# --
+#+roam_tags: ${1:$$(yas-choose-value '("LITERATURE" "CONCEPT"))}
