@@ -106,6 +106,7 @@
   :if (memq window-system '(mac ns)))
 
 (use-package expand-region
+  :after org
   :bind (("M-2" . er/expand-region)
          ("M-1" . er/contract-region)))
 
