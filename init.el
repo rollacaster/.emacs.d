@@ -994,6 +994,8 @@
   (org-ref-default-bibliography '("~/references/biblography.bib"))
   (org-ref-pdf-directory "~/references/"))
 
+(use-package org-noter)
+
 
 (use-package html-to-hiccup)
 
