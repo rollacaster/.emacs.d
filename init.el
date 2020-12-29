@@ -971,7 +971,8 @@
 
 (use-package org-roam-bibtex
   :after org-roam
-  :hook (org-roam-mode . org-roam-bibtex-mode))
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :custom (orb-file-field-extensions '("pdf" "epub")))
 
 (use-package org-journal
   :bind
@@ -985,12 +986,12 @@
 (use-package ivy-bibtex
   :custom
   (bibtex-completion-bibliography "~/references/biblography.bib")
-  (bibtex-completion-library-path "~/references/"))
+  (bibtex-completion-library-path "~/references/")
+  (bibtex-completion-pdf-extension '(".pdf" ".epub")))
 (use-package org-ref
   :custom
   (reftex-default-bibliography "~/references/biblography.bib")
-  (org-ref-default-bibliography "~/references/biblography.bib")
-  (org-ref-default-bibliography "~/references/biblography.bib")
+  (org-ref-default-bibliography '("~/references/biblography.bib"))
   (org-ref-pdf-directory "~/references/"))
 
 
