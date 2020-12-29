@@ -791,15 +791,6 @@
   (when (file-regular-p file)
     (load file)))
 
-(use-package multi-term
-  :bind
-  (( "C-x c" . term-char-mode)
-   ( "C-x l" . term-line-mode)
-   ( "C-x t" . multi-term)
-   ( "C-c t" . multi-term))
-  :custom
-  (multi-term-program "/bin/zsh"))
-
 (when (file-exists-p "~/.emacs.d/mail.el")
   (progn
     (load-file "~/.emacs.d/mail.el")
