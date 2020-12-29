@@ -996,6 +996,9 @@
 
 (use-package org-noter)
 
+(use-package org-roam-server
+  :custom
+  (org-roam-server-port 3030))
 
 (use-package html-to-hiccup)
 
