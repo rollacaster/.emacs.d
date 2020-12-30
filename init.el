@@ -425,6 +425,7 @@
   (("/Applications/Dropbox.app" . "brew cask install dropbox")
    (latex . "brew cask install mactex-no-gui"))
   :mode ("\\.org" . org-mode)
+  :hook (org-mode . visual-line-mode)
   :bind (("C-c c" . org-capture)
          ("C-c s" . org-store-link)
          ("C-c a" . org-agenda)
