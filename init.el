@@ -673,6 +673,7 @@
 (use-package nov
   :mode ("\\.epub\\'" . nov-mode)
   :hook (nov-mode . (lambda ()
+                      (text-scale-increase 2)
                       (face-remap-add-relative 'variable-pitch :family "Helvetica"
                              :height 1.0))))
 (use-package all-the-icons)
