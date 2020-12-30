@@ -342,6 +342,7 @@
  :custom (pomidor-play-sound-file . nil))
 (use-package counsel-projectile)
 (use-package projectile
+  :diminish projectile-mode
   :bind (:map projectile-mode-map
               ("C-c p" . projectile-command-map))
   :custom
@@ -955,13 +956,14 @@
   :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
 
 (use-package org-roam
-      :ensure t
-      :hook
-      (after-init . org-roam-mode)
-      :custom
-      (org-roam-directory "~/org-roam")
-      (org-roam-dailies-directory "daily/")
-      :bind (:map org-roam-mode-map
+  :ensure t
+  :diminish org-roam-mode
+  :hook
+  (after-init . org-roam-mode)
+  :custom
+  (org-roam-directory "~/org-roam")
+  (org-roam-dailies-directory "daily/")
+  :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
                ("C-c n g" . org-roam-graph))
@@ -971,6 +973,7 @@
 
 (use-package org-roam-bibtex
   :after org-roam
+  :diminish org-roam-bibtex-mode
   :hook (org-roam-mode . org-roam-bibtex-mode)
   :custom (orb-file-field-extensions '("pdf" "epub")))
 
