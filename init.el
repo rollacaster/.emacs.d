@@ -965,28 +965,23 @@
   :custom
   (org-roam-directory "~/org-roam")
   (org-roam-dailies-directory "daily/")
-  :bind (:map org-roam-mode-map
-              (("C-c n l" . org-roam)
-               ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph))
-              :map org-mode-map
-              (("C-c n i" . org-roam-insert))
-              (("C-c n I" . org-roam-insert-immediate))))
+  (org-roam-completion-system 'ivy)
+  :bind
+  ("C-c n j" . org-roam-dailies-today)
+  ("C-c n y" . org-roam-dailies-yesterday)
+  (:map org-roam-mode-map
+        (("C-c n l" . org-roam)
+         ("C-c n f" . org-roam-find-file)
+         ("C-c n g" . org-roam-graph))
+        :map org-mode-map
+        (("C-c n i" . org-roam-insert))
+        (("C-c n I" . org-roam-insert-immediate))))
 
 (use-package org-roam-bibtex
   :after org-roam
   :diminish org-roam-bibtex-mode
   :hook (org-roam-mode . org-roam-bibtex-mode)
   :custom (orb-file-field-extensions '("pdf" "epub")))
-
-(use-package org-journal
-  :bind
-  ("C-c n j" . org-journal-new-entry)
-  :custom
-  (org-journal-date-prefix "#+title: ")
-  (org-journal-file-format "%Y-%m-%d.org")
-  (org-journal-dir "~/org-journal")
-  (org-journal-date-format "%A, %d %B %Y"))
 
 (use-package ivy-bibtex
   :custom
