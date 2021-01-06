@@ -94,6 +94,12 @@
 ;; vterm-toggle
 (global-set-key (kbd "C-c C-z") 'vterm-toggle)
 
+;; Clocking
+(global-set-key (kbd "C-c C-x i") '(lambda () (interactive) (org-clock-in '(4))))
+(global-set-key (kbd "C-c C-x TAB") '(lambda () (interactive) (org-clock-in '(4))))
+(global-set-key (kbd "C-c C-x o") 'org-clock-out)
+(global-set-key (kbd "C-c C-x C-o") 'org-clock-out)
+
 (provide 'key-bindings)
 
 ;;; key-bindings.el ends here
