@@ -212,6 +212,7 @@
    (n . "npm i -g n"))
   :diminish npm-mode
   :config
+  (unbind-key "C-c n i" npm-mode-keymap)
   (npm-global-mode))
 
 (use-package meghanada
