@@ -3,4 +3,4 @@
 # key: depsedn
 # --
 {:deps {$0}
- :paths ["src" "target" "resources"]}
+ :paths ["src" "resources"]}
