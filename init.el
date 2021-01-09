@@ -453,12 +453,6 @@
   (org-tag-alist '(("Work" . ?w) ("Online" . ?o) ("Home" . ?h) ("Phone" . ?p)))
   (org-ellipsis "⤵")
   (org-folder "~/org")
-  (org-agenda-files (seq-filter
-                     (lambda (file) (and
-                                (not (string-match-p "archive" file))
-                                (not (string-match-p "organice" file))
-                                (string-match-p "\\.org" file)))
-                     (nthcdr 2 (directory-files org-folder t))))
   ;; babel
   (org-babel-load-languages
    '((emacs-lisp . t)
@@ -538,7 +532,14 @@
     (noflet ((switch-to-buffer-other-window (buf) (switch-to-buffer buf)))
       (org-capture)))
   :config
-
+  (setq org-agenda-files (seq-filter
+                     (lambda (file) (and
+                                     (not (string-match-p "archive" file))
+                                     (not (string-match-p "organice" file))
+                                     (string-match-p "\\.org" file)))
+                     (nthcdr 2 (directory-files "~/org" t))))
+  (dolist (hook '(org-mode-hook))
+    (add-hook hook (lambda () (flyspell-mode 1))))
   ;; (defun rac-completion-hook ()
   ;;   (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t))
   ;; (add-hook 'org-mode-hook #'rac-completion-hook)
@@ -551,18 +552,16 @@
                  (side            . bottom)
                  (window-height   . 0.2))))
 
-(use-package org-pdfview
-  :defer t)
-
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode))
 
 (use-package org-download
+  :after org
   :config
   (setq org-download-screenshot-method "screencapture -i %s"))
-  ;; (use-package ox-jira)
 
-(use-package ox-gfm)
+(use-package ox-gfm
+    :after org)
 
 (use-package try)
 
@@ -582,7 +581,8 @@
 
 (use-package f)
 
-(use-package org-tree-slide)
+(use-package org-tree-slide
+  :after org)
 
 (use-package osx-location)
 
@@ -696,7 +696,8 @@
   (cfw:fchar-top-left-corner ?┏)
   (cfw:fchar-top-right-corner ?┓)
   :config
-  (use-package calfw-org)
+  (use-package calfw-org
+      :after org)
   (use-package calfw-ical))
 
 (use-package typescript-mode
