@@ -6,4 +6,4 @@
 #+DESCRIPTION: data visualizations | frontend development | functional programming
 #+KEYWORDS: programming emacs clojure javascript blog tech
 #+OPTIONS: html-postamble:t html-scripts:nil html-style:nil html5-fancy:t toc:nil
-#+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/>
+#+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/> <link rel='stylesheet' href='css/syntax-highlighting.css' type='text/css'/>
