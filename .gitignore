@@ -49,3 +49,4 @@ xkcd/
 /forge-database.sqlite
 /.emacs.desktop*
 /work.el
+/org-roam.db
