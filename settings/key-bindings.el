@@ -99,6 +99,11 @@
 (global-set-key (kbd "C-c C-x TAB") '(lambda () (interactive) (org-clock-in '(4))))
 (global-set-key (kbd "C-c C-x o") 'org-clock-out)
 (global-set-key (kbd "C-c C-x C-o") 'org-clock-out)
+(global-set-key (kbd "s-s") (lambda () (interactive) (insert "ß")))
+(global-set-key (kbd "s-a") (lambda () (interactive) (insert "ä")))
+(global-set-key (kbd "s-o") (lambda () (interactive) (insert "ö")))
+(global-set-key (kbd "s-u") (lambda () (interactive) (insert "ü")))
+
 
 (provide 'key-bindings)
 
