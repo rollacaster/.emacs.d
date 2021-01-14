@@ -971,8 +971,8 @@
   (org-roam-dailies-directory "daily/")
   (org-roam-completion-system 'ivy)
   :bind
-  ("C-c n j" . org-roam-dailies-today)
-  ("C-c n y" . org-roam-dailies-yesterday)
+  ("C-c n j" . org-roam-dailies-find-today)
+  ("C-c n y" . org-roam-dailies-find-yesterday)
   (:map org-roam-mode-map
         (("C-c n l" . org-roam)
          ("C-c n f" . org-roam-find-file)
