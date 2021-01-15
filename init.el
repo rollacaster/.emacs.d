@@ -214,6 +214,7 @@
   :config
   (unbind-key "C-c n i" npm-mode-keymap)
   (unbind-key "C-c n n" npm-mode-keymap)
+  (unbind-key "C-c n l" npm-mode-keymap)
   (npm-global-mode))
 
 (use-package meghanada
@@ -970,6 +971,20 @@
   (org-roam-directory "~/org-roam")
   (org-roam-dailies-directory "daily/")
   (org-roam-completion-system 'ivy)
+  (org-roam-capture-templates
+   '(("d" "default" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}
+" :unnarrowed t)
+     ("l" "Literature" plain (function org-roam--capture-get-point)
+      "%?"
+      :file-name "%<%Y%m%d%H%M%S>-${slug}"
+      :head "#+title: %(second  (grab-mac-link-chrome-1))
+#+roam_key: %(first  (grab-mac-link-chrome-1))
+#+roam_tags LITERATURE
+
+- state :: [[file:20201228082015-unread.org][Unread]]
+- author :: ${author}
+- found-in :: ${found-in}
+- rating ::")))
   :bind
   ("C-c n j" . org-roam-dailies-find-today)
   ("C-c n y" . org-roam-dailies-find-yesterday)
