@@ -1,6 +1,6 @@
 #+AUTHOR: Thomas Sojka
 #+EMAIL: contact@thomas-sojka.tech
-#+OPTIONS: author:nil date:nil num:nil timestamp:nil
+#+OPTIONS: author:t date:nil num:nil timestamp:nil
 #+HTML_DOCTYPE: html5
 #+HTML_CONTAINER: section
 #+DESCRIPTION: data visualizations | frontend development | functional programming
