@@ -983,9 +983,9 @@
   (org-roam-directory "~/org-roam")
   (org-roam-dailies-directory "daily/")
   (org-roam-completion-system 'ivy)
-  (org-roam-capture-templates
-   '(("d" "default" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}
-" :unnarrowed t)
+  (org-roam-capture-ref-templates
+   '(("r" "ref" plain #'org-roam-capture--get-point "%?" :file-name "${slug}" :head "#+title: ${title}
+#+roam_key: ${ref}" :unnarrowed t)
      ("l" "Literature" plain (function org-roam--capture-get-point)
       "%?"
       :file-name "%<%Y%m%d%H%M%S>-${slug}"
@@ -995,8 +995,10 @@
 
 - state :: [[file:20201228082015-unread.org][Unread]]
 - author :: ${author}
-- found-in :: ${found-in}
 - rating ::")))
+  (org-roam-capture-templates
+   '(("d" "default" plain #'org-roam-capture--get-point "%?" :file-name "%<%Y%m%d%H%M%S>-${slug}" :head "#+title: ${title}
+" :unnarrowed t)))
   :bind
   ("C-c n j" . org-roam-dailies-find-today)
   ("C-c n y" . org-roam-dailies-find-yesterday)
@@ -1008,7 +1010,9 @@
          ("C-c n n" . org-roam-dailies-find-next-note))
         :map org-mode-map
         (("C-c n i" . org-roam-insert))
-        (("C-c n I" . org-roam-insert-immediate))))
+        (("C-c n I" . org-roam-insert-immediate)))
+  :config
+  (require 'org-roam-protocol))
 
 (use-package org-roam-bibtex
   :after org-roam
