@@ -504,7 +504,8 @@
 
   (org-agenda-custom-commands
    '(("h" "Agenda"
-      ((agenda "")
+      ((tags "GOAL")
+       (agenda "")
        (todo "TODO")))
      ("k" "Klaka"
       ((todo "ToDo")
