@@ -991,7 +991,7 @@
       :file-name "%<%Y%m%d%H%M%S>-${slug}"
       :head "#+title: %(second  (grab-mac-link-chrome-1))
 #+roam_key: %(first  (grab-mac-link-chrome-1))
-#+roam_tags LITERATURE
+#+roam_tags: LITERATURE
 
 - state :: [[file:20201228082015-unread.org][Unread]]
 - author :: ${author}
