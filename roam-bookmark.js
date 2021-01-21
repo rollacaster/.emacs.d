@@ -26,6 +26,20 @@ javascript: location.href =
         .author.map((a) => a.name)
         .join(' ')
     : document.querySelector('head > script[type="application/ld+json"]') &&
+      Array.isArray(
+        JSON.parse(
+          document.querySelector('head > script[type="application/ld+json"]')
+            .innerText
+        ).author
+      )
+    ? '&author=' +
+      JSON.parse(
+        document.querySelector('head > script[type="application/ld+json"]')
+          .innerText
+      )
+        .author.map(({ name }) => name)
+        .join(', ')
+    : document.querySelector('head > script[type="application/ld+json"]') &&
       JSON.parse(
         document.querySelector('head > script[type="application/ld+json"]')
           .innerText
