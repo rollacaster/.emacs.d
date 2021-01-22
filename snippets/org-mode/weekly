@@ -2,18 +2,17 @@
 # name: weekly
 # key: weekly
 # --
-* KW$1
-** Goals (check with good goals)
-*** $2
-*** 
-*** 
-** Clock Table
+#+title: 2021 Week $1
+* Goals (check with good goals)
+** $2
+** 
+** 
+* Clock Table
  #+BEGIN: clocktable :scope agenda :tstart "<-1w>" :tend "<now>" :maxlevel 3 :link t :compact t :hidefiles t
  #+END:
-*** Review Checks
+** Review Checks
 - [ ] Clear Inbox
 - [ ] Comit org files
-- [ ] Check short term goals
+- [ ] Check short term goals / check for good goal
 - [ ] New week goals
-- [ ] Move Projects
 - [ ] Check klaka

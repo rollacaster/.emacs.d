@@ -3,7 +3,7 @@
 #key: src
 # --
 #+BEGIN_SRC ${2:$$(yas-choose-value '(
-  "asymptote" "C" "clojurescript" "d" "dot" "emacs-lisp" "gnuplot"
+  "asymptote" "C" "clojure" "clojurescript" "d" "dot" "emacs-lisp" "gnuplot"
   "java" "latex" "lisp" "lua" "mscgen" "octave" "oz" "plantuml" "python" "ruby" "scheme" "sed"
   "sql" "awk" "C++" "css" "ditaa" "calc" "fortran" "haskell" "js" "ledger" "lilypond" "matlab"
   "ocaml" "org" "perl" "processing" "R" "sass" "screen" "sh" "sqlite" "restclient" "json"
