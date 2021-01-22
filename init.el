@@ -535,12 +535,17 @@
     (noflet ((switch-to-buffer-other-window (buf) (switch-to-buffer buf)))
       (org-capture)))
   :config
-  (setq org-agenda-files (seq-filter
-                     (lambda (file) (and
-                                     (not (string-match-p "archive" file))
-                                     (not (string-match-p "organice" file))
-                                     (string-match-p "\\.org" file)))
-                     (nthcdr 2 (directory-files "~/org" t))))
+  (setq org-agenda-files
+        (-concat
+         (seq-filter
+          (lambda (file) (and
+                     (not (string-match-p "archive" file))
+                     (not (string-match-p "organice" file))
+                     (string-match-p "\\.org" file)))
+          (nthcdr 2 (directory-files "~/org" t)))
+         (seq-filter
+          (lambda (file) (string-match-p "\\.org" file))
+          (nthcdr 2 (directory-files "~/org-roam/projects" t)))))
   (dolist (hook '(org-mode-hook))
     (add-hook hook (lambda () (flyspell-mode 1))))
   ;; (defun rac-completion-hook ()
