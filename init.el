@@ -1050,6 +1050,13 @@
   (( "C-x t" . vterm)
    ( "C-c t" . vterm)))
 
+(use-package deft
+  :bind ("<f8>" . deft)
+  :commands (deft)
+  :config (setq deft-directory "~/org-roam"
+                deft-extensions '("md" "org")
+                deft-recursive t))
+
 (use-package vterm-toggle)
 
 
