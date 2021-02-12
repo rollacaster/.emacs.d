@@ -956,7 +956,7 @@
 
 (use-package ox-json)
 
-(add-hook 'org-agenda-mode-hook
+(add-hook 'org-mode-hook
           (lambda ()
             (add-hook 'auto-save-hook 'org-save-all-org-buffers nil t)
             (auto-save-mode)))
